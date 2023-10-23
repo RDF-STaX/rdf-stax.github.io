@@ -25,12 +25,6 @@ jobs:
       - name: Generate documentation
         run: python /app/tasks/doc_gen.py output/stax.ttl output
 
-      - name: Upload output artifact
-        uses: actions/upload-artifact@v3
-        with:
-          name: output
-          path: output/
-
       - name: Upload files for the release
         uses: ncipollo/release-action@v1.13.0
         with:
@@ -41,3 +35,8 @@ jobs:
           name: "${{ env.GITHUB_REF_NAME }}"
           artifacts: 'output/*'
           generateReleaseNotes: true
+
+  call-publish:
+    uses: ./.github/workflows/publish.yml
+    with:
+      tag: "${{ env.GITHUB_REF_NAME }}"

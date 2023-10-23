@@ -22,7 +22,12 @@ jobs:
           cache-dependency-path: 'pages/requirements.txt'
 
       - name: Install dependencies
-        run: pip install -r requirements.txt 
+        run: pip install -r requirements.txt
+
+      - name: Download ontology docs
+        run: |
+          TAG='${{ inputs.tag }}'
+          wget https://github.com/RDF-STaX/rdf-stax.github.io/releases/download/$TAG/docs.html docs/includes/docs.html
 
       - name: Deploy site
         run: |
