@@ -24,7 +24,7 @@ jobs:
       - name: Download ontology docs
         run: |
           TAG='${{ inputs.tag }}'
-          wget https://github.com/RDF-STaX/rdf-stax.github.io/releases/download/$TAG/docs.html docs/includes/docs.html
+          wget https://github.com/RDF-STaX/rdf-stax.github.io/releases/download/$TAG/docs.html -O docs/includes/docs.html
 
       - name: Deploy site
         run: |
