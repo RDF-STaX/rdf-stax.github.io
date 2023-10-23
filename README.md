@@ -1,5 +1,8 @@
 # rdf-stax.github.io
+
 Main repository of the RDF Stream Taxonomy
+
+**TODO: website, issue tracker, license**
 
 ## Editing the ontology
 

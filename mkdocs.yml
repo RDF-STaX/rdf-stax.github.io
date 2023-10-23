@@ -1,6 +1,7 @@
 site_name: RDF-STaX
 site_description: RDF Stream Taxonomy (RDF-STaX)
 site_url: https://rdf-stax.github.io/
+edit_uri: edit/main/docs/
 
 plugins:
   - search
@@ -42,6 +43,7 @@ theme:
     - search.suggest
     - search.highlight
     - content.code.copy
+    - content.action.edit
 
   font:
     text: Lato
@@ -65,9 +67,8 @@ theme:
         icon: material/brightness-3
         name: Switch to light mode
 
-  # TODO
-  # logo: assets/jelly_white.png
-  # favicon: assets/jelly_color.png
+  logo: assets/logo_white.png
+  favicon: assets/logo_color.png
   icon:
     repo: fontawesome/brands/github
 
@@ -83,7 +84,9 @@ extra:
 
 nav:
   - Home: 'index.md'
-  - Taxonomy overview: 'overview.md'
+  - How to use it?: 'overview.md'
   - Ontology docs: 'ontology.md'
+  - Nanopublications: 'nanopubs.md'
+  - RDF-STaX uses and publications: 'uses.md'
   - Contributing: 'contributing.md'
   - Licensing and citation: 'licensing.md'
