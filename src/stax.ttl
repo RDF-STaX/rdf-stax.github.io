@@ -14,7 +14,6 @@
 @base <https://w3id.org/stax/ontology> .
 
 <https://w3id.org/stax/ontology> rdf:type owl:Ontology ;
-                                  owl:versionIRI <https://w3id.org/stax/ontology/dev> ;
                                   owl:imports <http://www.w3.org/2004/02/skos/core> ;
                                   dc:description "RDF-STaX enables describing the types of RDF streams and defines relations between them."@en ;
                                   dc:title "RDF Stream Taxonomy (RDF-STaX)"@en ;

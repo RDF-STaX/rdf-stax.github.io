@@ -1,0 +1,12 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+
+# This file lists the authors and contributors of the RDF Stream Taxonomy (RDF-STaX).
+# The information here will be merged into the ontology by the CI during release.
+
+<https://w3id.org/stax/ontology> dcterms:creator [
+    foaf:homepage <https://github.com/Ostrzyciel> ,
+        <https://orcid.org/0000-0002-2543-9461> ;
+    foaf:name "Piotr Sowiński" ;
+    foaf:nick "Ostrzyciel"
+] .
