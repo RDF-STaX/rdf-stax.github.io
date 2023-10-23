@@ -19,10 +19,7 @@ jobs:
         with:
           python-version: 3.x
           cache: pip
-          cache-dependency-path: 'pages/requirements.txt'
-
-      - name: Install dependencies
-        run: pip install -r requirements.txt
+          cache-dependency-path: 'requirements.txt'
 
       - name: Download ontology docs
         run: |

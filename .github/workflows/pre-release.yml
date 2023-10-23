@@ -39,6 +39,7 @@ jobs:
           generateReleaseNotes: true
 
   call-publish:
+    needs: package
     uses: ./.github/workflows/publish.yml
     with:
       tag: dev
