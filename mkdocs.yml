@@ -72,6 +72,7 @@ theme:
     repo: fontawesome/brands/github
 
 extra:
+  # TODO: edit buttons
   version:
     provider: mike
     default: stable

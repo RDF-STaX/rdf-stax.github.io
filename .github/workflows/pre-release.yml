@@ -18,10 +18,10 @@ jobs:
           path: stax
 
       - name: Package ontology
-        run: python tasks/package.py stax/src output dev
+        run: python /app/tasks/package.py stax/src output dev
 
       - name: Generate documentation
-        run: python tasks/doc_gen.py output/stax.ttl output
+        run: python /app/tasks/doc_gen.py output/stax.ttl output
 
       - name: Upload output artifact
         uses: actions/upload-artifact@v3
