@@ -85,4 +85,5 @@ nav:
   - Home: 'index.md'
   - Taxonomy overview: 'overview.md'
   - Ontology docs: 'ontology.md'
+  - Contributing: 'contributing.md'
   - Licensing and citation: 'licensing.md'

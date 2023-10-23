@@ -1,0 +1,43 @@
+name: Ontology tagged release
+
+on:
+  push:
+    tags:
+      - "v*"
+
+jobs:
+  package:
+    name: "Package"
+    runs-on: "ubuntu-latest"
+    container: ghcr.io/rdf-stax/ci-worker:main
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          path: stax
+
+      - name: Package ontology
+        run: python /app/tasks/package.py stax/src output "$GITHUB_REF_NAME"
+
+      - name: Generate documentation
+        run: python /app/tasks/doc_gen.py output/stax.ttl output
+
+      - name: Upload output artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: output
+          path: output/
+
+      - name: Upload files for the release
+        uses: ncipollo/release-action@v1.13.0
+        with:
+          prerelease: false
+          draft: false
+          makeLatest: true
+          tag: "${{ env.GITHUB_REF_NAME }}"
+          name: "${{ env.GITHUB_REF_NAME }}"
+          artifacts: 'output/*'
+          generateReleaseNotes: true
