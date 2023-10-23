@@ -40,3 +40,5 @@ jobs:
     uses: ./.github/workflows/publish.yml
     with:
       tag: "${{ env.GITHUB_REF_NAME }}"
+    permissions:
+      contents: write

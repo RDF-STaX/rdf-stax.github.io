@@ -42,3 +42,5 @@ jobs:
     uses: ./.github/workflows/publish.yml
     with:
       tag: dev
+    permissions:
+      contents: write
