@@ -289,11 +289,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../overview/" class="md-nav__link">
+      <a href="../taxonomy/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    How to use it?
+    Taxonomy overview
   </span>
   
 
@@ -312,7 +312,26 @@
         
   
   <span class="md-ellipsis">
-    Ontology docs
+    Ontology documentation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../use-it/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    How to use it?
   </span>
   
 
@@ -350,7 +369,7 @@
         
   
   <span class="md-ellipsis">
-    RDF-STaX uses and publications
+    Use cases and publications
   </span>
   
 
@@ -411,6 +430,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#filing-issues" class="md-nav__link">
+    Filing issues
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#editing-the-ontology" class="md-nav__link">
     Editing the ontology
   </a>
@@ -427,6 +453,13 @@
         <li class="md-nav__item">
   <a href="#releases" class="md-nav__link">
     Releases
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    See also
   </a>
   
 </li>
@@ -485,6 +518,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#filing-issues" class="md-nav__link">
+    Filing issues
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#editing-the-ontology" class="md-nav__link">
     Editing the ontology
   </a>
@@ -501,6 +541,13 @@
         <li class="md-nav__item">
   <a href="#releases" class="md-nav__link">
     Releases
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    See also
   </a>
   
 </li>
@@ -529,13 +576,38 @@
 
 
 <h1 id="contributing-to-rdf-stax">Contributing to RDF-STaX</h1>
-<p>TODO</p>
+<p>Do you have an idea for how to improve RDF-STaX? Or maybe you found a bug? <strong>Any contributions are welcome!</strong></p>
+<h2 id="filing-issues">Filing issues</h2>
+<p>Feature requests, bug reports, and other issues can be filed in the <a href="https://github.com/RDF-STaX/rdf-stax.github.io/issues">issue tracker on GitHub</a>.</p>
 <h2 id="editing-the-ontology">Editing the ontology</h2>
-<p>TODO</p>
+<p>The ontology is stored in the <a href="https://github.com/RDF-STaX/rdf-stax.github.io/tree/main/src"><code>src</code> directory of the main repository</a>. It is split into two files:</p>
+<ul>
+<li>The main ontology file is <code>src/stax.ttl</code>. It should be edited with Protégé.<ul>
+<li>Do not add information about the authors/contributors there. This is done in the <code>src/authors.ttl</code> file (see below).</li>
+<li>Do not set the ontology's version IRI or version – this is done automatically in CI during release.</li>
+</ul>
+</li>
+<li>The <code>src/authors.ttl</code> file contains information about the authors/contributors of the ontology. It should be edited manually with a text editor.</li>
+</ul>
+<p>Pull requests are welcome.</p>
 <h2 id="editing-documentation">Editing documentation</h2>
-<p>TODO</p>
+<p>Documentation is also stored in the main repository, in the <a href="https://github.com/RDF-STaX/rdf-stax.github.io/tree/main/docs"><code>docs</code> directory</a>. You can open a pull request for any of the files there, except the ones in the <code>includes</code> subdirectory. These files are generated automatically in the CI pipeline.</p>
+<p>You can also use the <em>Edit this page</em> link in the top right corner of each page on the website to edit the page directly on GitHub.</p>
 <h2 id="releases">Releases</h2>
-<p>TODO: tagged and untagged releases</p>
+<p>The <code>dev</code> (development) version corresponds to the <code>main</code> branch of the repository. A new development release is made automatically every time a commit is pushed to the <code>main</code> branch.</p>
+<p>The stable versions (e.g., 1.0.0) are created manually by the maintainer. To create a new tagged release:</p>
+<ol>
+<li>Check out the main branch of the <a href="https://github.com/RDF-STaX/rdf-stax.github.io">main repo</a> on your local machine.</li>
+<li>Update the main branch by running git pull. Make sure the pull was successful.</li>
+<li>Create a new tag with the version number: <code>git tag vX.Y.Z</code>.</li>
+<li>Push the tag to GitHub: <code>git push origin --tag vX.Y.Z</code>.</li>
+</ol>
+<p>The rest of the process is automatic. Make sure to prepend <code>v</code> before the version tag, e.g., <code>v1.0.0</code>. Otherwise, the release will not be created.</p>
+<h2 id="see-also">See also</h2>
+<ul>
+<li><a href="../use-it/">How to use RDF-STaX?</a></li>
+<li><a href="../licensing/">Licensing and citation</a></li>
+</ul>
 
 
 
