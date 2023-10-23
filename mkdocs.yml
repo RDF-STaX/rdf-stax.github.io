@@ -83,9 +83,10 @@ extra:
 
 nav:
   - Home: 'index.md'
-  - How to use it?: 'overview.md'
-  - Ontology docs: 'ontology.md'
+  - Taxonomy overview: taxonomy.md
+  - Ontology documentation: 'ontology.md'
+  - How to use it?: 'use-it.md'
   - Nanopublications: 'nanopubs.md'
-  - RDF-STaX uses and publications: 'uses.md'
+  - Use cases and publications: 'uses.md'
   - Contributing: 'contributing.md'
   - Licensing and citation: 'licensing.md'

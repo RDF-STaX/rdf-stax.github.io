@@ -23,7 +23,7 @@ jobs:
         run: python /app/tasks/package.py stax/src output dev
 
       - name: Generate documentation
-        run: python /app/tasks/doc_gen.py output/stax.ttl output
+        run: python /app/tasks/doc_gen.py output/stax.ttl output dev
 
       - name: Upload files for the release
         uses: ncipollo/release-action@v1.13.0
