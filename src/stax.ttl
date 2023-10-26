@@ -98,12 +98,31 @@ stax:hasElementType rdf:type owl:ObjectProperty ;
                     rdfs:label "has element type"@en .
 
 
+###  https://w3id.org/stax/ontology#hasStreamType
+stax:hasStreamType rdf:type owl:ObjectProperty ;
+                   rdfs:domain stax:RdfStreamTypeUsage ;
+                   rdfs:range stax:ConcreteRdfStreamType ;
+                   rdfs:comment "For an RDF stream type usage, this property indicates which stream type is used."@en ;
+                   rdfs:label "has stream type"@en .
+
+
 ###  https://w3id.org/stax/ontology#hasStreamTypeUsage
 stax:hasStreamTypeUsage rdf:type owl:ObjectProperty ;
-                        owl:inverseOf stax:usedIn ;
+                        owl:inverseOf stax:isUsageOf ;
                         rdfs:range stax:RdfStreamTypeUsage ;
-                        rdfs:comment "Inverse of stax:usedIn – indicates that the subject includes a usage of an RDF stream type."@en ;
+                        rdfs:comment """Inverse of stax:isUsageOf – indicates that the subject is related to a usage of an RDF stream type.
+
+The subject for this property can be for example a published stream on the Web (e.g., vocals:RDFStream) or a scientific publication that discusses a usage of an RDF stream type."""@en ;
                         rdfs:label "has stream type usage"@en .
+
+
+###  https://w3id.org/stax/ontology#isUsageOf
+stax:isUsageOf rdf:type owl:ObjectProperty ;
+               rdfs:domain stax:RdfStreamTypeUsage ;
+               rdfs:comment """For an RDF stream type usage, this property indicates where the stream was used or from where the usage was derived. The value of this property can be for example the DOI URL of an academic work.
+
+Inverse of stax:hasStreamTypeUsage."""@en ;
+               rdfs:label "is usage of"@en .
 
 
 ###  https://w3id.org/stax/ontology#streamTypeSemanticRelation
@@ -115,23 +134,6 @@ stax:streamTypeSemanticRelation rdf:type owl:ObjectProperty ;
                                 rdfs:label "is in stream type semantic relation with"@en .
 
 
-###  https://w3id.org/stax/ontology#usedIn
-stax:usedIn rdf:type owl:ObjectProperty ;
-            rdfs:domain stax:RdfStreamTypeUsage ;
-            rdfs:comment """For an RDF stream type usage, this property indicates where the stream was used. The value of this property can be for example the DOI URL of an academic work.
-
-Inverse of stax:hasStreamTypeUsage."""@en ;
-            rdfs:label "used in"@en .
-
-
-###  https://w3id.org/stax/ontology#usesStreamType
-stax:usesStreamType rdf:type owl:ObjectProperty ;
-                    rdfs:domain stax:RdfStreamTypeUsage ;
-                    rdfs:range stax:ConcreteRdfStreamType ;
-                    rdfs:comment "For an RDF stream type usage, this property indicates which stream type is used."@en ;
-                    rdfs:label "uses stream type"@en .
-
-
 #################################################################
 #    Classes
 #################################################################
@@ -140,7 +142,7 @@ stax:usesStreamType rdf:type owl:ObjectProperty ;
 stax:AbstractRdfStreamType rdf:type owl:Class ;
                            rdfs:subClassOf stax:RdfStreamType ;
                            owl:disjointWith stax:ConcreteRdfStreamType ;
-                           rdfs:comment "Class for the abstract RDF stream types in the taxonomy. Instances of this class have abstract definitions, i.e., they cannot be used in practice."@en ;
+                           rdfs:comment "Class for abstract RDF stream types in the taxonomy. Instances of this class have abstract definitions, i.e., they cannot be used to annotate real streams. They are only intended to be used for reasoning about stream types."@en ;
                            rdfs:label "Abstract RDF stream type"@en .
 
 
@@ -150,15 +152,19 @@ stax:ConcreteRdfStreamType rdf:type owl:Class ;
                                            [ rdf:type owl:Restriction ;
                                              owl:onProperty stax:hasElementType ;
                                              owl:someValuesFrom stax:RdfElementType
+                                           ] ,
+                                           [ rdf:type owl:Restriction ;
+                                             owl:onProperty stax:hasElementType ;
+                                             owl:allValuesFrom stax:RdfElementType
                                            ] ;
-                           rdfs:comment "Class for the concrete RDF stream types in the taxonomy. Instances of this class have concrete definitions, and they can be used in practice."@en ;
+                           rdfs:comment "Class for the concrete RDF stream types in the taxonomy. Instances of this class have concrete definitions, and they can be used to annotate real streams."@en ;
                            rdfs:label "Concrete RDF stream type"@en .
 
 
 ###  https://w3id.org/stax/ontology#RdfElementType
 stax:RdfElementType rdf:type owl:Class ;
                     owl:disjointWith stax:RdfStreamType ;
-                    rdfs:comment "Class for base types of elements in RDF streams. Instances of this class should correspond to RDF \"primitives\" (e.g., triple, quad, graph, dataset) and should not be further specialized. The instances of this class do NOT form a taxonomical structure."@en ;
+                    rdfs:comment "Class for base types of elements in RDF streams. There are four instances of this class (triple, quad, graph, dataset) and they should not be further specialized. The instances of this class do NOT form a taxonomical structure."@en ;
                     rdfs:label "RDF element type"@en .
 
 
@@ -172,8 +178,8 @@ stax:RdfStreamType rdf:type owl:Class ;
 ###  https://w3id.org/stax/ontology#RdfStreamTypeUsage
 stax:RdfStreamTypeUsage rdf:type owl:Class ;
                         rdfs:subClassOf [ rdf:type owl:Restriction ;
-                                          owl:onProperty stax:usesStreamType ;
-                                          owl:someValuesFrom stax:ConcreteRdfStreamType
+                                          owl:onProperty stax:hasStreamType ;
+                                          owl:allValuesFrom stax:ConcreteRdfStreamType
                                         ] ;
                         rdfs:comment """Class for instances of using an RDF stream type, in a program, an academic paper, or elsewhere. Instances of this class must have the stax:usesStreamType property pointing to a concrete stream type. The stax:usedIn property is also recommended to indicate where the stream is used. The use of other properties (e.g., rdfs:label, rdfs:comment) is encouraged to give more context about the usage.
 

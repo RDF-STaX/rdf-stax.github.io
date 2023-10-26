@@ -4,9 +4,14 @@
 # This file lists the authors and contributors of the RDF Stream Taxonomy (RDF-STaX).
 # The information here will be merged into the ontology by the CI during release.
 
-<https://w3id.org/stax/ontology> dcterms:creator [
-    foaf:homepage <https://github.com/Ostrzyciel> ,
-        <https://orcid.org/0000-0002-2543-9461> ;
-    foaf:name "Piotr Sowiński" ;
-    foaf:nick "Ostrzyciel"
-] .
+<https://w3id.org/stax/ontology>
+    dcterms:creator [
+        foaf:name "Piotr Sowiński" ;
+        foaf:nick "Ostrzyciel" ;
+        foaf:homepage <https://github.com/Ostrzyciel> ,
+            <https://orcid.org/0000-0002-2543-9461>
+    ] ;
+    dcterms:contributor [
+        foaf:name "Paweł Szmeja" ;
+        foaf:homepage <https://orcid.org/0000-0003-0869-3836>
+    ] .

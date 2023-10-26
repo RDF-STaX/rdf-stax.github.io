@@ -12,21 +12,23 @@ Making a statement about something's RDF stream type is very straightforward. Fo
 @prefix stax: <https://w3id.org/stax/ontology#> .
 
 _:usage a stax:RdfStreamTypeUsage ;
-    stax:usesStreamType stax:rdfGraphStream ;
-    stax:usedIn <https://example.org/some-resource> .
+    stax:hasStreamType stax:rdfGraphStream ;
+    stax:isUsageOf <https://example.org/some-resource> .
 ```
 
 It is recommended (but not required) to have one `#!turtle stax:RdfStreamTypeUsage` instance per annotated resource and per RDF stream type. This makes it easier to find all the annotations for a given resource or stream type.
 
-You can also make the statement in reverse, by annotating the resource itself:
+You can also make the statement in reverse, by annotating the resource itself. This can be especially useful when annotating RDF streams on the Web or in a dataset. For example, to annotate a `#!turtle vocals:RDFStream` from the [VoCaLS Vocabulary](http://w3id.org/rsp/vocals):
 
 ```turtle
 @prefix stax: <https://w3id.org/stax/ontology#> .
 
-<https://example.org/some-resource> stax:hasStreamTypeUsage [
-    a stax:RdfStreamTypeUsage ;
-    stax:usesStreamType stax:rdfGraphStream
-] .
+_:stream a vocals:RDFStream ;
+    # ... other properties of the stream ...
+    stax:hasStreamTypeUsage [
+        a stax:RdfStreamTypeUsage ;
+        stax:hasStreamType stax:timestampedRdfNamedGraphStream
+    ] .
 ```
 
 The `#!turtle stax:RdfStreamTypeUsage` instance is a good place to put additional information about the usage, such as a textual explanation, the source of the information, or the author of the statement. For example:
@@ -39,15 +41,15 @@ The `#!turtle stax:RdfStreamTypeUsage` instance is a good place to put additiona
 
 _:usage a stax:RdfStreamTypeUsage ;
     rdfs:comment "The authors state that for their proposed system, 'the streaming element (i.e. a single message) (...) is a set of triples'. Therefore, it uses an RDF graph stream."@en ;
-    stax:usesStreamType stax:rdfGraphStream ;
-    stax:usedIn <https://doi.org/10.1109/ICSTCC.2017.8107003> ;
+    stax:hasStreamType stax:rdfGraphStream ;
+    stax:isUsageOf <https://doi.org/10.1109/ICSTCC.2017.8107003> ;
     cito:citesAsEvidence <https://doi.org/10.1109/ICSTCC.2017.8107003> ;
     dcterms:creator <https://orcid.org/0000-0002-2543-9461> .
 ```
 
 You can use whatever properties you like, however, the following are recommended:
 
-- [CITO ontology](http://purl.org/spar/cito/) for typing the citations.
+- [CiTO ontology](http://purl.org/spar/cito) for typing the citations.
 - [DCMI Metadata Terms](http://purl.org/dc/terms/) for the statement author information.
 - `#!turtle rdfs:comment` for the textual explanation.
 - For statement creators, we recommend using [ORCID](https://orcid.org/).
