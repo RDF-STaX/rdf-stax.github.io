@@ -17,6 +17,17 @@ The ontology is stored in the [`src` directory of the main repository](https://g
 
 Pull requests are welcome.
 
+### CI pipeline
+
+The CI automatically publishes the ontology (see [the releases section below](#releases)) and pushes it to the website. The CI does the following:
+
+- Merge in the author information from `src/authors.ttl`.
+- Set the ontology's version IRI and version.
+- Infer additional statements with [ROBOT](https://robot.obolibrary.org/reason).
+- Serialize the ontology in all supported formats.
+
+The CI code can be found in the [`ci-worker` repository](https://github.com/RDF-STaX/ci-worker). The code there is licensed under Apache 2.0.
+
 ## Editing documentation
 
 Documentation is also stored in the main repository, in the [`docs` directory](https://github.com/RDF-STaX/rdf-stax.github.io/tree/main/docs). You can open a pull request for any of the files there, except the ones in the `includes` subdirectory. These files are generated automatically in the CI pipeline.
