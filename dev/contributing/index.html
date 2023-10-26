@@ -69,7 +69,18 @@
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
 
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     
@@ -441,6 +452,19 @@
     Editing the ontology
   </a>
   
+    <nav class="md-nav" aria-label="Editing the ontology">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ci-pipeline" class="md-nav__link">
+    CI pipeline
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -529,6 +553,19 @@
     Editing the ontology
   </a>
   
+    <nav class="md-nav" aria-label="Editing the ontology">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ci-pipeline" class="md-nav__link">
+    CI pipeline
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -590,6 +627,15 @@
 <li>The <code>src/authors.ttl</code> file contains information about the authors/contributors of the ontology. It should be edited manually with a text editor.</li>
 </ul>
 <p>Pull requests are welcome.</p>
+<h3 id="ci-pipeline">CI pipeline</h3>
+<p>The CI automatically publishes the ontology (see <a href="#releases">the releases section below</a>) and pushes it to the website. The CI does the following:</p>
+<ul>
+<li>Merge in the author information from <code>src/authors.ttl</code>.</li>
+<li>Set the ontology's version IRI and version.</li>
+<li>Infer additional statements with <a href="https://robot.obolibrary.org/reason">ROBOT</a>.</li>
+<li>Serialize the ontology in all supported formats.</li>
+</ul>
+<p>The CI code can be found in the <a href="https://github.com/RDF-STaX/ci-worker"><code>ci-worker</code> repository</a>. The code there is licensed under Apache 2.0.</p>
 <h2 id="editing-documentation">Editing documentation</h2>
 <p>Documentation is also stored in the main repository, in the <a href="https://github.com/RDF-STaX/rdf-stax.github.io/tree/main/docs"><code>docs</code> directory</a>. You can open a pull request for any of the files there, except the ones in the <code>includes</code> subdirectory. These files are generated automatically in the CI pipeline.</p>
 <p>You can also use the <em>Edit this page</em> link in the top right corner of each page on the website to edit the page directly on GitHub.</p>
@@ -679,5 +725,5 @@
       <script src="../assets/javascripts/bundle.aecac24b.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

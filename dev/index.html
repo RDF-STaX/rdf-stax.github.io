@@ -65,7 +65,18 @@
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
 
-  </head>
+   <link href="assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="assets/javascripts/glightbox.min.js"></script></head>
   
   
     
@@ -318,13 +329,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#more" class="md-nav__link">
-    More...
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -499,13 +503,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#more" class="md-nav__link">
-    More...
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -530,21 +527,19 @@
 
 
 <h1 id="rdf-stream-taxonomy-rdf-stax">RDF Stream Taxonomy (RDF-STaX)</h1>
-<p><img align="right" alt="RDF Stream Taxonomy (RDF-STaX)" src="assets/logo_color.svg" width="150" /></p>
-<p><strong>RDF-STaX</strong> is a taxonomy of RDF stream types. It <a href="uses/">can be used</a> to describe RDF streams used on the Web, in software tools, or in scientific publications.</p>
+<p><a class="glightbox" href="assets/logo_color.svg" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img align="right" alt="RDF Stream Taxonomy (RDF-STaX)" src="assets/logo_color.svg" width="150" /></a></p>
+<p><strong>RDF-STaX</strong> is a taxonomy of RDF stream types. It <a href="use-it/">can be used</a> to describe RDF streams used on the Web, in software tools, or in scientific publications.</p>
 <p>RDF-STaX is modeled as an <a href="ontology/">OWL 2 ontology</a>, using <a href="https://www.w3.org/TR/skos-reference/">SKOS</a> to define the taxonomical structure.</p>
 <h2 id="getting-started">Getting started</h2>
 <p>Have a look at the <strong><a href="taxonomy/">taxonomy overview</a></strong> to get an idea of the different types of RDF streams that are defined in RDF-STaX. You can also see the <strong><a href="ontology/">ontology documentation</a></strong> for a more detailed description of the ontology.</p>
-<p>If you want to know how to use RDF-STaX easily and effectively, have a look at the <strong><a href="use-it/">How to use RDF-STaX?</a></strong> page.</p>
-<h2 id="more">More...</h2>
 <ul>
-<li><a href="taxonomy/">Taxonomy overview</a></li>
-<li><a href="ontology/">Ontology documentation</a></li>
-<li><a href="use-it/">How to use RDF-STaX?</a></li>
-<li><a href="nanopubs/">Nanopublications</a> – making assertions about RDF stream type usage</li>
-<li><a href="uses/">Use cases and publications</a></li>
-<li><a href="contributing/">Contributing</a></li>
-<li><a href="licensing/">Licensing and citation</a></li>
+<li><strong><a href="taxonomy/">Taxonomy overview</a></strong></li>
+<li><strong><a href="ontology/">Ontology documentation</a></strong></li>
+<li><strong><a href="use-it/">How to use RDF-STaX?</a></strong></li>
+<li><strong><a href="nanopubs/">Nanopublications</a></strong> – making assertions about RDF stream type usage</li>
+<li><strong><a href="uses/">Use cases and publications</a></strong></li>
+<li><strong><a href="contributing/">Contributing</a></strong></li>
+<li><strong><a href="licensing/">Licensing and citation</a></strong></li>
 </ul>
 
 
@@ -617,5 +612,5 @@
       <script src="assets/javascripts/bundle.aecac24b.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

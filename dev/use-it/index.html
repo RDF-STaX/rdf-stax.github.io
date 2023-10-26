@@ -69,7 +69,18 @@
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
 
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     
@@ -373,15 +384,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#general-usage" class="md-nav__link">
-    General usage
+  <a href="#annotating-rdf-stream-types" class="md-nav__link">
+    Annotating RDF stream types
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#making-assertions-about-rdf-stream-type-usage-with-nanopublications" class="md-nav__link">
-    Making assertions about RDF stream type usage with nanopublications
+  <a href="#making-rdf-stream-type-usage-nanopublications" class="md-nav__link">
+    Making RDF stream type usage nanopublications
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    See also
   </a>
   
 </li>
@@ -497,15 +515,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#general-usage" class="md-nav__link">
-    General usage
+  <a href="#annotating-rdf-stream-types" class="md-nav__link">
+    Annotating RDF stream types
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#making-assertions-about-rdf-stream-type-usage-with-nanopublications" class="md-nav__link">
-    Making assertions about RDF stream type usage with nanopublications
+  <a href="#making-rdf-stream-type-usage-nanopublications" class="md-nav__link">
+    Making RDF stream type usage nanopublications
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    See also
   </a>
   
 </li>
@@ -534,11 +559,55 @@
 
 
 <h1 id="how-to-use-rdf-stax">How to use RDF-STaX?</h1>
-<p>TODO</p>
-<h2 id="general-usage">General usage</h2>
-<p>TODO</p>
-<h2 id="making-assertions-about-rdf-stream-type-usage-with-nanopublications">Making assertions about RDF stream type usage with nanopublications</h2>
-<p>TODO</p>
+<p>RDF stream type usage is often a subjective matter, so RDF-STaX provides <a href="../ontology/">facilities</a> for making <em>subjective</em> assertions about RDF stream types. For example: <em>I see this resource as an RDF graph stream, because (...)</em>, as opposed to strict, universal classification.</p>
+<p>The assertions can be made by anyone, anywhere – be it in the metadata of your resource, when discussing research works and software, or elsewhere.</p>
+<h2 id="annotating-rdf-stream-types">Annotating RDF stream types</h2>
+<p>Making a statement about something's RDF stream type is very straightforward. For example, to say that <code class="language-turtle highlight"><span class="nv">&lt;https://example.org/some-resource&gt;</span></code> is an RDF graph stream, you would use the following RDF:</p>
+<div class="language-turtle highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">@prefix</span><span class="w"> </span><span class="nn">stax:</span><span class="w"> </span><span class="nv">&lt;https://w3id.org/stax/ontology#&gt;</span><span class="w"> </span><span class="p">.</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="err">_</span><span class="p">:</span><span class="nt">usage</span> <span class="kt">a</span> <span class="nn">stax</span><span class="p">:</span><span class="nt">RdfStreamTypeUsage</span> <span class="p">;</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    <span class="nn">stax</span><span class="p">:</span><span class="nt">usesStreamType</span> <span class="nn">stax</span><span class="p">:</span><span class="nt">rdfGraphStream</span> <span class="p">;</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    <span class="nn">stax</span><span class="p">:</span><span class="nt">usedIn</span> <span class="nv">&lt;https://example.org/some-resource&gt;</span> <span class="p">.</span>
+</span></code></pre></div>
+<p>It is recommended (but not required) to have one <code class="language-turtle highlight"><span class="nn">stax</span><span class="p">:</span><span class="nt">RdfStreamTypeUsage</span></code> instance per annotated resource and per RDF stream type. This makes it easier to find all the annotations for a given resource or stream type.</p>
+<p>You can also make the statement in reverse, by annotating the resource itself:</p>
+<div class="language-turtle highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">@prefix</span><span class="w"> </span><span class="nn">stax:</span><span class="w"> </span><span class="nv">&lt;https://w3id.org/stax/ontology#&gt;</span><span class="w"> </span><span class="p">.</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="nv">&lt;https://example.org/some-resource&gt;</span> <span class="nn">stax</span><span class="p">:</span><span class="nt">hasStreamTypeUsage</span> <span class="p">[</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>    <span class="kt">a</span> <span class="nn">stax</span><span class="p">:</span><span class="nt">RdfStreamTypeUsage</span> <span class="p">;</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>    <span class="nn">stax</span><span class="p">:</span><span class="nt">usesStreamType</span> <span class="nn">stax</span><span class="p">:</span><span class="nt">rdfGraphStream</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="p">]</span> <span class="p">.</span>
+</span></code></pre></div>
+<p>The <code class="language-turtle highlight"><span class="nn">stax</span><span class="p">:</span><span class="nt">RdfStreamTypeUsage</span></code> instance is a good place to put additional information about the usage, such as a textual explanation, the source of the information, or the author of the statement. For example:</p>
+<div class="language-turtle highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">@prefix</span><span class="w"> </span><span class="nn">cito:</span><span class="w"> </span><span class="nv">&lt;http://purl.org/spar/cito/&gt;</span><span class="w"> </span><span class="p">.</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="k">@prefix</span><span class="w"> </span><span class="nn">dcterms:</span><span class="w"> </span><span class="nv">&lt;http://purl.org/dc/terms/&gt;</span><span class="w"> </span><span class="p">.</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="k">@prefix</span><span class="w"> </span><span class="nn">rdfs:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2000/01/rdf-schema#&gt;</span><span class="w"> </span><span class="p">.</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="k">@prefix</span><span class="w"> </span><span class="nn">stax:</span><span class="w"> </span><span class="nv">&lt;https://w3id.org/stax/ontology#&gt;</span><span class="w"> </span><span class="p">.</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="err">_</span><span class="p">:</span><span class="nt">usage</span> <span class="kt">a</span> <span class="nn">stax</span><span class="p">:</span><span class="nt">RdfStreamTypeUsage</span> <span class="p">;</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>    <span class="nn">rdfs</span><span class="p">:</span><span class="nt">comment</span> <span class="s">&quot;The authors state that for their proposed system, &#39;the streaming element (i.e. a single message) (...) is a set of triples&#39;. Therefore, it uses an RDF graph stream.&quot;</span><span class="o">@</span><span class="ge">en</span> <span class="p">;</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>    <span class="nn">stax</span><span class="p">:</span><span class="nt">usesStreamType</span> <span class="nn">stax</span><span class="p">:</span><span class="nt">rdfGraphStream</span> <span class="p">;</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>    <span class="nn">stax</span><span class="p">:</span><span class="nt">usedIn</span> <span class="nv">&lt;https://doi.org/10.1109/ICSTCC.2017.8107003&gt;</span> <span class="p">;</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>    <span class="nn">cito</span><span class="p">:</span><span class="nt">citesAsEvidence</span> <span class="nv">&lt;https://doi.org/10.1109/ICSTCC.2017.8107003&gt;</span> <span class="p">;</span>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>    <span class="nn">dcterms</span><span class="p">:</span><span class="nt">creator</span> <span class="nv">&lt;https://orcid.org/0000-0002-2543-9461&gt;</span> <span class="p">.</span>
+</span></code></pre></div>
+<p>You can use whatever properties you like, however, the following are recommended:</p>
+<ul>
+<li><a href="http://purl.org/spar/cito/">CITO ontology</a> for typing the citations.</li>
+<li><a href="http://purl.org/dc/terms/">DCMI Metadata Terms</a> for the statement author information.</li>
+<li><code class="language-turtle highlight"><span class="nn">rdfs</span><span class="p">:</span><span class="nt">comment</span></code> for the textual explanation.</li>
+<li>For statement creators, we recommend using <a href="https://orcid.org/">ORCID</a>.</li>
+<li>For research works, we recommend using <a href="https://www.doi.org/">DOI</a>.</li>
+</ul>
+<h2 id="making-rdf-stream-type-usage-nanopublications">Making RDF stream type usage nanopublications</h2>
+<p>This <em>subjective</em> style of RDF-STaX meshes very well with the idea of <a href="https://nanopub.net/">nanopublications</a>, small snippets of scientific knowledge. See the <a href="../nanopubs/">documentation page on nanopublications</a> for more information on how to find, use, and create them.</p>
+<h2 id="see-also">See also</h2>
+<ul>
+<li><a href="../licensing/">Licensing and citation</a></li>
+<li><a href="../taxonomy/">Taxonomy overview</a></li>
+<li><a href="../ontology/">Ontology documentation</a></li>
+<li><a href="../nanopubs/">Nanopublications</a></li>
+</ul>
 
 
 
@@ -610,5 +679,5 @@
       <script src="../assets/javascripts/bundle.aecac24b.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>
