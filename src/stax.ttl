@@ -1,5 +1,6 @@
 @prefix : <https://w3id.org/stax/ontology#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix sd: <http://www.w3.org/ns/sparql-service-description#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
@@ -200,6 +201,7 @@ Note that \"stream type usage\" is a subjective assertion and instances of this 
 ###  https://w3id.org/stax/ontology#dataset
 stax:dataset rdf:type owl:NamedIndividual ,
                       stax:RdfElementType ;
+             skos:relatedMatch sd:Dataset ;
              skos:definition <https://www.w3.org/TR/rdf11-concepts/#section-dataset> ;
              skos:note "RDF dataset, as defined by the RDF 1.1 Concepts and Abstract Syntax W3C Recommendation."@en ;
              skos:prefLabel "RDF dataset"@en .
@@ -242,6 +244,7 @@ stax:flatRdfTripleStream rdf:type owl:NamedIndividual ,
 ###  https://w3id.org/stax/ontology#graph
 stax:graph rdf:type owl:NamedIndividual ,
                     stax:RdfElementType ;
+           skos:relatedMatch sd:Graph ;
            skos:definition <https://www.w3.org/TR/rdf11-concepts/#section-rdf-graph> ;
            skos:note "RDF graph, as defined by the RDF 1.1 Concepts and Abstract Syntax W3C Recommendation."@en ;
            skos:prefLabel "RDF graph"@en .

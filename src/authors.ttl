@@ -8,8 +8,7 @@
     dcterms:creator [
         foaf:name "Piotr Sowiński" ;
         foaf:nick "Ostrzyciel" ;
-        foaf:homepage <https://github.com/Ostrzyciel> ,
-            <https://orcid.org/0000-0002-2543-9461>
+        foaf:homepage <https://orcid.org/0000-0002-2543-9461>
     ] ;
     dcterms:contributor [
         foaf:name "Paweł Szmeja" ;
