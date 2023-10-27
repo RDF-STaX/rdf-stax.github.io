@@ -18,18 +18,66 @@ _:usage a stax:RdfStreamTypeUsage ;
 
 It is recommended (but not required) to have one `#!turtle stax:RdfStreamTypeUsage` instance per annotated resource and per RDF stream type. This makes it easier to find all the annotations for a given resource or stream type.
 
-You can also make the statement in reverse, by annotating the resource itself. This can be especially useful when annotating RDF streams on the Web or in a dataset. For example, to annotate a `#!turtle vocals:RDFStream` from the [VoCaLS Vocabulary](http://w3id.org/rsp/vocals):
+You can also make the statement in reverse, by annotating the resource itself. This can be especially useful when annotating RDF streams on the Web or in a dataset. The following three examples illustrate combining RDF-STaX with other vocabularies for describing datasets and streams ([VoCaLS](http://w3id.org/rsp/vocals), [VoID](https://www.w3.org/TR/void/), [DCAT](https://www.w3.org/TR/vocab-dcat-3/)).
 
-```turtle
-@prefix stax: <https://w3id.org/stax/ontology#> .
+??? example "Example: VoCaLS `RDFStream` (click to expand)"
 
-_:stream a vocals:RDFStream ;
-    # ... other properties of the stream ...
-    stax:hasStreamTypeUsage [
-        a stax:RdfStreamTypeUsage ;
-        stax:hasStreamType stax:timestampedRdfNamedGraphStream
-    ] .
-```
+    To annotate a `#!turtle vocals:RDFStream` from the [VoCaLS Vocabulary](http://w3id.org/rsp/vocals):
+
+    ```turtle
+    @prefix stax: <https://w3id.org/stax/ontology#> .
+    @prefix vocals: <http://w3id.org/rsp/vocals#> .
+
+    _:stream a vocals:RDFStream ;
+        # ... other properties of the stream ...
+        stax:hasStreamTypeUsage [
+            a stax:RdfStreamTypeUsage ;
+            stax:hasStreamType stax:rdfGraphStream
+        ] .
+    ```
+
+
+??? example "Example: VoID `Dataset` (click to expand)"
+
+    To annotate a `#!turtle void:Dataset` from the [VoID Vocabulary](https://www.w3.org/TR/void/):
+
+    ```turtle
+    @prefix stax: <https://w3id.org/stax/ontology#> .
+    @prefix void: <http://rdfs.org/ns/void#> .
+
+    _:dataset a void:Dataset ;
+        # ... other properties of the dataset ...
+        stax:hasStreamTypeUsage [
+            a stax:RdfStreamTypeUsage ;
+            stax:hasStreamType stax:flatRdfTripleStream
+        ] .
+    ```
+
+    In VoID, `#!turtle void:Dataset` refers to a set of triples, which can be viewed as a flat RDF triple stream.
+
+
+??? example "Example: DCAT `Distribution` (click to expand)"
+
+    In [DCAT](https://www.w3.org/TR/vocab-dcat-3/), a dataset may have multiple representations (`#!turtle dcat:Distribution`). Thus, here we will want to annotate the distribution, not the dataset itself:
+
+    ```turtle
+    @prefix dcat: <http://www.w3.org/ns/dcat#> .
+    @prefix stax: <https://w3id.org/stax/ontology#> .
+
+    _:dataset a dcat:Dataset ;
+        # ... other properties of the dataset ...
+        dcat:distribution [
+            a dcat:Distribution ;
+            # ... other properties of the distribution ...
+            stax:hasStreamTypeUsage [
+                a stax:RdfStreamTypeUsage ;
+                stax:hasStreamType stax:rdfDatasetStream
+            ]
+        ] .
+    ```
+
+
+### Adding more information
 
 The `#!turtle stax:RdfStreamTypeUsage` instance is a good place to put additional information about the usage, such as a textual explanation, the source of the information, or the author of the statement. For example:
 

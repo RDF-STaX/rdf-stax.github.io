@@ -13,7 +13,7 @@ Have a look at the **[taxonomy overview](taxonomy.md)** to get an idea of the di
 - **[Taxonomy overview](taxonomy.md)**
 - **[Ontology documentation](ontology.md)**
 - **[How to use RDF-STaX?](use-it.md)**
-- **[Nanopublications](nanopubs.md)** – making assertions about RDF stream type usage
+- **[Nanopublications](nanopubs.md)** – publishing assertions about RDF stream type usage
 - **[Use cases and publications](uses.md)**
 - **[Contributing](contributing.md)**
 - **[Licensing and citation](licensing.md)**
