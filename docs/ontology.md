@@ -1,5 +1,9 @@
 --8<-- "docs/includes/links.md"
 
+!!! info
+
+    You can also download other versions of the ontology or an OWL 2 DL version. See the [versioning and releases](#versioning-and-releases) section below for more information.
+
 !!! note
 
     The documentation and the download links here are for the release version of the ontology. The ontology sources are [available on GitHub](https://github.com/RDF-STaX/rdf-stax.github.io) – see also [Contributing](contributing.md).
