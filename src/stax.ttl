@@ -182,15 +182,26 @@ stax:RdfStreamTypeUsage rdf:type owl:Class ;
                                           owl:onProperty stax:hasStreamType ;
                                           owl:allValuesFrom stax:ConcreteRdfStreamType
                                         ] ;
-                        rdfs:comment """Class for instances of using an RDF stream type, in a program, an academic paper, or elsewhere. Instances of this class must have the stax:usesStreamType property pointing to a concrete stream type. The stax:usedIn property is also recommended to indicate where the stream is used. The use of other properties (e.g., rdfs:label, rdfs:comment) is encouraged to give more context about the usage.
+                        rdfs:comment """Class for instances of using an RDF stream type, in a program, an academic paper, or elsewhere. This class is suitable for annotating both theoretical uses and practical ones, i.e., real streams or datasets.
+
+Instances of this class should have the stax:hasStreamType property pointing to a concrete stream type. The stax:usedIn property is recommended to indicate where the stream is used – alternatively you can use its inverse (stax:hasStreamTypeUsage). The use of other properties (e.g., rdfs:label, rdfs:comment) is encouraged to give more context about the usage.
 
 Note that \"stream type usage\" is a subjective assertion and instances of this class may be annotated with additional provenance properties to explain who made the assertion. There can be multiple views on what type of stream is in use, depending on the involved actor, processing step, etc."""@en ;
-                        rdfs:label "RDF stream type usage"@en .
+                        rdfs:label "RDF stream type usage"@en ;
+                        skos:example <https://w3id.org/stax/stable/use-it/> .
 
 
 #################################################################
 #    Individuals
 #################################################################
+
+###  http://www.w3.org/ns/sparql-service-description#Dataset
+sd:Dataset rdf:type owl:NamedIndividual .
+
+
+###  http://www.w3.org/ns/sparql-service-description#Graph
+sd:Graph rdf:type owl:NamedIndividual .
+
 
 ###  https://w3id.org/stax/ontology
 <https://w3id.org/stax/ontology> rdf:type owl:NamedIndividual ,
