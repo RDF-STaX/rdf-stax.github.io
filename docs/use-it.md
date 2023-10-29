@@ -12,7 +12,7 @@ Making a statement about something's RDF stream type is very straightforward. Fo
 @prefix stax: <https://w3id.org/stax/ontology#> .
 
 _:usage a stax:RdfStreamTypeUsage ;
-    stax:hasStreamType stax:rdfGraphStream ;
+    stax:hasStreamType stax:graphStream ;
     stax:isUsageOf <https://example.org/some-resource> .
 ```
 
@@ -32,7 +32,7 @@ You can also make the statement in reverse, by annotating the resource itself. T
         # ... other properties of the stream ...
         stax:hasStreamTypeUsage [
             a stax:RdfStreamTypeUsage ;
-            stax:hasStreamType stax:rdfGraphStream
+            stax:hasStreamType stax:graphStream
         ] .
     ```
 
@@ -49,7 +49,7 @@ You can also make the statement in reverse, by annotating the resource itself. T
         # ... other properties of the dataset ...
         stax:hasStreamTypeUsage [
             a stax:RdfStreamTypeUsage ;
-            stax:hasStreamType stax:flatRdfTripleStream
+            stax:hasStreamType stax:flatTripleStream
         ] .
     ```
 
@@ -58,7 +58,7 @@ You can also make the statement in reverse, by annotating the resource itself. T
 
 ??? example "Example: DCAT `Distribution` (click to expand)"
 
-    In [DCAT](https://www.w3.org/TR/vocab-dcat-3/), a dataset may have multiple representations (`#!turtle dcat:Distribution`). Thus, here we will want to annotate the distribution, not the dataset itself:
+    In [DCAT](https://www.w3.org/TR/vocab-dcat-3/), a dataset may have multiple representations (`#!turtle dcat:Distribution`). Thus, tou may want to annotate the distribution, not the dataset itself:
 
     ```turtle
     @prefix dcat: <http://www.w3.org/ns/dcat#> .
@@ -71,10 +71,12 @@ You can also make the statement in reverse, by annotating the resource itself. T
             # ... other properties of the distribution ...
             stax:hasStreamTypeUsage [
                 a stax:RdfStreamTypeUsage ;
-                stax:hasStreamType stax:rdfDatasetStream
+                stax:hasStreamType stax:datasetStream
             ]
         ] .
     ```
+
+    Of course, annotating the dataset itself also makes sense, if you want to make a statement about the dataset as a whole.
 
 
 ### Adding more information
@@ -89,7 +91,7 @@ The `#!turtle stax:RdfStreamTypeUsage` instance is a good place to put additiona
 
 _:usage a stax:RdfStreamTypeUsage ;
     rdfs:comment "The authors state that for their proposed system, 'the streaming element (i.e. a single message) (...) is a set of triples'. Therefore, it uses an RDF graph stream."@en ;
-    stax:hasStreamType stax:rdfGraphStream ;
+    stax:hasStreamType stax:graphStream ;
     stax:isUsageOf <https://doi.org/10.1109/ICSTCC.2017.8107003> ;
     cito:citesAsEvidence <https://doi.org/10.1109/ICSTCC.2017.8107003> ;
     dcterms:creator <https://orcid.org/0000-0002-2543-9461> .
