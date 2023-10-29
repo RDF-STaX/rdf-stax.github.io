@@ -1,0 +1,24 @@
+name: Validate ontology
+
+on:
+  push:
+    branches: ['main']
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch: {}
+
+jobs:
+  validate:
+    name: Validate ontology
+    runs-on: ubuntu-latest
+    container: ghcr.io/rdf-stax/ci-worker:main
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          path: stax
+
+      - name: Validate ontology's profile
+        run: java -jar robot.jar --input src/stax.ttl --profile DL --output dl-validation.txt

@@ -1,0 +1,13 @@
+@prefix sd: <http://www.w3.org/ns/sparql-service-description#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix stax: <https://w3id.org/stax/ontology#> .
+
+# This file provides alignments from RDF-STaX to other ontologies and vocabularies.
+# They are kept separate from the main ontology file, as they may violate the OWL 2 DL profile.
+
+# Alignments to the SPARQL Service Description vocabulary
+# The sd:Dataset and sd:Graph classes represent datasets and graphs from RDF 1.1. They are
+# however classes, whereas the corresponding entities in RDF-STaX are instances.
+# This is consistent with the SKOS model, which allows concepts to be either instances or classes.
+stax:dataset skos:relatedMatch sd:Dataset .
+stax:graph skos:relatedMatch sd:Graph .

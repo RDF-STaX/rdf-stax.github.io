@@ -13,17 +13,22 @@ The ontology is stored in the [`src` directory of the main repository](https://g
 - The main ontology file is `src/stax.ttl`. It should be edited with Protégé.
     - Do not add information about the authors/contributors there. This is done in the `src/authors.ttl` file (see below).
     - Do not set the ontology's version IRI or version – this is done automatically in CI during release.
+    - You must keep this file valid OWL 2 DL. The CI will check it when you open a pull request.
 - The `src/authors.ttl` file contains information about the authors/contributors of the ontology. It should be edited manually with a text editor.
+- The `src/alignments.ttl` file contains alignments to other vocabularies. It should be edited manually with a text editor.
 
-Pull requests are welcome.
+**Pull requests are welcome.**
 
 ### CI pipeline
 
 The CI automatically publishes the ontology (see [the releases section below](#releases)) and pushes it to the website. The CI does the following:
 
-- Merge in the author information from `src/authors.ttl`.
+- Check if the ontology is valid and matches the OWL 2 DL profile (with [ROBOT](https://robot.obolibrary.org/)).
 - Set the ontology's version IRI and version.
+- Save an OWL 2 DL version of the ontology in all supported formats.
 - Infer additional statements with [ROBOT](https://robot.obolibrary.org/reason).
+- Merge in the author information from `src/authors.ttl`.
+- Merge in the alignments to other vocabularies from `src/alignments.ttl`.
 - Serialize the ontology in all supported formats.
 
 The CI code can be found in the [`ci-worker` repository](https://github.com/RDF-STaX/ci-worker). The code there is licensed under Apache 2.0.
