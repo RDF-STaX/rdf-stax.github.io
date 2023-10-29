@@ -163,6 +163,13 @@ stax:ConcreteRdfStreamType rdf:type owl:Class ;
 
 ###  https://w3id.org/stax/ontology#RdfElementType
 stax:RdfElementType rdf:type owl:Class ;
+                    owl:equivalentClass [ rdf:type owl:Class ;
+                                          owl:oneOf ( stax:dataset
+                                                      stax:graph
+                                                      stax:quad
+                                                      stax:triple
+                                                    )
+                                        ] ;
                     owl:disjointWith stax:RdfStreamType ;
                     rdfs:comment "Class for base types of elements in RDF streams. There are four instances of this class (triple, quad, graph, dataset) and they should not be further specialized. The instances of this class do NOT form a taxonomical structure."@en ;
                     rdfs:label "RDF element type"@en .
