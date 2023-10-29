@@ -833,7 +833,7 @@ code {
         <dt><a class="proplink" href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/created">Created</a></dt>
         <dd>2023-10-22T00:00:00</dd>
         <dt><a class="proplink" href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/modified">Modified</a></dt>
-        <dd>2023-10-29T13:11:24</dd>
+        <dd>2023-10-29T13:57:54</dd>
         <dt>Version Information</dt>
         <dd>dev</dd>
         <dt>Version URI</dt>
@@ -904,9 +904,9 @@ code {
             <tr>
                 <th>Members</th>
                 <td>
-                    <a href="https://w3id.org/stax/ontology#flatRdfStream">stax:flatRdfStream</a><br/>
                     <a href="https://w3id.org/stax/ontology#rdfStream">stax:rdfStream</a><br/>
                     <a href="https://w3id.org/stax/ontology#groupedRdfStream">stax:groupedRdfStream</a><br/>
+                    <a href="https://w3id.org/stax/ontology#flatRdfStream">stax:flatRdfStream</a><br/>
                 </td>
             </tr>
         </table>
@@ -943,9 +943,9 @@ code {
             <tr>
                 <th>In domain of</th>
                 <td>
-                    <a href="#canbeflattenedinto">can be flattened into</a><sup class="sup-op" title="object property">op</sup><br/>
-                    <a href="#isinstreamtypesemanticrelationwith">is in stream type semantic relation with</a><sup class="sup-op" title="object property">op</sup><br/>
                     <a href="#haselementtype">has element type</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#isinstreamtypesemanticrelationwith">is in stream type semantic relation with</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#canbeflattenedinto">can be flattened into</a><sup class="sup-op" title="object property">op</sup><br/>
                     <a href="#canbegroupedinto">can be grouped into</a><sup class="sup-op" title="object property">op</sup><br/>
                 </td>
             </tr>
@@ -953,20 +953,20 @@ code {
                 <th>In range of</th>
                 <td>
                     <a href="#hasstreamtype">has stream type</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#isinstreamtypesemanticrelationwith">is in stream type semantic relation with</a><sup class="sup-op" title="object property">op</sup><br/>
                     <a href="#canbegroupedinto">can be grouped into</a><sup class="sup-op" title="object property">op</sup><br/>
                     <a href="#canbeflattenedinto">can be flattened into</a><sup class="sup-op" title="object property">op</sup><br/>
-                    <a href="#isinstreamtypesemanticrelationwith">is in stream type semantic relation with</a><sup class="sup-op" title="object property">op</sup><br/>
                 </td>
             </tr>
             <tr>
                 <th>Members</th>
                 <td>
+                    <a href="https://w3id.org/stax/ontology#rdfDatasetStream">stax:rdfDatasetStream</a><br/>
                     <a href="https://w3id.org/stax/ontology#flatRdfTripleStream">stax:flatRdfTripleStream</a><br/>
+                    <a href="https://w3id.org/stax/ontology#flatRdfQuadStream">stax:flatRdfQuadStream</a><br/>
                     <a href="https://w3id.org/stax/ontology#rdfNamedGraphStream">stax:rdfNamedGraphStream</a><br/>
                     <a href="https://w3id.org/stax/ontology#rdfSubjectGraphStream">stax:rdfSubjectGraphStream</a><br/>
                     <a href="https://w3id.org/stax/ontology#rdfGraphStream">stax:rdfGraphStream</a><br/>
-                    <a href="https://w3id.org/stax/ontology#flatRdfQuadStream">stax:flatRdfQuadStream</a><br/>
-                    <a href="https://w3id.org/stax/ontology#rdfDatasetStream">stax:rdfDatasetStream</a><br/>
                     <a href="https://w3id.org/stax/ontology#timestampedRdfNamedGraphStream">stax:timestampedRdfNamedGraphStream</a><br/>
                 </td>
             </tr>
@@ -999,8 +999,8 @@ code {
                 <td>
                     <a href="https://w3id.org/stax/ontology#dataset">stax:dataset</a><br/>
                     <a href="https://w3id.org/stax/ontology#triple">stax:triple</a><br/>
-                    <a href="https://w3id.org/stax/ontology#graph">stax:graph</a><br/>
                     <a href="https://w3id.org/stax/ontology#quad">stax:quad</a><br/>
+                    <a href="https://w3id.org/stax/ontology#graph">stax:graph</a><br/>
                 </td>
             </tr>
         </table>
@@ -1030,8 +1030,8 @@ code {
             <tr>
                 <th>Sub-classes</th>
                 <td>
-                    <a href="#AbstractRDFstreamtype">Abstract RDF stream type</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="#ConcreteRDFstreamtype">Concrete RDF stream type</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#AbstractRDFstreamtype">Abstract RDF stream type</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
         </table>
@@ -1460,8 +1460,8 @@ code {
             </tr>
             <dt>Class(es)</dt>
             <dd>
-                <a href="http://www.w3.org/2004/02/skos/core#ConceptScheme">skos:ConceptScheme</a><br/>
                 <a href="http://www.w3.org/2002/07/owl#Ontology">owl:Ontology</a><br/>
+                <a href="http://www.w3.org/2004/02/skos/core#ConceptScheme">skos:ConceptScheme</a><br/>
             </dd>
             <tr>
                 <th>Description</th>
@@ -1908,7 +1908,7 @@ A timestamped RDF named graph stream is an RDF named graph stream in which every
 <p>RDF-STaX imports <a href="https://www.w3.org/TR/skos-reference/">SKOS</a>, which is OWL 2 Full by default. There is however <a href="https://www.w3.org/TR/skos-reference/#rdf-schema-owl-dl">a subset of SKOS that is OWL 2 DL</a>, and this is the version of SKOS that is used in RDF-STaX.</p>
 <p>The released version of the ontology includes additional assertions (inferred, authorship, alignments) that are not part of the ontology itself. These assertions may be in OWL 2 Full. To get the OWL 2 DL version of the ontology, see the notes on <a href="#versioning-and-releases">versioning and releases</a> below.</p>
 <h2 id="versioning-and-releases">Versioning and releases</h2>
-<p>RDF-STaX follows the <a href="https://semver.org/">Semantic Versioning 2</a> scheme. The version number is stored in the <code>owl:versionInfo</code> annotation property of the ontology and is a part of the version IRI. The <code>dev</code> version corresponds to the <code>main</code> branch of the repository. The <code>stable</code> version is an alias for the latest tagged release. When you don't specify a version, the <code>dev</code> version is used.</p>
+<p>RDF-STaX follows the <a href="https://semver.org/">Semantic Versioning 2</a> scheme. The version number is stored in the <code>owl:versionInfo</code> annotation property of the ontology and is a part of the version IRI. The <code>dev</code> version corresponds to the <code>main</code> branch of the repository. When you don't specify a version, the <code>dev</code> version is used.</p>
 <p>The dropdown at the top of the page allows you to switch between different versions of the documentation. Previous releases can also be found on <a href="https://github.com/RDF-STaX/rdf-stax.github.io/releases">GitHub</a>.</p>
 <p>The released versions of the ontology include also the inferred statements, authorship information, and alignments to other ontologies. If you would like to get the raw ontology without these additions (OWL 2 DL), append <code>/dl</code> to the URL, e.g., <code>https://w3id.org/stax/ontology/dl</code>.</p>
 <p>Released versions of the ontology are available in the JSON-LD, N-Triples, RDF/XML, and Turtle formats, by appending their respective extension at the end of the ontology's URL, or with the <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Content_negotiation">content negotiation mechanism</a>. Some examples of links that would work:</p>
@@ -1919,7 +1919,7 @@ A timestamped RDF named graph stream is an RDF named graph stream in which every
 <li><code>https://w3id.org/stax/dev/ontology</code> (content negotiation)</li>
 <li><code>https://w3id.org/stax/dev/ontology/dl</code> (OWL 2 DL version, content negotiation)</li>
 <li><code>https://w3id.org/stax/dev/ontology.ttl</code> (explicitly ask for Turtle)</li>
-<li><code>https://w3id.org/stax/stable/ontology</code> (content negotiation)</li>
+<li><code>https://w3id.org/stax/1.0.0/ontology</code> (content negotiation)</li>
 <li><code>https://w3id.org/stax/1.0.0/ontology.jsonld</code> (explicitly ask for JSON-LD)</li>
 </ul>
 <div class="admonition warning">
