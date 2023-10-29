@@ -17,8 +17,6 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-        with:
-          path: stax
 
       - name: Validate ontology's profile
         run: java -jar /app/robot.jar validate-profile --input src/stax.ttl --profile DL --output dl-validation.txt
