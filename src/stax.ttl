@@ -187,7 +187,7 @@ Instances of this class should have the stax:hasStreamType property pointing to 
 
 Note that \"stream type usage\" is a subjective assertion and instances of this class may be annotated with additional provenance properties to explain who made the assertion. There can be multiple views on what type of stream is in use, depending on the involved actor, processing step, etc."""@en ;
                         rdfs:label "RDF stream type usage"@en ;
-                        skos:example <https://w3id.org/stax/stable/use-it/> .
+                        skos:example <https://w3id.org/stax/dev/use-it/> .
 
 
 #################################################################

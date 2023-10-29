@@ -16,7 +16,7 @@ The released version of the ontology includes additional assertions (inferred, a
 
 ## Versioning and releases
 
-RDF-STaX follows the [Semantic Versioning 2](https://semver.org/) scheme. The version number is stored in the `owl:versionInfo` annotation property of the ontology and is a part of the version IRI. The `dev` version corresponds to the `main` branch of the repository. The `stable` version is an alias for the latest tagged release. When you don't specify a version, the `stable` version is used.
+RDF-STaX follows the [Semantic Versioning 2](https://semver.org/) scheme. The version number is stored in the `owl:versionInfo` annotation property of the ontology and is a part of the version IRI. The `dev` version corresponds to the `main` branch of the repository. The `stable` version is an alias for the latest tagged release. When you don't specify a version, the `dev` version is used.
 
 The dropdown at the top of the page allows you to switch between different versions of the documentation. Previous releases can also be found on [GitHub](https://github.com/RDF-STaX/rdf-stax.github.io/releases).
 
@@ -30,6 +30,7 @@ Released versions of the ontology are available in the JSON-LD, N-Triples, RDF/X
 - `https://w3id.org/stax/dev/ontology` (content negotiation)
 - `https://w3id.org/stax/dev/ontology/dl` (OWL 2 DL version, content negotiation)
 - `https://w3id.org/stax/dev/ontology.ttl` (explicitly ask for Turtle)
+- `https://w3id.org/stax/stable/ontology` (content negotiation)
 - `https://w3id.org/stax/1.0.0/ontology.jsonld` (explicitly ask for JSON-LD)
 
 !!! warning "Important"
