@@ -119,7 +119,7 @@ The subject for this property can be for example a published stream on the Web (
 ###  https://w3id.org/stax/ontology#isUsageOf
 stax:isUsageOf rdf:type owl:ObjectProperty ;
                rdfs:domain stax:RdfStreamTypeUsage ;
-               rdfs:comment """For an RDF stream type usage, this property indicates where the stream was used or from where the usage was derived. The value of this property can be for example the DOI URL of an academic work.
+               rdfs:comment """For an RDF stream type usage, this property indicates where the stream was used or from where the usage was derived. The value of this property can be anything that makes sense for the desired use case. The value can be for example: the DOI URL of an academic work, URL of a piece of software, IRI of a published stream, IRI of an RDF dataset.
 
 Inverse of stax:hasStreamTypeUsage."""@en ;
                rdfs:label "is usage of"@en .

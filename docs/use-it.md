@@ -113,3 +113,4 @@ This *subjective* style of RDF-STaX meshes very well with the idea of [nanopubli
 - [Taxonomy overview](taxonomy.md)
 - [Ontology documentation](ontology.md)
 - [Nanopublications](nanopubs.md)
+- [Existing use cases](uses.md)
