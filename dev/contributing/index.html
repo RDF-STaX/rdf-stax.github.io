@@ -20,7 +20,7 @@
       
       
       <link rel="icon" href="../assets/logo_color.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.6">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.7">
     
     
       
@@ -28,7 +28,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.35e1ed30.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.4b4a2bd9.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.356b1318.min.css">
@@ -622,17 +622,22 @@
 <li>The main ontology file is <code>src/stax.ttl</code>. It should be edited with Protégé.<ul>
 <li>Do not add information about the authors/contributors there. This is done in the <code>src/authors.ttl</code> file (see below).</li>
 <li>Do not set the ontology's version IRI or version – this is done automatically in CI during release.</li>
+<li>You must keep this file valid OWL 2 DL. The CI will check it when you open a pull request.</li>
 </ul>
 </li>
 <li>The <code>src/authors.ttl</code> file contains information about the authors/contributors of the ontology. It should be edited manually with a text editor.</li>
+<li>The <code>src/alignments.ttl</code> file contains alignments to other vocabularies. It should be edited manually with a text editor.</li>
 </ul>
-<p>Pull requests are welcome.</p>
+<p><strong>Pull requests are welcome.</strong></p>
 <h3 id="ci-pipeline">CI pipeline</h3>
 <p>The CI automatically publishes the ontology (see <a href="#releases">the releases section below</a>) and pushes it to the website. The CI does the following:</p>
 <ul>
-<li>Merge in the author information from <code>src/authors.ttl</code>.</li>
+<li>Check if the ontology is valid and matches the OWL 2 DL profile (with <a href="https://robot.obolibrary.org/">ROBOT</a>).</li>
 <li>Set the ontology's version IRI and version.</li>
+<li>Save an OWL 2 DL version of the ontology in all supported formats.</li>
 <li>Infer additional statements with <a href="https://robot.obolibrary.org/reason">ROBOT</a>.</li>
+<li>Merge in the author information from <code>src/authors.ttl</code>.</li>
+<li>Merge in the alignments to other vocabularies from <code>src/alignments.ttl</code>.</li>
 <li>Serialize the ontology in all supported formats.</li>
 </ul>
 <p>The CI code can be found in the <a href="https://github.com/RDF-STaX/ci-worker"><code>ci-worker</code> repository</a>. The code there is licensed under Apache 2.0.</p>

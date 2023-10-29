@@ -173,7 +173,7 @@ code {
     ],
     "https://schema.org/description": [
       {
-        "@value": "<p>RDF-STaX enables describing the types of RDF streams and defines relations between them.</p>"
+        "@value": "<p>RDF-STaX is an OWL 2 DL ontology that enables describing the types of RDF streams and defines relations between them.</p>"
       }
     ],
     "https://schema.org/license": [
@@ -255,15 +255,15 @@ code {
         </dd>
         <dt><a class="proplink" href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/created">Created</a></dt>
         <dd>2023-10-22T00:00:00</dd>
-        <dt><a class="proplink" href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/issued">Issued</a></dt>
-        <dd>2023-10-27T08:57:42</dd>
+        <dt><a class="proplink" href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/modified">Modified</a></dt>
+        <dd>2023-10-29T12:31:02</dd>
         <dt>Version Information</dt>
         <dd>dev</dd>
         <dt>Version URI</dt>
-        <dd><a href="https://w3id.org/stax/ontology/dev">https://w3id.org/stax/ontology/dev</a></dd>
+        <dd><a href="https://w3id.org/stax/dev/ontology">https://w3id.org/stax/dev/ontology</a></dd>
         <dt>Imports</dt>
         <dd>
-            <a href="http://www.w3.org/2004/02/skos/core">http://www.w3.org/2004/02/skos/core</a><br/>
+            <a href="http://www.w3.org/TR/skos-reference/skos-owl1-dl.rdf">http://www.w3.org/TR/skos-reference/skos-owl1-dl.rdf</a><br/>
         </dd>
         <dt>License</dt>
         <dd><a href="https://spdx.org/licenses/CC-BY-4.0">https://spdx.org/licenses/CC-BY-4.0</a></dd>
@@ -272,7 +272,7 @@ code {
     </dl>
     <h2>Description</h2>
     <div id="description">
-        <p>RDF-STaX enables describing the types of RDF streams and defines relations between them.</p>
+        <p>RDF-STaX is an OWL 2 DL ontology that enables describing the types of RDF streams and defines relations between them.</p>
     </div>
 </section>
 <section id="toc">
@@ -289,7 +289,7 @@ code {
 <section id="overview">
     <h2>Overview</h2>
     <div class="figure">
-        <img src="https://rdf-stax.github.io/dev/assets/ontology.png" alt="Ontology diagram" >
+        <img src="/dev/assets/ontology.png" alt="Ontology diagram" >
         <div class="caption"><strong>Figure 1:</strong> Ontology overview</div>
     </div>
 </section>
@@ -366,31 +366,31 @@ code {
             <tr>
                 <th>In domain of</th>
                 <td>
-                    <a href="#isinstreamtypesemanticrelationwith">is in stream type semantic relation with</a><sup class="sup-op" title="object property">op</sup><br/>
-                    <a href="#canbegroupedinto">can be grouped into</a><sup class="sup-op" title="object property">op</sup><br/>
                     <a href="#canbeflattenedinto">can be flattened into</a><sup class="sup-op" title="object property">op</sup><br/>
                     <a href="#haselementtype">has element type</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#isinstreamtypesemanticrelationwith">is in stream type semantic relation with</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#canbegroupedinto">can be grouped into</a><sup class="sup-op" title="object property">op</sup><br/>
                 </td>
             </tr>
             <tr>
                 <th>In range of</th>
                 <td>
-                    <a href="#canbegroupedinto">can be grouped into</a><sup class="sup-op" title="object property">op</sup><br/>
                     <a href="#canbeflattenedinto">can be flattened into</a><sup class="sup-op" title="object property">op</sup><br/>
                     <a href="#isinstreamtypesemanticrelationwith">is in stream type semantic relation with</a><sup class="sup-op" title="object property">op</sup><br/>
                     <a href="#hasstreamtype">has stream type</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#canbegroupedinto">can be grouped into</a><sup class="sup-op" title="object property">op</sup><br/>
                 </td>
             </tr>
             <tr>
                 <th>Members</th>
                 <td>
-                    <a href="https://w3id.org/stax/ontology#timestampedRdfNamedGraphStream">stax:timestampedRdfNamedGraphStream</a><br/>
-                    <a href="https://w3id.org/stax/ontology#rdfSubjectGraphStream">stax:rdfSubjectGraphStream</a><br/>
-                    <a href="https://w3id.org/stax/ontology#flatRdfQuadStream">stax:flatRdfQuadStream</a><br/>
-                    <a href="https://w3id.org/stax/ontology#flatRdfTripleStream">stax:flatRdfTripleStream</a><br/>
-                    <a href="https://w3id.org/stax/ontology#rdfNamedGraphStream">stax:rdfNamedGraphStream</a><br/>
                     <a href="https://w3id.org/stax/ontology#rdfDatasetStream">stax:rdfDatasetStream</a><br/>
+                    <a href="https://w3id.org/stax/ontology#timestampedRdfNamedGraphStream">stax:timestampedRdfNamedGraphStream</a><br/>
+                    <a href="https://w3id.org/stax/ontology#rdfNamedGraphStream">stax:rdfNamedGraphStream</a><br/>
+                    <a href="https://w3id.org/stax/ontology#rdfSubjectGraphStream">stax:rdfSubjectGraphStream</a><br/>
                     <a href="https://w3id.org/stax/ontology#rdfGraphStream">stax:rdfGraphStream</a><br/>
+                    <a href="https://w3id.org/stax/ontology#flatRdfTripleStream">stax:flatRdfTripleStream</a><br/>
+                    <a href="https://w3id.org/stax/ontology#flatRdfQuadStream">stax:flatRdfQuadStream</a><br/>
                 </td>
             </tr>
         </table>
@@ -420,10 +420,10 @@ code {
             <tr>
                 <th>Members</th>
                 <td>
-                    <a href="https://w3id.org/stax/ontology#triple">stax:triple</a><br/>
                     <a href="https://w3id.org/stax/ontology#graph">stax:graph</a><br/>
-                    <a href="https://w3id.org/stax/ontology#quad">stax:quad</a><br/>
+                    <a href="https://w3id.org/stax/ontology#triple">stax:triple</a><br/>
                     <a href="https://w3id.org/stax/ontology#dataset">stax:dataset</a><br/>
+                    <a href="https://w3id.org/stax/ontology#quad">stax:quad</a><br/>
                 </td>
             </tr>
         </table>
@@ -453,8 +453,8 @@ code {
             <tr>
                 <th>Sub-classes</th>
                 <td>
-                    <a href="#AbstractRDFstreamtype">Abstract RDF stream type</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="#ConcreteRDFstreamtype">Concrete RDF stream type</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#AbstractRDFstreamtype">Abstract RDF stream type</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
         </table>
@@ -472,8 +472,15 @@ code {
             <tr>
                 <th>Description</th>
                 <td>
-                    <p>Class for instances of using an RDF stream type, in a program, an academic paper, or elsewhere. Instances of this class must have the stax:usesStreamType property pointing to a concrete stream type. The stax:usedIn property is also recommended to indicate where the stream is used. The use of other properties (e.g., rdfs:label, rdfs:comment) is encouraged to give more context about the usage.</p>
+                    <p>Class for instances of using an RDF stream type, in a program, an academic paper, or elsewhere. This class is suitable for annotating both theoretical uses and practical ones, i.e., real streams or datasets.</p>
+<p>Instances of this class should have the stax:hasStreamType property pointing to a concrete stream type. The stax:usedIn property is recommended to indicate where the stream is used – alternatively you can use its inverse (stax:hasStreamTypeUsage). The use of other properties (e.g., rdfs:label, rdfs:comment) is encouraged to give more context about the usage.</p>
 <p>Note that "stream type usage" is a subjective assertion and instances of this class may be annotated with additional provenance properties to explain who made the assertion. There can be multiple views on what type of stream is in use, depending on the involved actor, processing step, etc.</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Example(s)</th>
+                <td>
+                    <a href="https://w3id.org/stax/stable/use-it/">https://w3id.org/stax/stable/use-it/</a><br/>
                 </td>
             </tr>
             <tr>
@@ -735,6 +742,7 @@ code {
         <li><a href="#title">title</a></li>
         <li><a href="#created">created</a></li>
         <li><a href="#license">license</a></li>
+        <li><a href="#modified">modified</a></li>
         <li><a href="#preferredNamespacePrefix">preferredNamespacePrefix</a></li>
         <li><a href="#preferredNamespaceUri">preferredNamespaceUri</a></li>
         <li><a href="#citation">citation</a></li>
@@ -781,6 +789,17 @@ code {
             <tr>
                 <th>URI</th>
                 <td><code>http://purl.org/dc/terms/license</code></td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="modified">
+        <h3>modified<sup title="annotation property" class="sup-ap">ap</sup><span style="float:right; margin-right:10px; font-size:smaller;">
+            <a href="#modified" title="fragment link to here">#</a>&nbsp;<a href="#annotationproperties" title="Annotation Properties Index">APs</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://purl.org/dc/terms/modified</code></td>
             </tr>
         </table>
     </div>
@@ -870,7 +889,7 @@ code {
             <tr>
                 <th>Description</th>
                 <td>
-                    RDF-STaX enables describing the types of RDF streams and defines relations between them.
+                    RDF-STaX is an OWL 2 DL ontology that enables describing the types of RDF streams and defines relations between them.
                 </td>
             </tr>
         </table>
@@ -890,7 +909,6 @@ code {
             <dt>Class(es)</dt>
             <dd>
                 <a href="https://w3id.org/stax/ontology#RdfElementType">stax:RdfElementType</a><br/>
-                <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a><br/>
             </dd>
             <tr>
                 <th>Description</th>
@@ -914,8 +932,8 @@ code {
             </tr>
             <dt>Class(es)</dt>
             <dd>
-                <a href="https://w3id.org/stax/ontology#ConcreteRdfStreamType">stax:ConcreteRdfStreamType</a><br/>
                 <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a><br/>
+                <a href="https://w3id.org/stax/ontology#ConcreteRdfStreamType">stax:ConcreteRdfStreamType</a><br/>
             </dd>
             <tr>
                 <th>Description</th>
@@ -964,8 +982,8 @@ code {
             </tr>
             <dt>Class(es)</dt>
             <dd>
-                <a href="https://w3id.org/stax/ontology#ConcreteRdfStreamType">stax:ConcreteRdfStreamType</a><br/>
                 <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a><br/>
+                <a href="https://w3id.org/stax/ontology#ConcreteRdfStreamType">stax:ConcreteRdfStreamType</a><br/>
             </dd>
             <tr>
                 <th>Description</th>
@@ -990,7 +1008,6 @@ code {
             <dt>Class(es)</dt>
             <dd>
                 <a href="https://w3id.org/stax/ontology#RdfElementType">stax:RdfElementType</a><br/>
-                <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a><br/>
             </dd>
             <tr>
                 <th>Description</th>
@@ -1063,8 +1080,8 @@ code {
             </tr>
             <dt>Class(es)</dt>
             <dd>
-                <a href="https://w3id.org/stax/ontology#ConcreteRdfStreamType">stax:ConcreteRdfStreamType</a><br/>
                 <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a><br/>
+                <a href="https://w3id.org/stax/ontology#ConcreteRdfStreamType">stax:ConcreteRdfStreamType</a><br/>
             </dd>
             <tr>
                 <th>Description</th>
@@ -1088,8 +1105,8 @@ code {
             </tr>
             <dt>Class(es)</dt>
             <dd>
-                <a href="https://w3id.org/stax/ontology#ConcreteRdfStreamType">stax:ConcreteRdfStreamType</a><br/>
                 <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a><br/>
+                <a href="https://w3id.org/stax/ontology#ConcreteRdfStreamType">stax:ConcreteRdfStreamType</a><br/>
             </dd>
             <tr>
                 <th>Description</th>
@@ -1113,8 +1130,8 @@ code {
             </tr>
             <dt>Class(es)</dt>
             <dd>
-                <a href="https://w3id.org/stax/ontology#ConcreteRdfStreamType">stax:ConcreteRdfStreamType</a><br/>
                 <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a><br/>
+                <a href="https://w3id.org/stax/ontology#ConcreteRdfStreamType">stax:ConcreteRdfStreamType</a><br/>
             </dd>
             <tr>
                 <th>Description</th>
@@ -1163,8 +1180,8 @@ code {
             </tr>
             <dt>Class(es)</dt>
             <dd>
-                <a href="https://w3id.org/stax/ontology#ConcreteRdfStreamType">stax:ConcreteRdfStreamType</a><br/>
                 <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a><br/>
+                <a href="https://w3id.org/stax/ontology#ConcreteRdfStreamType">stax:ConcreteRdfStreamType</a><br/>
             </dd>
             <tr>
                 <th>Description</th>
@@ -1188,8 +1205,8 @@ code {
             </tr>
             <dt>Class(es)</dt>
             <dd>
-                <a href="https://w3id.org/stax/ontology#ConcreteRdfStreamType">stax:ConcreteRdfStreamType</a><br/>
                 <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a><br/>
+                <a href="https://w3id.org/stax/ontology#ConcreteRdfStreamType">stax:ConcreteRdfStreamType</a><br/>
             </dd>
             <tr>
                 <th>Description</th>
