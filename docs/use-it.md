@@ -2,11 +2,11 @@
 
 RDF stream type usage is often a subjective matter, so RDF-STaX provides [facilities](ontology.md) for making *subjective* assertions about RDF stream types. For example: *I see this resource as an RDF graph stream, because (...)*, as opposed to strict, universal classification.
 
-The assertions can be made by anyone, anywhere – be it in the metadata of your resource, when discussing research works and software, or elsewhere.
+**The assertions can be made by anyone, anywhere. You can use RDF-STaX to annotate published streams, datasets, research papers, software, and more.**
 
 ## Annotating RDF stream types
 
-Making a statement about something's RDF stream type is very straightforward. For example, to say that `#!turtle <https://example.org/some-resource>` is an RDF graph stream, you would use the following RDF:
+Making a statement about something's RDF stream type is very straightforward. For example, to say that `#!turtle <https://example.org/some-resource>` is an RDF graph stream, you would use the `#!turtle stax:RdfStreamTypeUsage` class:
 
 ```turtle
 @prefix stax: <https://w3id.org/stax/ontology#> .
