@@ -4,7 +4,7 @@
 
 **RDF-STaX** is a taxonomy of RDF stream types. It [can be used](use-it.md) to describe RDF streams used on the Web, in software tools, or in scientific publications.
 
-RDF-STaX is modeled as an [OWL 2 ontology](ontology.md), using [SKOS](https://www.w3.org/TR/skos-reference/) to define the taxonomical structure.
+RDF-STaX is modeled as an [OWL 2 DL ontology](ontology.md), using [SKOS](https://www.w3.org/TR/skos-reference/) to define the taxonomical structure.
 
 ## Getting started
 
