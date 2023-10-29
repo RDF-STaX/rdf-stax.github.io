@@ -256,7 +256,7 @@ code {
         <dt><a class="proplink" href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/created">Created</a></dt>
         <dd>2023-10-22T00:00:00</dd>
         <dt><a class="proplink" href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/modified">Modified</a></dt>
-        <dd>2023-10-29T13:57:54</dd>
+        <dd>2023-10-29T20:15:53</dd>
         <dt>Version Information</dt>
         <dd>dev</dd>
         <dt>Version URI</dt>
@@ -327,9 +327,9 @@ code {
             <tr>
                 <th>Members</th>
                 <td>
+                    <a href="https://w3id.org/stax/ontology#flatStream">stax:flatStream</a><br/>
+                    <a href="https://w3id.org/stax/ontology#groupedStream">stax:groupedStream</a><br/>
                     <a href="https://w3id.org/stax/ontology#rdfStream">stax:rdfStream</a><br/>
-                    <a href="https://w3id.org/stax/ontology#groupedRdfStream">stax:groupedRdfStream</a><br/>
-                    <a href="https://w3id.org/stax/ontology#flatRdfStream">stax:flatRdfStream</a><br/>
                 </td>
             </tr>
         </table>
@@ -367,9 +367,9 @@ code {
                 <th>In domain of</th>
                 <td>
                     <a href="#haselementtype">has element type</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#canbegroupedinto">can be grouped into</a><sup class="sup-op" title="object property">op</sup><br/>
                     <a href="#isinstreamtypesemanticrelationwith">is in stream type semantic relation with</a><sup class="sup-op" title="object property">op</sup><br/>
                     <a href="#canbeflattenedinto">can be flattened into</a><sup class="sup-op" title="object property">op</sup><br/>
-                    <a href="#canbegroupedinto">can be grouped into</a><sup class="sup-op" title="object property">op</sup><br/>
                 </td>
             </tr>
             <tr>
@@ -377,20 +377,20 @@ code {
                 <td>
                     <a href="#hasstreamtype">has stream type</a><sup class="sup-op" title="object property">op</sup><br/>
                     <a href="#isinstreamtypesemanticrelationwith">is in stream type semantic relation with</a><sup class="sup-op" title="object property">op</sup><br/>
-                    <a href="#canbegroupedinto">can be grouped into</a><sup class="sup-op" title="object property">op</sup><br/>
                     <a href="#canbeflattenedinto">can be flattened into</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#canbegroupedinto">can be grouped into</a><sup class="sup-op" title="object property">op</sup><br/>
                 </td>
             </tr>
             <tr>
                 <th>Members</th>
                 <td>
-                    <a href="https://w3id.org/stax/ontology#rdfDatasetStream">stax:rdfDatasetStream</a><br/>
-                    <a href="https://w3id.org/stax/ontology#flatRdfTripleStream">stax:flatRdfTripleStream</a><br/>
-                    <a href="https://w3id.org/stax/ontology#flatRdfQuadStream">stax:flatRdfQuadStream</a><br/>
-                    <a href="https://w3id.org/stax/ontology#rdfNamedGraphStream">stax:rdfNamedGraphStream</a><br/>
-                    <a href="https://w3id.org/stax/ontology#rdfSubjectGraphStream">stax:rdfSubjectGraphStream</a><br/>
-                    <a href="https://w3id.org/stax/ontology#rdfGraphStream">stax:rdfGraphStream</a><br/>
-                    <a href="https://w3id.org/stax/ontology#timestampedRdfNamedGraphStream">stax:timestampedRdfNamedGraphStream</a><br/>
+                    <a href="https://w3id.org/stax/ontology#timestampedNamedGraphStream">stax:timestampedNamedGraphStream</a><br/>
+                    <a href="https://w3id.org/stax/ontology#flatQuadStream">stax:flatQuadStream</a><br/>
+                    <a href="https://w3id.org/stax/ontology#subjectGraphStream">stax:subjectGraphStream</a><br/>
+                    <a href="https://w3id.org/stax/ontology#flatTripleStream">stax:flatTripleStream</a><br/>
+                    <a href="https://w3id.org/stax/ontology#graphStream">stax:graphStream</a><br/>
+                    <a href="https://w3id.org/stax/ontology#datasetStream">stax:datasetStream</a><br/>
+                    <a href="https://w3id.org/stax/ontology#namedGraphStream">stax:namedGraphStream</a><br/>
                 </td>
             </tr>
         </table>
@@ -420,10 +420,10 @@ code {
             <tr>
                 <th>Members</th>
                 <td>
-                    <a href="https://w3id.org/stax/ontology#dataset">stax:dataset</a><br/>
                     <a href="https://w3id.org/stax/ontology#triple">stax:triple</a><br/>
                     <a href="https://w3id.org/stax/ontology#quad">stax:quad</a><br/>
                     <a href="https://w3id.org/stax/ontology#graph">stax:graph</a><br/>
+                    <a href="https://w3id.org/stax/ontology#dataset">stax:dataset</a><br/>
                 </td>
             </tr>
         </table>
@@ -453,8 +453,8 @@ code {
             <tr>
                 <th>Sub-classes</th>
                 <td>
-                    <a href="#ConcreteRDFstreamtype">Concrete RDF stream type</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="#AbstractRDFstreamtype">Abstract RDF stream type</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#ConcreteRDFstreamtype">Concrete RDF stream type</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
         </table>
@@ -918,6 +918,31 @@ code {
             </tr>
         </table>
     </div>
+            <div class="entity named_individual" id="RDFdatasetstream">
+        <h3>RDF dataset stream<sup title="named individual" class="sup-ni">ni</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td>
+                  <code>
+                      https://w3id.org/stax/ontology#datasetStream
+                  
+                  </code>
+                </td>
+            </tr>
+            <dt>Class(es)</dt>
+            <dd>
+                <a href="https://w3id.org/stax/ontology#ConcreteRdfStreamType">stax:ConcreteRdfStreamType</a><br/>
+                <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a><br/>
+            </dd>
+            <tr>
+                <th>Description</th>
+                <td>
+                    An RDF dataset stream is a grouped RDF stream whose elements are RDF datasets.
+                </td>
+            </tr>
+        </table>
+    </div>
             <div class="entity named_individual" id="FlatRDFquadstream">
         <h3>Flat RDF quad stream<sup title="named individual" class="sup-ni">ni</sup></h3>
         <table>
@@ -925,7 +950,7 @@ code {
                 <th>URI</th>
                 <td>
                   <code>
-                      https://w3id.org/stax/ontology#flatRdfQuadStream
+                      https://w3id.org/stax/ontology#flatQuadStream
                   
                   </code>
                 </td>
@@ -950,7 +975,7 @@ code {
                 <th>URI</th>
                 <td>
                   <code>
-                      https://w3id.org/stax/ontology#flatRdfStream
+                      https://w3id.org/stax/ontology#flatStream
                   
                   </code>
                 </td>
@@ -975,7 +1000,7 @@ code {
                 <th>URI</th>
                 <td>
                   <code>
-                      https://w3id.org/stax/ontology#flatRdfTripleStream
+                      https://w3id.org/stax/ontology#flatTripleStream
                   
                   </code>
                 </td>
@@ -1017,6 +1042,31 @@ code {
             </tr>
         </table>
     </div>
+            <div class="entity named_individual" id="RDFgraphstream">
+        <h3>RDF graph stream<sup title="named individual" class="sup-ni">ni</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td>
+                  <code>
+                      https://w3id.org/stax/ontology#graphStream
+                  
+                  </code>
+                </td>
+            </tr>
+            <dt>Class(es)</dt>
+            <dd>
+                <a href="https://w3id.org/stax/ontology#ConcreteRdfStreamType">stax:ConcreteRdfStreamType</a><br/>
+                <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a><br/>
+            </dd>
+            <tr>
+                <th>Description</th>
+                <td>
+                    An RDF graph stream is a grouped RDF stream whose elements are unnamed (default) RDF graphs.
+                </td>
+            </tr>
+        </table>
+    </div>
             <div class="entity named_individual" id="GroupedRDFstream">
         <h3>Grouped RDF stream<sup title="named individual" class="sup-ni">ni</sup></h3>
         <table>
@@ -1024,7 +1074,7 @@ code {
                 <th>URI</th>
                 <td>
                   <code>
-                      https://w3id.org/stax/ontology#groupedRdfStream
+                      https://w3id.org/stax/ontology#groupedStream
                   
                   </code>
                 </td>
@@ -1038,6 +1088,31 @@ code {
                 <th>Description</th>
                 <td>
                     A grouped RDF stream is an RDF stream whose elements are either RDF graphs or RDF datasets.
+                </td>
+            </tr>
+        </table>
+    </div>
+            <div class="entity named_individual" id="RDFnamedgraphstream">
+        <h3>RDF named graph stream<sup title="named individual" class="sup-ni">ni</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td>
+                  <code>
+                      https://w3id.org/stax/ontology#namedGraphStream
+                  
+                  </code>
+                </td>
+            </tr>
+            <dt>Class(es)</dt>
+            <dd>
+                <a href="https://w3id.org/stax/ontology#ConcreteRdfStreamType">stax:ConcreteRdfStreamType</a><br/>
+                <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a><br/>
+            </dd>
+            <tr>
+                <th>Description</th>
+                <td>
+                    An RDF named graph stream is an RDF dataset stream in which every element has exactly one named RDF graph pair <n, G>, where G is an RDF graph, and n is the graph node. Apart from graph G, the dataset may contain any number of triples in the default graph.
                 </td>
             </tr>
         </table>
@@ -1062,81 +1137,6 @@ code {
                 <th>Description</th>
                 <td>
                     An RDF quad is an RDF triple with a fourth component indicating the RDF graph the triple belongs to. If the triple is in a named graph, then the fourth component is the graph name (blank node or IRI). If the triple is in the default graph, then the fourth component is empty.
-                </td>
-            </tr>
-        </table>
-    </div>
-            <div class="entity named_individual" id="RDFdatasetstream">
-        <h3>RDF dataset stream<sup title="named individual" class="sup-ni">ni</sup></h3>
-        <table>
-            <tr>
-                <th>URI</th>
-                <td>
-                  <code>
-                      https://w3id.org/stax/ontology#rdfDatasetStream
-                  
-                  </code>
-                </td>
-            </tr>
-            <dt>Class(es)</dt>
-            <dd>
-                <a href="https://w3id.org/stax/ontology#ConcreteRdfStreamType">stax:ConcreteRdfStreamType</a><br/>
-                <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a><br/>
-            </dd>
-            <tr>
-                <th>Description</th>
-                <td>
-                    An RDF dataset stream is a grouped RDF stream whose elements are RDF datasets.
-                </td>
-            </tr>
-        </table>
-    </div>
-            <div class="entity named_individual" id="RDFgraphstream">
-        <h3>RDF graph stream<sup title="named individual" class="sup-ni">ni</sup></h3>
-        <table>
-            <tr>
-                <th>URI</th>
-                <td>
-                  <code>
-                      https://w3id.org/stax/ontology#rdfGraphStream
-                  
-                  </code>
-                </td>
-            </tr>
-            <dt>Class(es)</dt>
-            <dd>
-                <a href="https://w3id.org/stax/ontology#ConcreteRdfStreamType">stax:ConcreteRdfStreamType</a><br/>
-                <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a><br/>
-            </dd>
-            <tr>
-                <th>Description</th>
-                <td>
-                    An RDF graph stream is a grouped RDF stream whose elements are unnamed (default) RDF graphs.
-                </td>
-            </tr>
-        </table>
-    </div>
-            <div class="entity named_individual" id="RDFnamedgraphstream">
-        <h3>RDF named graph stream<sup title="named individual" class="sup-ni">ni</sup></h3>
-        <table>
-            <tr>
-                <th>URI</th>
-                <td>
-                  <code>
-                      https://w3id.org/stax/ontology#rdfNamedGraphStream
-                  
-                  </code>
-                </td>
-            </tr>
-            <dt>Class(es)</dt>
-            <dd>
-                <a href="https://w3id.org/stax/ontology#ConcreteRdfStreamType">stax:ConcreteRdfStreamType</a><br/>
-                <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a><br/>
-            </dd>
-            <tr>
-                <th>Description</th>
-                <td>
-                    An RDF named graph stream is an RDF dataset stream in which every element has exactly one named RDF graph pair <n, G>, where G is an RDF graph, and n is the graph node. Apart from graph G, the dataset may contain any number of triples in the default graph.
                 </td>
             </tr>
         </table>
@@ -1173,7 +1173,7 @@ code {
                 <th>URI</th>
                 <td>
                   <code>
-                      https://w3id.org/stax/ontology#rdfSubjectGraphStream
+                      https://w3id.org/stax/ontology#subjectGraphStream
                   
                   </code>
                 </td>
@@ -1198,7 +1198,7 @@ code {
                 <th>URI</th>
                 <td>
                   <code>
-                      https://w3id.org/stax/ontology#timestampedRdfNamedGraphStream
+                      https://w3id.org/stax/ontology#timestampedNamedGraphStream
                   
                   </code>
                 </td>
