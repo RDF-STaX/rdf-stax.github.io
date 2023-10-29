@@ -21,4 +21,4 @@ jobs:
           path: stax
 
       - name: Validate ontology's profile
-        run: java -jar robot.jar --input src/stax.ttl --profile DL --output dl-validation.txt
+        run: java -jar /app/robot.jar --input src/stax.ttl --profile DL --output dl-validation.txt
