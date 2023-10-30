@@ -323,8 +323,8 @@ stax:subjectGraphStream rdf:type owl:NamedIndividual ,
                                  stax:ConcreteRdfStreamType ;
                         skos:broader stax:graphStream ;
                         skos:inScheme <https://w3id.org/stax/ontology> ;
-                        skos:definition "An RDF subject graph stream is an RDF graph stream in which every element contains exactly one unique triple subject."@en ;
-                        skos:note "A stream of RDF graphs which have one subject each."@en ;
+                        skos:definition "An RDF subject graph stream is an RDF graph stream in which every element contains an IRI node (called the subject node) that uniquely identifies the graph in the stream. Every other node in the graph can be reached by traversing triples, starting from the subject node."@en ;
+                        skos:note "A stream of RDF graphs which have a node that uniquely identifies them in the stream."@en ;
                         skos:prefLabel "RDF subject graph stream"@en .
 
 
