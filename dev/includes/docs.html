@@ -256,7 +256,7 @@ code {
         <dt><a class="proplink" href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/created">Created</a></dt>
         <dd>2023-10-22T00:00:00</dd>
         <dt><a class="proplink" href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/modified">Modified</a></dt>
-        <dd>2023-10-29T20:15:53</dd>
+        <dd>2023-10-30T08:26:55</dd>
         <dt>Version Information</dt>
         <dd>dev</dd>
         <dt>Version URI</dt>
@@ -327,8 +327,8 @@ code {
             <tr>
                 <th>Members</th>
                 <td>
-                    <a href="https://w3id.org/stax/ontology#flatStream">stax:flatStream</a><br/>
                     <a href="https://w3id.org/stax/ontology#groupedStream">stax:groupedStream</a><br/>
+                    <a href="https://w3id.org/stax/ontology#flatStream">stax:flatStream</a><br/>
                     <a href="https://w3id.org/stax/ontology#rdfStream">stax:rdfStream</a><br/>
                 </td>
             </tr>
@@ -359,15 +359,15 @@ code {
             <tr>
                 <th>Restrictions</th>
                 <td>
-                    <a href="#haselementtype">has element type</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">some</span> <a href="#RDFelementtype">RDF element type</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="#haselementtype">has element type</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">only</span> <a href="#RDFelementtype">RDF element type</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#haselementtype">has element type</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">some</span> <a href="#RDFelementtype">RDF element type</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
             <tr>
                 <th>In domain of</th>
                 <td>
-                    <a href="#haselementtype">has element type</a><sup class="sup-op" title="object property">op</sup><br/>
                     <a href="#canbegroupedinto">can be grouped into</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#haselementtype">has element type</a><sup class="sup-op" title="object property">op</sup><br/>
                     <a href="#isinstreamtypesemanticrelationwith">is in stream type semantic relation with</a><sup class="sup-op" title="object property">op</sup><br/>
                     <a href="#canbeflattenedinto">can be flattened into</a><sup class="sup-op" title="object property">op</sup><br/>
                 </td>
@@ -375,10 +375,10 @@ code {
             <tr>
                 <th>In range of</th>
                 <td>
+                    <a href="#canbegroupedinto">can be grouped into</a><sup class="sup-op" title="object property">op</sup><br/>
                     <a href="#hasstreamtype">has stream type</a><sup class="sup-op" title="object property">op</sup><br/>
                     <a href="#isinstreamtypesemanticrelationwith">is in stream type semantic relation with</a><sup class="sup-op" title="object property">op</sup><br/>
                     <a href="#canbeflattenedinto">can be flattened into</a><sup class="sup-op" title="object property">op</sup><br/>
-                    <a href="#canbegroupedinto">can be grouped into</a><sup class="sup-op" title="object property">op</sup><br/>
                 </td>
             </tr>
             <tr>
@@ -386,10 +386,10 @@ code {
                 <td>
                     <a href="https://w3id.org/stax/ontology#timestampedNamedGraphStream">stax:timestampedNamedGraphStream</a><br/>
                     <a href="https://w3id.org/stax/ontology#flatQuadStream">stax:flatQuadStream</a><br/>
-                    <a href="https://w3id.org/stax/ontology#subjectGraphStream">stax:subjectGraphStream</a><br/>
-                    <a href="https://w3id.org/stax/ontology#flatTripleStream">stax:flatTripleStream</a><br/>
-                    <a href="https://w3id.org/stax/ontology#graphStream">stax:graphStream</a><br/>
                     <a href="https://w3id.org/stax/ontology#datasetStream">stax:datasetStream</a><br/>
+                    <a href="https://w3id.org/stax/ontology#flatTripleStream">stax:flatTripleStream</a><br/>
+                    <a href="https://w3id.org/stax/ontology#subjectGraphStream">stax:subjectGraphStream</a><br/>
+                    <a href="https://w3id.org/stax/ontology#graphStream">stax:graphStream</a><br/>
                     <a href="https://w3id.org/stax/ontology#namedGraphStream">stax:namedGraphStream</a><br/>
                 </td>
             </tr>
@@ -420,10 +420,10 @@ code {
             <tr>
                 <th>Members</th>
                 <td>
-                    <a href="https://w3id.org/stax/ontology#triple">stax:triple</a><br/>
+                    <a href="https://w3id.org/stax/ontology#dataset">stax:dataset</a><br/>
                     <a href="https://w3id.org/stax/ontology#quad">stax:quad</a><br/>
                     <a href="https://w3id.org/stax/ontology#graph">stax:graph</a><br/>
-                    <a href="https://w3id.org/stax/ontology#dataset">stax:dataset</a><br/>
+                    <a href="https://w3id.org/stax/ontology#triple">stax:triple</a><br/>
                 </td>
             </tr>
         </table>
@@ -453,8 +453,8 @@ code {
             <tr>
                 <th>Sub-classes</th>
                 <td>
-                    <a href="#AbstractRDFstreamtype">Abstract RDF stream type</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="#ConcreteRDFstreamtype">Concrete RDF stream type</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#AbstractRDFstreamtype">Abstract RDF stream type</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
         </table>
@@ -492,8 +492,8 @@ code {
             <tr>
                 <th>In domain of</th>
                 <td>
-                    <a href="#isusageof">is usage of</a><sup class="sup-op" title="object property">op</sup><br/>
                     <a href="#hasstreamtype">has stream type</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#isusageof">is usage of</a><sup class="sup-op" title="object property">op</sup><br/>
                 </td>
             </tr>
             <tr>
@@ -1186,7 +1186,7 @@ code {
             <tr>
                 <th>Description</th>
                 <td>
-                    An RDF subject graph stream is an RDF graph stream in which every element contains exactly one unique triple subject.
+                    An RDF subject graph stream is an RDF graph stream in which every element contains an IRI node (called the subject node) that uniquely identifies the graph in the stream. Every other node in the graph can be reached by traversing triples, starting from the subject node.
                 </td>
             </tr>
         </table>
