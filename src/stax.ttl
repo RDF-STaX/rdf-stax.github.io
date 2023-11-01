@@ -22,7 +22,7 @@
                                   dcterms:license <https://spdx.org/licenses/CC-BY-4.0> ;
                                   vann:preferredNamespacePrefix "stax" ;
                                   vann:preferredNamespaceUri stax: ;
-                                  schema:citation "Please cite this work according to the instructions here: https://w3id.org/stax/licensing"@en ;
+                                  schema:citation "Please cite this ontology according to the instructions here: https://w3id.org/stax/dev/licensing/"@en ;
                                   skos:altLabel "RDF-STaX"@en ;
                                   skos:prefLabel "RDF Stream Taxonomy"@en ;
                                   foaf:homepage <https://w3id.org/stax> .
