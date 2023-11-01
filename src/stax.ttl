@@ -19,6 +19,7 @@
                                   dc:description "RDF-STaX is an OWL 2 DL ontology that enables describing the types of RDF streams and defines relations between them."@en ;
                                   dc:title "RDF Stream Taxonomy (RDF-STaX)"@en ;
                                   dcterms:created "2023-10-22T00:00:00"^^xsd:dateTime ;
+                                  dcterms:issued "2023-10-23T00:00:00"^^xsd:dateTime ;
                                   dcterms:license <https://spdx.org/licenses/CC-BY-4.0> ;
                                   vann:preferredNamespacePrefix "stax" ;
                                   vann:preferredNamespaceUri stax: ;
@@ -41,6 +42,10 @@ dc:title rdf:type owl:AnnotationProperty .
 
 ###  http://purl.org/dc/terms/created
 dcterms:created rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/issued
+dcterms:issued rdf:type owl:AnnotationProperty .
 
 
 ###  http://purl.org/dc/terms/license
