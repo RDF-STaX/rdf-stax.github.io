@@ -422,16 +422,36 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#projects-using-rdf-stax" class="md-nav__link">
-    Projects using RDF-STaX
+  <a href="#publications-about-rdf-stax" class="md-nav__link">
+    Publications about RDF-STaX
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#publications-about-rdf-stax" class="md-nav__link">
-    Publications about RDF-STaX
+  <a href="#projects-using-rdf-stax" class="md-nav__link">
+    Projects using RDF-STaX
   </a>
+  
+    <nav class="md-nav" aria-label="Projects using RDF-STaX">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#riverbench" class="md-nav__link">
+    RiverBench
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nanopublications" class="md-nav__link">
+    Nanopublications
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -515,16 +535,36 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#projects-using-rdf-stax" class="md-nav__link">
-    Projects using RDF-STaX
+  <a href="#publications-about-rdf-stax" class="md-nav__link">
+    Publications about RDF-STaX
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#publications-about-rdf-stax" class="md-nav__link">
-    Publications about RDF-STaX
+  <a href="#projects-using-rdf-stax" class="md-nav__link">
+    Projects using RDF-STaX
   </a>
+  
+    <nav class="md-nav" aria-label="Projects using RDF-STaX">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#riverbench" class="md-nav__link">
+    RiverBench
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nanopublications" class="md-nav__link">
+    Nanopublications
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -560,9 +600,38 @@
 
 <h1 id="rdf-stax-uses-and-publications">RDF-STaX uses and publications</h1>
 <p>Are you using RDF-STaX in your project or paper? We would be glad to list it here! <strong>Please <a href="https://github.com/RDF-STaX/rdf-stax.github.io/issues/new">open an issue</a></strong> with a link or a brief explanation of how you use RDF-STaX.</p>
-<h2 id="projects-using-rdf-stax">Projects using RDF-STaX</h2>
-<p>TODO</p>
 <h2 id="publications-about-rdf-stax">Publications about RDF-STaX</h2>
+<p>TODO</p>
+<h2 id="projects-using-rdf-stax">Projects using RDF-STaX</h2>
+<h3 id="riverbench">RiverBench</h3>
+<p><a href="https://w3id.org/riverbench/">RiverBench</a> is an open, community-driven RDF streaming benchmark suite. It uses RDF-STaX for annotating the stream types of the benchmark datasets. The <a href="../use-it/">RDF-STaX annotation system</a> is integrated into the <a href="https://w3id.org/riverbench/schema/metadata">RiverBench metadata ontology</a>.</p>
+<p>Each dataset is assigned two stream type usages – one grouped RDF stream type and one flat RDF stream type. This is because in RiverBench each dataset can be viewed as either <em>streaming</em> or <em>flat</em>. Each dataset also has multiple distributions (flat or streaming) which are annotated with the corresponding stream type usage. The annotations are validated using SHACL, to make sure that the annotation is not contradictory (<a href="https://github.com/RiverBench/schema/blob/c38e2a8fb1d8d9e0dd019ff2d0515651c3b6b7da/src/dataset-shacl.ttl">see the rules</a>). For this, the <code class="language-turtle highlight"><span class="nn">stax</span><span class="p">:</span><span class="nt">canBeFlattenedInto</span></code> and <code class="language-turtle highlight"><span class="nn">stax</span><span class="p">:</span><span class="nt">canBeGroupedInto</span></code> properties are used, along with the taxonomical structure from SKOS.</p>
+<details class="example">
+<summary>Example usage (click to expand)</summary>
+<p>From dataset <a href="https://w3id.org/riverbench/datasets/digital-agenda-indicators/dev/">digital-agenda-indicators</a> (<a href="https://github.com/RiverBench/dataset-digital-agenda-indicators/blob/1557f93529d38602e07ddedfb2513d42189ff7e9/metadata.ttl">source</a>):</p>
+<div class="language-turtle highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">:</span><span class="nt">dataset</span> <span class="nn">stax</span><span class="p">:</span><span class="nt">hasStreamTypeUsage</span> <span class="p">[</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    <span class="kt">a</span> <span class="nn">stax</span><span class="p">:</span><span class="nt">RdfStreamTypeUsage</span> <span class="p">;</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    <span class="nn">rdfs</span><span class="p">:</span><span class="nt">comment</span> <span class="s">&quot;The dataset can be viewed as a stream of graphs corresponding to statistical observations. Each graph is uniquely identified by its subject IRI.&quot;</span><span class="o">@</span><span class="ge">en</span> <span class="p">;</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    <span class="nn">stax</span><span class="p">:</span><span class="nt">hasStreamType</span> <span class="nn">stax</span><span class="p">:</span><span class="nt">subjectGraphStream</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="p">]</span> <span class="p">,</span> <span class="p">[</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>    <span class="kt">a</span> <span class="nn">stax</span><span class="p">:</span><span class="nt">RdfStreamTypeUsage</span> <span class="p">;</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>    <span class="nn">rdfs</span><span class="p">:</span><span class="nt">comment</span> <span class="s">&quot;The dataset can be viewed as a flattened stream of triples.&quot;</span><span class="o">@</span><span class="ge">en</span> <span class="p">;</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>    <span class="nn">stax</span><span class="p">:</span><span class="nt">hasStreamType</span> <span class="nn">stax</span><span class="p">:</span><span class="nt">flatTripleStream</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="p">]</span> <span class="p">.</span>
+</span></code></pre></div>
+<p>The distribution annotations are generated automatically by the CI. You find the complete generated metadata <a href="https://w3id.org/riverbench/datasets/digital-agenda-indicators/dev.ttl">here</a>.</p>
+</details>
+<p><strong>Links:</strong></p>
+<ul>
+<li><a href="https://w3id.org/riverbench/profiles">Profiles</a> group datasets by stream type</li>
+<li>Datasets (<a href="https://w3id.org/riverbench/datasets/assist-iot-weather-graphs/dev/#technical-metadata">example</a>) include <code>stax:hasStreamTypeUsage</code> annotations. This can be seen in:<ul>
+<li><a href="https://w3id.org/riverbench/datasets/">Dataset documentation pages</a></li>
+<li>Dataset <a href="https://w3id.org/riverbench/datasets/assist-iot-weather-graphs/dev.ttl">RDF metadata</a></li>
+</ul>
+</li>
+<li><a href="https://w3id.org/riverbench/dumps/dev.ttl.gz">Complete metadata dump</a></li>
+</ul>
+<h3 id="nanopublications">Nanopublications</h3>
 <p>TODO</p>
 <h2 id="see-also">See also</h2>
 <ul>
