@@ -1,6 +1,6 @@
 # How to use RDF-STaX?
 
-RDF stream type usage is often a subjective matter, so RDF-STaX provides [facilities](ontology.md) for making *subjective* assertions about RDF stream types. For example: *I see this resource as an RDF graph stream, because (...)*, as opposed to strict, universal classification.
+RDF stream type usage is often a subjective matter, so RDF-STaX provides [facilities](ontology.md) for making *subjective* assertions about RDF stream types. For example: *I see this resource as an RDF graph stream, because (...)*, as opposed to strict, universal classification. The types in RDF-STaX are semantically related, [allowing you to reason about them](#using-semantic-relations-from-the-ontology).
 
 **The assertions can be made by anyone, anywhere. You can use RDF-STaX to annotate published streams, datasets, research papers, software, and more.**
 
@@ -108,6 +108,10 @@ You can use whatever properties you like, however, the following are recommended
 ## Making RDF stream type usage nanopublications
 
 This *subjective* style of RDF-STaX meshes very well with the idea of [nanopublications](https://nanopub.net/), small snippets of scientific knowledge. See the [documentation page on nanopublications](nanopubs.md) for more information on how to find, use, and create them.
+
+## Using semantic relations from the ontology
+
+TODO: taxonomy, flatten, group, extend
 
 ## See also
 

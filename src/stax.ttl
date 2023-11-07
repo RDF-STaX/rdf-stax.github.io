@@ -78,7 +78,12 @@ stax:canBeFlattenedInto rdf:type owl:ObjectProperty ;
                         owl:propertyChainAxiom ( skos:broaderTransitive
                                                  stax:canBeFlattenedInto
                                                ) ;
-                        rdfs:comment "Indicates that the subject stream type can be flattened into the object. The flattening is done by enumerating all components of the stream elements in one, flat stream. For example, a graph stream can be flattened into a flat triple stream."@en ;
+                        rdfs:comment """Indicates that the subject stream type can be flattened into the object.
+
+The flattening is done by enumerating all components of the stream elements in one, flat stream. For example, a graph stream can be flattened into a flat triple stream."""@en ,
+                                     """Indicates that the subject stream type that uses triples or graphs can be trivially extended into the object type that uses quads or datasets.
+
+The extension is done by (in case of flat RDF streams) adding a fourth component, corresponding to the default graph. In case of grouped RDF streams, the contents of the graph are placed explicitly in the default graph."""@en ;
                         rdfs:label "can be flattened into"@en .
 
 
@@ -88,8 +93,19 @@ stax:canBeGroupedInto rdf:type owl:ObjectProperty ;
                       owl:propertyChainAxiom ( skos:broaderTransitive
                                                stax:canBeGroupedInto
                                              ) ;
-                      rdfs:comment "Indicates that the subject stream type can be grouped into the object. The grouping is done by splitting the flat stream of statements into groups, which then can be used to construct elements of the grouped stream. For example, a flat triple stream can be grouped into a graph stream."@en ;
+                      rdfs:comment """Indicates that the subject stream type can be grouped into the object.
+
+The grouping is done by splitting the flat stream of statements into groups, which then can be used to construct elements of the grouped stream. For example, a flat triple stream can be grouped into a graph stream. In this operation, the ordering information within a group is lost."""@en ;
                       rdfs:label "can be grouped into"@en .
+
+
+###  https://w3id.org/stax/ontology#canBeTriviallyExtendedInto
+stax:canBeTriviallyExtendedInto rdf:type owl:ObjectProperty ;
+                                rdfs:subPropertyOf stax:streamTypeSemanticRelation ;
+                                owl:propertyChainAxiom ( skos:broaderTransitive
+                                                         stax:canBeTriviallyExtendedInto
+                                                       ) ;
+                                rdfs:label "can be trivially extended into"@en .
 
 
 ###  https://w3id.org/stax/ontology#hasElementType
@@ -260,6 +276,7 @@ stax:flatTripleStream rdf:type owl:NamedIndividual ,
                       skos:broader stax:flatStream ;
                       skos:inScheme <https://w3id.org/stax/ontology> ;
                       stax:canBeGroupedInto stax:graphStream ;
+                      stax:canBeTriviallyExtendedInto stax:flatQuadStream ;
                       stax:hasElementType stax:triple ;
                       skos:definition "A flat RDF triple stream is an RDF stream whose elements are triple statements."@en ;
                       skos:note "A stream of triple statements."@en ;
@@ -280,6 +297,7 @@ stax:graphStream rdf:type owl:NamedIndividual ,
                  skos:broader stax:groupedStream ;
                  skos:inScheme <https://w3id.org/stax/ontology> ;
                  stax:canBeFlattenedInto stax:flatTripleStream ;
+                 stax:canBeTriviallyExtendedInto stax:datasetStream ;
                  stax:hasElementType stax:graph ;
                  skos:definition "An RDF graph stream is a grouped RDF stream whose elements are unnamed (default) RDF graphs."@en ;
                  skos:note "A stream of RDF graphs."@en ;
