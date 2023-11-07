@@ -90,7 +90,7 @@ The `#!turtle stax:RdfStreamTypeUsage` instance is a good place to put additiona
 @prefix stax: <https://w3id.org/stax/ontology#> .
 
 _:usage a stax:RdfStreamTypeUsage ;
-    rdfs:comment "The authors state that for their proposed system, 'the streaming element (i.e. a single message) (...) is a set of triples'. Therefore, it uses an RDF graph stream."@en ;
+    rdfs:comment "The authors state that for their proposed system, 'the streaming element (i.e. a single message) (...) is a set of triples'. Therefore, internally it uses an RDF graph stream."@en ;
     stax:hasStreamType stax:graphStream ;
     stax:isUsageOf <https://doi.org/10.1109/ICSTCC.2017.8107003> ;
     cito:citesAsEvidence <https://doi.org/10.1109/ICSTCC.2017.8107003> ;
@@ -105,13 +105,22 @@ You can use whatever properties you like, however, the following are recommended
 - For statement creators, we recommend using [ORCID](https://orcid.org/).
 - For research works, we recommend using [DOI](https://www.doi.org/).
 
+These rich annotations are used in [RDF-STaX nanopublications](nanopubs.md).
+
 ## Making RDF stream type usage nanopublications
 
-This *subjective* style of RDF-STaX meshes very well with the idea of [nanopublications](https://nanopub.net/), small snippets of scientific knowledge. See the [documentation page on nanopublications](nanopubs.md) for more information on how to find, use, and create them.
+This *subjective* style of RDF-STaX meshes very well with the idea of [nanopublications](https://nanopub.net/), small snippets of scientific knowledge. **See the [documentation page on nanopublications](nanopubs.md)** for more information on how to find, use, and create them.
 
 ## Using semantic relations from the ontology
 
-TODO: taxonomy, flatten, group, extend
+The ontology includes several semantic relations between the RDF stream types. You can use them to reason about the types – for example can stream of type X be flattened into type Y?
+
+- `#!turtle skos:broader` and `#!turtle skos:narrower` – properties indicating sub- and super-types of streams.
+- `#!turtle stax:canBeFlattenedInto` – property indicating that a stream of type X can be flattened into a stream of type Y. For example, a `#!turtle stax:graphStream` can be flattened into a `#!turtle stax:flatTripleStream`.
+- `#!turtle stax:canBeGroupedInto` – property indicating that a stream of type X can be grouped into a stream of type Y. For example, a `#!turtle stax:flatQuadStream` can be grouped into a `#!turtle stax:datasetStream`.
+- `#!turtle stax:canBeTriviallyExtendedInto` – property indicating that a stream of type X can be trivially turned into a stream of type Y, by explicitly adding the graph component (default graph). For example, a `#!turtle stax:flatTripleStream` can be trivially extended into a `#!turtle stax:flatQuadStream`.
+
+These semantic relations are used in [RiverBench](uses.md#riverbench) to validate the stream type annotations.
 
 ## See also
 
