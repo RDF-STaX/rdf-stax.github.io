@@ -45,6 +45,12 @@ Released versions of the ontology are available in the JSON-LD, N-Triples, RDF/X
     
     The process for making releases is described on the [Contributing](contributing.md#releases) page.
 
+### Archival in Zenodo
+
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.10072907.svg)](https://zenodo.org/doi/10.5281/zenodo.10072907)
+
+Each RDF-STaX release is archived in Zenodo under this DOI: [10.5281/zenodo.10072907](https://zenodo.org/doi/10.5281/zenodo.10072907).
+
 ## See also
 
 - **[How to use it?](use-it.md)**

@@ -1,0 +1,20 @@
+{
+    "description": "<p>This artifact is for archival purposes only. <strong>Please see the </strong><a href=\"https://w3id.org/stax/\"><strong>RDF-STaX website</strong></a><strong> for more information.</strong></p>", 
+    "license": "CC-BY-4.0", 
+    "upload_type": "software", 
+    "keywords": [
+        "RDF",
+        "RDF streaming", 
+        "Taxonomy", 
+        "Ontology",
+        "SKOS"
+    ], 
+    "creators": [
+        {
+            "orcid": "0000-0002-2543-9461", 
+            "affiliation": "Warsaw University of Technology", 
+            "name": "Piotr Sowi\u0144ski"
+        }
+    ], 
+    "access_right": "open"
+}
