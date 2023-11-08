@@ -31,7 +31,7 @@ jobs:
         uses: actions/cache/restore@v3
         with:
           path: cache
-          key: nanopubs
+          restore-keys: nanopubs-
 
       - name: Fetch nanopublications
         run: python /app/tasks/nanopub_fetch.py cache output dev
@@ -40,7 +40,7 @@ jobs:
         uses: actions/cache/save@v3
         with:
           path: cache
-          key: nanopubs
+          key: nanopubs-${{ hashFiles('cache/*') }}
 
       - name: Upload files for the release
         uses: ncipollo/release-action@v1.13.0
