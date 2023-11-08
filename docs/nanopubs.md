@@ -8,7 +8,12 @@
 
 All valid nanopublications that annotate stream types using RDF-STaX can be downloaded using the links above. This dump is created automatically in the CI, and is updated whenever the ontology changes.
 
-You can also download the nanopubs using content negotiation on URLs like `https://w3id.org/{version}/nanopubs`. The following content types are supported: `application/trig`, `application/n-quads`.
+You can also download the nanopubs using content negotiation on URLs like: 
+
+- `https://w3id.org/{version}/nanopubs`
+- `https://w3id.org/nanopubs`
+
+The following content types are supported: `application/trig`, `application/n-quads`.
 
 There are also [other ways to access the nanopublications](https://nanopub.net/docs/network) – you can search for nanopubs with these parameters:
 
