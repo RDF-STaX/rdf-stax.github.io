@@ -24,7 +24,7 @@ There are also [other ways to access the nanopublications](https://nanopub.net/d
 
 There are [several ways to make nanopublications](https://nanopub.net/docs/tools), but the easiest is using **[Nanodash](https://nanodash.petapico.org/)**. You only need to log in with your ORCID account, and you can start creating nanopublications right away.
 
-To create a nanopublication about RDF stream type usage, simply use **[this template](https://nanodash.petapico.org/publish?template=https://w3id.org/np/RAMrlanWeHwGty3Q3k3uIjD89rLI8z5B0U9YZSTplMLq0)** – it will guide you through the process.
+To create a nanopublication about RDF stream type usage, simply use **[this template](https://nanodash.petapico.org/publish?template=https://w3id.org/np/RA91Mpsm7Ki1kdxPmxlucIyDDNv80Qp42KPpwcVSKr3n0)** – it will guide you through the process.
 
 The published nanopublications can be later updated or retracted, if needed.
 
