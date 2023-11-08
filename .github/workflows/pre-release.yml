@@ -31,6 +31,7 @@ jobs:
         uses: actions/cache/restore@v3
         with:
           path: cache
+          key: nanopubs-
           restore-keys: nanopubs-
 
       - name: Fetch nanopublications
