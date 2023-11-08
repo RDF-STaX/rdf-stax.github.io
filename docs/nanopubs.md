@@ -1,10 +1,19 @@
 # Nanopublications
 
-TODO: intro to nanopubs
+[Nanopublications](https://nanopub.net/) are small units of publishable knowledge. RDF-STaX provides some [helpful tools](#making-new-nanopublications) to aid you making nanopublications about RDF stream types in papers, software, on the Web, or elsewhere. You can also browse the existing nanopublications and use them in your work.
 
 ## Existing nanopublications
 
-TODO
+--8<-- "docs/includes/nanopub_links.md"
+
+All valid nanopublications that annotate stream types using RDF-STaX can be downloaded using the links above. This dump is created automatically in the CI, and is updated whenever the ontology changes.
+
+You can also download the nanopubs using content negotiation on URLs like `https://w3id.org/{version}/nanopubs`. The following content types are supported: `application/trig`, `application/n-quads`.
+
+There are also [other ways to access the nanopublications](https://nanopub.net/docs/network) – you can search for nanopubs with these parameters:
+
+- Predicate: `http://purl.org/nanopub/x/hasNanopubType`
+- Object: `https://w3id.org/stax/ontology#RdfStreamTypeUsage`
 
 ## Making new nanopublications
 

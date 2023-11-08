@@ -23,7 +23,24 @@ jobs:
         run: python /app/tasks/package.py stax/src output "$GITHUB_REF_NAME"
 
       - name: Generate documentation
-        run: python /app/tasks/doc_gen.py output/stax.ttl output "$GITHUB_REF_NAME"
+        run: |
+          python /app/tasks/doc_gen.py output/stax.ttl output "$GITHUB_REF_NAME"
+          mkdir cache
+
+      - name: Restore nanopub cache
+        uses: actions/cache/restore@v3
+        with:
+          path: cache
+          key: nanopubs
+
+      - name: Fetch nanopublications
+        run: python /app/tasks/nanopub_fetch.py cache output "$GITHUB_REF_NAME"
+
+      - name: Save nanopub cache
+        uses: actions/cache/save@v3
+        with:
+          path: cache
+          key: nanopubs
 
       - name: Upload files for the release
         uses: ncipollo/release-action@v1.13.0

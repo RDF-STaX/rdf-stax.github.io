@@ -29,6 +29,7 @@ jobs:
           TAG='${{ inputs.tag }}'
           wget https://github.com/RDF-STaX/rdf-stax.github.io/releases/download/$TAG/docs.html -O docs/includes/docs.html
           wget https://github.com/RDF-STaX/rdf-stax.github.io/releases/download/$TAG/links.md -O docs/includes/links.md
+          wget https://github.com/RDF-STaX/rdf-stax.github.io/releases/download/$TAG/nanopub_links.md -O docs/includes/nanopub_links.md
 
       - name: Deploy site
         run: |
