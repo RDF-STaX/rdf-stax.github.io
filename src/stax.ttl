@@ -21,12 +21,15 @@
                                   dcterms:created "2023-10-22T00:00:00"^^xsd:dateTime ;
                                   dcterms:issued "2023-10-23T00:00:00"^^xsd:dateTime ;
                                   dcterms:license <https://spdx.org/licenses/CC-BY-4.0> ;
+                                  dcterms:publisher <https://orcid.org/0000-0002-2543-9461> ;
+                                  <http://purl.org/ontology/bibo/status> <http://purl.org/ontology/bibo/status/published> ;
                                   vann:preferredNamespacePrefix "stax" ;
                                   vann:preferredNamespaceUri stax: ;
                                   schema:citation "Please cite this ontology according to the instructions here: https://w3id.org/stax/dev/licensing/"@en ;
                                   skos:altLabel "RDF-STaX"@en ;
                                   skos:prefLabel "RDF Stream Taxonomy"@en ;
-                                  foaf:homepage <https://w3id.org/stax> .
+                                  foaf:homepage <https://w3id.org/stax/dev> ;
+                                  foaf:logo <https://w3id.org/stax/dev/assets/logo_color.svg> .
 
 #################################################################
 #    Annotation properties
@@ -52,6 +55,14 @@ dcterms:issued rdf:type owl:AnnotationProperty .
 dcterms:license rdf:type owl:AnnotationProperty .
 
 
+###  http://purl.org/dc/terms/publisher
+dcterms:publisher rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/ontology/bibo/status
+<http://purl.org/ontology/bibo/status> rdf:type owl:AnnotationProperty .
+
+
 ###  http://purl.org/vocab/vann/preferredNamespacePrefix
 vann:preferredNamespacePrefix rdf:type owl:AnnotationProperty .
 
@@ -66,6 +77,10 @@ schema:citation rdf:type owl:AnnotationProperty .
 
 ###  http://xmlns.com/foaf/0.1/homepage
 foaf:homepage rdf:type owl:AnnotationProperty .
+
+
+###  http://xmlns.com/foaf/0.1/logo
+foaf:logo rdf:type owl:AnnotationProperty .
 
 
 #################################################################
