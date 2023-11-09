@@ -80,10 +80,7 @@ stax:canBeFlattenedInto rdf:type owl:ObjectProperty ;
                                                ) ;
                         rdfs:comment """Indicates that the subject stream type can be flattened into the object.
 
-The flattening is done by enumerating all components of the stream elements in one, flat stream. For example, a graph stream can be flattened into a flat triple stream."""@en ,
-                                     """Indicates that the subject stream type that uses triples or graphs can be trivially extended into the object type that uses quads or datasets.
-
-The extension is done by (in case of flat RDF streams) adding a fourth component, corresponding to the default graph. In case of grouped RDF streams, the contents of the graph are placed explicitly in the default graph."""@en ;
+The flattening is done by enumerating all components of the stream elements in one, flat stream. For example, a graph stream can be flattened into a flat triple stream."""@en ;
                         rdfs:label "can be flattened into"@en .
 
 
@@ -105,6 +102,9 @@ stax:canBeTriviallyExtendedInto rdf:type owl:ObjectProperty ;
                                 owl:propertyChainAxiom ( skos:broaderTransitive
                                                          stax:canBeTriviallyExtendedInto
                                                        ) ;
+                                rdfs:comment """Indicates that the subject stream type that uses triples or graphs can be trivially extended into the object type that uses quads or datasets.
+
+The extension is done by (in case of flat RDF streams) adding a fourth component, corresponding to the default graph. In case of grouped RDF streams, the contents of the graph are placed explicitly in the default graph."""@en ;
                                 rdfs:label "can be trivially extended into"@en .
 
 
@@ -257,7 +257,7 @@ stax:flatQuadStream rdf:type owl:NamedIndividual ,
                     skos:inScheme <https://w3id.org/stax/ontology> ;
                     stax:canBeGroupedInto stax:datasetStream ;
                     stax:hasElementType stax:quad ;
-                    skos:definition "A flat RDF quad stream is an RDF stream whose elements are quad statements."@en ;
+                    skos:definition "A flat RDF quad stream is a flat RDF stream whose elements are quad statements."@en ;
                     skos:example <https://w3id.org/np/RAZIs-6LyJuxrn-osVbEdxEoXmGsC1g-8m3n8LYAZ6sUI> ;
                     skos:note "A stream of quad statements."@en ;
                     skos:prefLabel "Flat RDF quad stream"@en .
@@ -281,7 +281,7 @@ stax:flatTripleStream rdf:type owl:NamedIndividual ,
                       stax:canBeGroupedInto stax:graphStream ;
                       stax:canBeTriviallyExtendedInto stax:flatQuadStream ;
                       stax:hasElementType stax:triple ;
-                      skos:definition "A flat RDF triple stream is an RDF stream whose elements are triple statements."@en ;
+                      skos:definition "A flat RDF triple stream is a flat RDF stream whose elements are triple statements."@en ;
                       skos:example <https://w3id.org/np/RAelRRiQeq2oSXNR-qqrB5dQ6g7Lait55srza_sfz6Jzs> ,
                                    <https://w3id.org/np/RAsiMOcZpJwtQVyiIBvn5-K1AvCcXmU8axm9VY4A7AY-k> ;
                       skos:note "A stream of triple statements."@en ;
