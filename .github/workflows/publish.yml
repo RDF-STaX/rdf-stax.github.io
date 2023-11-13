@@ -40,5 +40,5 @@ jobs:
           if [[ $TAG == v* ]] ; then
             mike deploy --push --update-aliases "${TAG#v}" stable
           else
-            mike deploy --push dev
+            mike deploy --push --update-aliases dev latest
           fi
