@@ -84,7 +84,7 @@ theme:
 extra:
   version:
     provider: mike
-    default: latest
+    default: dev
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/RDF-STaX
