@@ -16,3 +16,10 @@
     <meta property="og:image:height" content="630" />
     <meta name="google-site-verification" content="GkeCfDKZE5MRj_U5_gZTOlW1-eNm64mFtqWLvLjwkLw" />
 {% endblock %}
+
+{% block outdated %}
+  You're not viewing the latest version.
+  <a href="{{ '../' ~ base_url }}">
+    <strong>Click here to go to latest.</strong>
+  </a>
+{% endblock %}
