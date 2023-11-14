@@ -38,7 +38,6 @@ repo_name: RDF-STaX/rdf-stax.github.io
 
 theme:
   name: material
-  # TODO: custom scripts
   custom_dir: overrides
   features:
     # Behave like an SPA

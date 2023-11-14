@@ -43,7 +43,7 @@ Each dataset is assigned two stream type usages – one grouped RDF stream type 
 
 ### Nanopublications
 
-TODO
+RDF-STaX is used in [nanopublications](nanopubs.md) to annotate stream types in research works or software. You can find more information on the [dedicated page about nanopublications](nanopubs.md).
 
 ## See also
 
