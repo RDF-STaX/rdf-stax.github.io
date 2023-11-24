@@ -73,7 +73,7 @@ Can be flattened[^1] into a [flat RDF quad stream](#flat-rdf-quad-stream).
 
 IRI: [`https://w3id.org/stax/ontology#namedGraphStream`](https://w3id.org/stax/ontology#namedGraphStream)
 
-An **RDF named graph stream** is an [RDF dataset stream](#rdf-dataset-stream) in which every element has exactly one named RDF graph pair $\langle n, G \rangle$, where $G$ is an RDF graph, and $n$ is the graph node. Apart from graph $G$, the dataset may contain any number of triples in the default graph.
+An **RDF named graph stream** is an [RDF dataset stream](#rdf-dataset-stream) in which every element has exactly one named RDF graph pair $\langle n, G \rangle$, where $G$ is an RDF graph, and $n$ is the graph name. Apart from graph $G$, the dataset may contain any number of triples in the default graph.
 
 Can be flattened[^1] into a [flat RDF quad stream](#flat-rdf-quad-stream).
 
@@ -84,7 +84,7 @@ Can be flattened[^1] into a [flat RDF quad stream](#flat-rdf-quad-stream).
 IRI: [`https://w3id.org/stax/ontology#timestampedNamedGraphStream`](https://w3id.org/stax/ontology#timestampedNamedGraphStream)
 
 A **timestamped named graph** is an RDF dataset in which: <br>
-(1) there is exactly one named RDF graph pair $\langle n, G \rangle$, where $G$ is an RDF graph, and $n$ is the graph node; <br>
+(1) there is exactly one named RDF graph pair $\langle n, G \rangle$, where $G$ is an RDF graph, and $n$ is the graph name; <br>
 (2) the default graph includes a timestamp triple $\langle n, p, t \rangle$, where $p$ is a timestamp predicate that relates $t$, called the timestamp, and the graph $G$.
 
 A **timestamped RDF named graph stream** is an [RDF named graph stream](#rdf-named-graph-stream) in which every element is a timestamped named graph. The elements that share the same timestamp predicate $p$ are ordered by the partial order associated with $p$.
@@ -99,7 +99,7 @@ Can be flattened[^1] into a [flat RDF quad stream](#flat-rdf-quad-stream).
 
 IRI: [`https://w3id.org/stax/ontology#flatTripleStream`](https://w3id.org/stax/ontology#flatTripleStream)
 
-A **flat RDF triple stream** is a [flat RDF stream](#flat-rdf-stream) whose elements are triple statements.
+A **flat RDF triple stream** is a [flat RDF stream](#flat-rdf-stream) whose elements are triples.
 
 Can be grouped[^2] into an [RDF graph stream](#rdf-graph-stream). <br>
 Can be trivially extended[^3] into a [flat RDF quad stream](#flat-rdf-quad-stream).
@@ -110,7 +110,7 @@ Can be trivially extended[^3] into a [flat RDF quad stream](#flat-rdf-quad-strea
 
 IRI: [`https://w3id.org/stax/ontology#flatQuadStream`](https://w3id.org/stax/ontology#flatQuadStream)
 
-A **flat RDF quad stream** is a [flat RDF stream](#flat-rdf-stream) whose elements are quad statements.
+A **flat RDF quad stream** is a [flat RDF stream](#flat-rdf-stream) whose elements are quads.
 
 Can be grouped[^2] into an [RDF dataset stream](#rdf-dataset-stream).
 
