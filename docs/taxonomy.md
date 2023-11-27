@@ -118,7 +118,7 @@ Can be grouped[^2] into an [RDF dataset stream](#rdf-dataset-stream).
 
 ## See also
 
-- You can find a detailed discussion on the taxonomy in the **[RDF-STaX paper]()**. TODO TODO TODO!
+- You can find a detailed discussion on the taxonomy in the **[RDF-STaX paper](https://arxiv.org/abs/2311.14540)**.
 - [Ontology documentation](ontology.md)
 - [How to use RDF-STaX?](use-it.md)
 

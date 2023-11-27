@@ -4,14 +4,21 @@ The RDF-STaX ontology and its documentation is licensed under the [Creative Comm
 
 ## Attribution / citation
 
-If you use RDF-STaX in your research, please cite [the paper introducing it]() (TODO):
+If you use RDF-STaX in your research, please cite [the paper introducing it](https://arxiv.org/abs/2311.14540) ([PDF](https://arxiv.org/pdf/2311.14540.pdf)):
 
-TODO
+Sowinski, P., Szmeja, P. Ganzha, M., & Paprzycki, M. (2023). RDF Stream Taxonomy: Systematizing RDF Stream Types in Research and Practice. _[arXiv preprint arXiv:2311.14540](https://arxiv.org/abs/2311.14540)_.
 
 Or use this BibTeX entry:
 
 ```bibtex
-TODO
+@article{sowinski2023rdfstax,
+  title={RDF Stream Taxonomy: Systematizing RDF Stream Types in Research and Practice}, 
+  author={Piotr Sowinski and Pawel Szmeja and Maria Ganzha and Marcin Paprzycki},
+  journal={arXiv preprint arXiv:2311.14540},
+  year={2023},
+  url={https://doi.org/10.48550/arXiv.2311.14540},
+  doi={10.48550/arXiv.2311.14540}
+}
 ```
 
 ## RDF-STaX maintainer
