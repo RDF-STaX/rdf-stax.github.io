@@ -1,6 +1,6 @@
 # RDF Stream Taxonomy (RDF-STaX)
 
-![RDF Stream Taxonomy (RDF-STaX)](assets/logo_color.svg){ align=right width="150" }
+![RDF Stream Taxonomy (RDF-STaX)](assets/logo_color.svg){ align=right width="120" }
 
 **RDF-STaX** is a taxonomy of RDF stream types. It [can be used](use-it.md) to describe published RDF streams, datasets, software tools, or scientific publications.
 
