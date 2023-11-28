@@ -1,3 +1,5 @@
+# RDF-STaX ontology documentation
+
 --8<-- "docs/includes/links.md"
 
 !!! info
