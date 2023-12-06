@@ -31,7 +31,7 @@ Each dataset is assigned two stream type usages – one grouped RDF stream type 
     ] .
     ```
 
-    The distribution annotations are generated automatically by the CI. You find the complete generated metadata [here](https://w3id.org/riverbench/datasets/digital-agenda-indicators/dev.ttl).
+    The distribution annotations are generated automatically by the CI. You can find the complete generated metadata [here](https://w3id.org/riverbench/datasets/digital-agenda-indicators/dev.ttl).
 
 **Links:**
 
