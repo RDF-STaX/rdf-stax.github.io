@@ -6,6 +6,15 @@
 
 --8<-- "docs/includes/nanopub_links.md"
 
+!!! example "Experimental: SPARQL endpoint"
+
+    You can query the dataset through the experimental SPARQL endpoint: **[query GUI](https://query.np.trustyuri.net/tools/type/aabe9436b877b6a91acaa9741b3e1e5c1f47e1069ff2c0cb2bf0ceac25176629/yasgui.html)**.
+
+    Endpoint URL: `https://query.np.trustyuri.net/repo/type/aabe9436b877b6a91acaa9741b3e1e5c1f47e1069ff2c0cb2bf0ceac25176629`
+
+    *This endpoint may change or stop working in the future without prior notice.*
+    
+
 All valid nanopublications that annotate stream types using RDF-STaX can be downloaded using the links above. This dump is created automatically in the CI, and is updated whenever the ontology changes.
 
 You can also download the nanopubs using content negotiation on URLs like: 
