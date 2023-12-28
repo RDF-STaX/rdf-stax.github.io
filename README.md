@@ -4,7 +4,7 @@ This is the main repository of the RDF Stream Taxonomy. Here you will find the o
 
 **Read more about RDF-STaX on the [official website](https://w3id.org/stax/).**
 
-Please file any feature requests, bugs, or other issues on **[issue tracker](https://github.com/RDF-STaX/rdf-stax.github.io/issues)**.
+Please file any feature requests, bugs, or other issues in the **[issue tracker](https://github.com/RDF-STaX/rdf-stax.github.io/issues)**.
 
 ## Editing the ontology
 
