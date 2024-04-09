@@ -120,7 +120,7 @@ The ontology includes several semantic relations between the RDF stream types. Y
 - `#!turtle stax:canBeGroupedInto` – property indicating that a stream of type X can be grouped into a stream of type Y. For example, a `#!turtle stax:flatQuadStream` can be grouped into a `#!turtle stax:datasetStream`.
 - `#!turtle stax:canBeTriviallyExtendedInto` – property indicating that a stream of type X can be trivially turned into a stream of type Y, by explicitly adding the graph component (default graph). For example, a `#!turtle stax:flatTripleStream` can be trivially extended into a `#!turtle stax:flatQuadStream`.
 
-These semantic relations are used in [RiverBench](uses.md#riverbench) to validate the stream type annotations.
+These semantic relations are used in [RiverBench](uses/index.md#riverbench) to validate the stream type annotations.
 
 ## See also
 
@@ -128,4 +128,4 @@ These semantic relations are used in [RiverBench](uses.md#riverbench) to validat
 - [Taxonomy overview](taxonomy.md)
 - [Ontology documentation](ontology.md)
 - [Nanopublications](nanopubs.md)
-- [Existing use cases](uses.md)
+- [Existing use cases](uses/index.md)

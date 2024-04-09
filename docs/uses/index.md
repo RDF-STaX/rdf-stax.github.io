@@ -11,7 +11,7 @@ Are you using RDF-STaX in your project or paper? We would be glad to list it her
 
 ### RiverBench
 
-[RiverBench](https://w3id.org/riverbench/) is an open, community-driven RDF streaming benchmark suite. It uses RDF-STaX for annotating the stream types of the benchmark datasets. The [RDF-STaX annotation system](use-it.md) is integrated into the [RiverBench metadata ontology](https://w3id.org/riverbench/schema/metadata).
+[RiverBench](https://w3id.org/riverbench/) is an open, community-driven RDF streaming benchmark suite. It uses RDF-STaX for annotating the stream types of the benchmark datasets. The [RDF-STaX annotation system](../use-it.md) is integrated into the [RiverBench metadata ontology](https://w3id.org/riverbench/schema/metadata).
 
 Each dataset is assigned two stream type usages – one grouped RDF stream type and one flat RDF stream type. This is because in RiverBench each dataset can be viewed as either *streaming* or *flat*. Each dataset also has multiple distributions (flat or streaming) which are annotated with the corresponding stream type usage. The annotations are validated using SHACL, to make sure that the annotation is not contradictory ([see the rules](https://github.com/RiverBench/schema/blob/c38e2a8fb1d8d9e0dd019ff2d0515651c3b6b7da/src/dataset-shacl.ttl)). For this, the `#!turtle stax:canBeFlattenedInto` and `#!turtle stax:canBeGroupedInto` properties are used, along with the taxonomical structure from SKOS.
 
@@ -44,9 +44,14 @@ Each dataset is assigned two stream type usages – one grouped RDF stream type 
 
 ### Nanopublications
 
-RDF-STaX is used in [nanopublications](nanopubs.md) to annotate stream types in research works or software. You can find more information on the [dedicated page about nanopublications](nanopubs.md).
+RDF-STaX is used in [nanopublications](../nanopubs.md) to annotate stream types in research works or software. You can find more information on the [dedicated page about nanopublications](../nanopubs.md).
+
+## Use case-based competency question tests
+
+Based on the above use cases, a number of competency question tests were created. The tests are implemented as SPARQL queries and are used in Continuous Integration (CI) to test the RDF-STaX ontology. You can find a list of all the tests on **[this subpage](cq.md)**. The documentation for creating new tests is available [here](../contributing.md#competency-question-tests).
 
 ## See also
 
-- [Contributing](contributing.md)
-- [Licensing and citation](licensing.md)
+- [Competency question tests](cq.md)
+- [Contributing](../contributing.md)
+- [Licensing and citation](../licensing.md)

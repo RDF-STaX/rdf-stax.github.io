@@ -97,6 +97,8 @@ nav:
   - Ontology documentation: 'ontology.md'
   - How to use it?: 'use-it.md'
   - Nanopublications: 'nanopubs.md'
-  - Use cases and publications: 'uses.md'
+  - Use cases and publications:
+    - 'uses/index.md'
+    - Competency question tests: 'uses/cq.md'
   - Contributing: 'contributing.md'
   - Licensing and citation: 'licensing.md'
