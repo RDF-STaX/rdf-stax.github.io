@@ -1,0 +1,38 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://w3id.org/stax/dev/schema/cq-test",
+    "type": "object",
+    "title": "Schema for competency question-based SPARQL tests in RDF-STaX.",
+    "properties": {
+        "$schema": {
+            "const": "https://w3id.org/stax/dev/schema/cq-test"
+        },
+        "useCase": { 
+            "type": "integer",
+            "title": "Use case number of the test."
+        },
+        "testNumber": {
+            "type": "integer",
+            "title": "Test number within the use case."
+        },
+        "text": {
+            "type": "string",
+            "title": "Human-readable competency question corresponding to the test.",
+            "minLength": 5
+        },
+        "expectation": {
+            "oneOf": [
+                { "const": "empty" },
+                { "const": "nonEmpty" },
+                {
+                    "type": "object",
+                    "properties": {
+                        "resultsCount": { "type": "integer" }
+                    }
+                }
+            ]
+        }
+    },
+    "required": ["useCase", "testNumber", "text", "expectation"],
+    "additionalProperties": false
+}
