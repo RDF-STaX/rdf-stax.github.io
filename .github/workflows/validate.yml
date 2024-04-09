@@ -31,6 +31,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          path: stax
 
       - name: Validate the tests
         run: python /app/tasks/validate_tests.py stax/tests stax/tests/test-schema.json
