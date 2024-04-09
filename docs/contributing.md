@@ -19,11 +19,20 @@ The ontology is stored in the [`src` directory of the main repository](https://g
 
 **Pull requests are welcome.**
 
+### Competency question tests
+
+The competency question tests are stored in the [`tests` directory](https://github.com/RDF-STaX/rdf-stax.github.io/tree/main/tests), divided into subdirectories by use cases – `uc{X}`. Each test is defined as a pair of files: a YAML file named `cq{X}-{Y}.yaml`, and SPARQL file named `cq{X}-{Y}.rq`, where `{X}` is the use case number and `{Y}` is the test number. The YAML file contains the metadata of the test, and the SPARQL file contains the query to be executed against the ontology.
+
+The YAML file must adhere to the JSON Schema defined in the [`tests/test-schema.json` file](https://github.com/RDF-STaX/rdf-stax.github.io/blob/main/tests/test-schema.json). The CI will check if the tests are valid when you open a pull request.
+
+A list of all implemented competency question tests can be found in the [documentation](uses/cq.md).
+
 ### CI pipeline
 
 The CI automatically publishes the ontology (see [the releases section below](#releases)) and pushes it to the website. The CI does the following:
 
 - Check if the ontology is valid and matches the OWL 2 DL profile (with [ROBOT](https://robot.obolibrary.org/)).
+- Validate the competency question tests and run them agains the ontology.
 - Set the ontology's version IRI and version.
 - Save an OWL 2 DL version of the ontology in all supported formats.
 - Infer additional statements with [ROBOT](https://robot.obolibrary.org/reason).

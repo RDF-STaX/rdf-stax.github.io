@@ -14,6 +14,6 @@ Have a look at the **[taxonomy overview](taxonomy.md)** to get an idea of the di
 - **[Ontology documentation](ontology.md)**
 - **[How to use RDF-STaX?](use-it.md)**
 - **[Nanopublications](nanopubs.md)** – publishing assertions about RDF stream type usage
-- **[Use cases and publications](uses.md)**
+- **[Use cases and publications](uses/index.md)**
 - **[Contributing](contributing.md)**
 - **[Licensing and citation](licensing.md)**
