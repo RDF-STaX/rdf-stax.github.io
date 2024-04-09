@@ -41,4 +41,4 @@ jobs:
         run: python /app/tasks/package.py stax/src output dev
 
       - name: Run competency question tests
-        run: python /app/tasks/run_tests.py stax/tests output/stax.ttl
+        run: python /app/tasks/run_tests.py output/stax.ttl stax/tests
