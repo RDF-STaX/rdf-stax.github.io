@@ -36,17 +36,22 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://rdf-stax.github.io/dev/uses/</loc>
-         <lastmod>2024-04-09</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://rdf-stax.github.io/dev/includes/links/</loc>
          <lastmod>2024-04-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://rdf-stax.github.io/dev/includes/nanopub_links/</loc>
+         <lastmod>2024-04-09</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://rdf-stax.github.io/dev/uses/</loc>
+         <lastmod>2024-04-09</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://rdf-stax.github.io/dev/uses/cq/</loc>
          <lastmod>2024-04-09</lastmod>
          <changefreq>daily</changefreq>
     </url>

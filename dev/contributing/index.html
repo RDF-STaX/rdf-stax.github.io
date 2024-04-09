@@ -13,7 +13,7 @@
         <link rel="canonical" href="https://rdf-stax.github.io/dev/contributing/">
       
       
-        <link rel="prev" href="../uses/">
+        <link rel="prev" href="../uses/cq/">
       
       
         <link rel="next" href="../licensing/">
@@ -392,16 +392,77 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../uses/" class="md-nav__link">
+    
+    
+      
         
+          
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../uses/" class="md-nav__link ">
+              
   
   <span class="md-ellipsis">
     Use cases and publications
   </span>
   
 
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Use cases and publications
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../uses/cq/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Competency question tests
+  </span>
+  
+
       </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -476,6 +537,15 @@
   
     <nav class="md-nav" aria-label="Editing the ontology">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#competency-question-tests" class="md-nav__link">
+    <span class="md-ellipsis">
+      Competency question tests
+    </span>
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#ci-pipeline" class="md-nav__link">
@@ -592,6 +662,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#competency-question-tests" class="md-nav__link">
+    <span class="md-ellipsis">
+      Competency question tests
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#ci-pipeline" class="md-nav__link">
     <span class="md-ellipsis">
       CI pipeline
@@ -672,10 +751,15 @@
 <li>The <code>src/alignments.ttl</code> file contains alignments to other vocabularies. It should be edited manually with a text editor.</li>
 </ul>
 <p><strong>Pull requests are welcome.</strong></p>
+<h3 id="competency-question-tests">Competency question tests</h3>
+<p>The competency question tests are stored in the <a href="https://github.com/RDF-STaX/rdf-stax.github.io/tree/main/tests"><code>tests</code> directory</a>, divided into subdirectories by use cases – <code>uc{X}</code>. Each test is defined as a pair of files: a YAML file named <code>cq{X}-{Y}.yaml</code>, and SPARQL file named <code>cq{X}-{Y}.rq</code>, where <code>{X}</code> is the use case number and <code>{Y}</code> is the test number. The YAML file contains the metadata of the test, and the SPARQL file contains the query to be executed against the ontology.</p>
+<p>The YAML file must adhere to the JSON Schema defined in the <a href="https://github.com/RDF-STaX/rdf-stax.github.io/blob/main/tests/test-schema.json"><code>tests/test-schema.json</code> file</a>. The CI will check if the tests are valid when you open a pull request.</p>
+<p>A list of all implemented competency question tests can be found in the <a href="../uses/cq/">documentation</a>.</p>
 <h3 id="ci-pipeline">CI pipeline</h3>
 <p>The CI automatically publishes the ontology (see <a href="#releases">the releases section below</a>) and pushes it to the website. The CI does the following:</p>
 <ul>
 <li>Check if the ontology is valid and matches the OWL 2 DL profile (with <a href="https://robot.obolibrary.org/">ROBOT</a>).</li>
+<li>Validate the competency question tests and run them agains the ontology.</li>
 <li>Set the ontology's version IRI and version.</li>
 <li>Save an OWL 2 DL version of the ontology in all supported formats.</li>
 <li>Infer additional statements with <a href="https://robot.obolibrary.org/reason">ROBOT</a>.</li>
