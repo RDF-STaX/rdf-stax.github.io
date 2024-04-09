@@ -1,4 +1,4 @@
-name: Validate ontology
+name: Validate and test ontology
 
 on:
   push:
@@ -22,3 +22,21 @@ jobs:
         run: |
           java -jar /app/robot.jar validate-profile --input src/stax.ttl --profile DL --output dl-validation.txt
           cat dl-validation.txt
+
+  test-cq:
+    name: Run competency question tests
+    runs-on: ubuntu-latest
+    container: ghcr.io/rdf-stax/ci-worker:main
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Validate the tests
+        run: python /app/tasks/validate_tests.py stax/tests stax/tests/test-schema.json
+
+      - name: Package ontology for testing
+        run: python /app/tasks/package.py stax/src output dev
+
+      - name: Run competency question tests
+        run: python /app/tasks/run_tests.py stax/tests output/stax.ttl
