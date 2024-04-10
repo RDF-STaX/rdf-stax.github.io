@@ -1,0 +1,6 @@
+$schema: https://w3id.org/stax/dev/schema/cq-test
+useCase: 2
+testNumber: 4
+text: Which concrete stream types can be grouped to obtain other stream types?
+expectation:
+  resultsCount: 2

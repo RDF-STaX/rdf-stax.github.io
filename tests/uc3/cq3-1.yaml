@@ -1,6 +1,6 @@
 $schema: https://w3id.org/stax/dev/schema/cq-test
-useCase: 1
+useCase: 3
 testNumber: 1
-text: What are the names and descriptions of all RDF stream types?
+text: What are the taxonomical parents of each stream type, listed in order?
 expectation:
   resultsCount: 10

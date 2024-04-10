@@ -2,6 +2,6 @@ PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX stax: <https://w3id.org/stax/ontology#>
 
 SELECT * WHERE {
-    ?broaderStreamType a stax:ConcreteRdfStreamType ;
-  		skos:narrower+ ?narrowerStreamType .
+    ?baseStreamType a stax:ConcreteRdfStreamType ;
+  		skos:broader*/stax:canBeGroupedInto ?groupedStreamType .
 }

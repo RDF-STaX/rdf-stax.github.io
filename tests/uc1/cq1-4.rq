@@ -1,0 +1,8 @@
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX stax: <https://w3id.org/stax/ontology#>
+
+SELECT ?streamType (SAMPLE(?example) as ?anyExample) WHERE {
+    ?streamType a stax:ConcreteRdfStreamType ;
+        skos:example ?example .
+}
+GROUP BY ?streamType

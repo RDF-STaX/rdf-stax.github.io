@@ -1,0 +1,6 @@
+$schema: https://w3id.org/stax/dev/schema/cq-test
+useCase: 1
+testNumber: 3
+text: What is the type of element of each concrete stream type? Provide additional references to external sources for each element type, if available.
+expectation:
+  resultsCount: 7

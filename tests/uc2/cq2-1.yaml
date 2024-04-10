@@ -1,6 +1,6 @@
 $schema: https://w3id.org/stax/dev/schema/cq-test
 useCase: 2
 testNumber: 1
-text: What are the names of all RDF stream types?
+text: Which concrete stream types can be viewed as generalizations of other stream types?
 expectation:
-  resultsCount: 10
+  resultsCount: 4

@@ -1,0 +1,13 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX stax: <https://w3id.org/stax/ontology#>
+
+SELECT ?label (GROUP_CONCAT(?broader; SEPARATOR=", ") as ?parents) WHERE {
+    ?streamType a/rdfs:subClassOf* stax:RdfStreamType ;
+        skos:prefLabel ?label .
+
+    OPTIONAL {
+        ?streamType skos:broader+ [ skos:prefLabel ?broader ] .
+    }
+}
+GROUP BY ?streamType ?label
