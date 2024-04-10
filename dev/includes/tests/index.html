@@ -555,6 +555,24 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#test-cq13-definition" class="md-nav__link">
+    <span class="md-ellipsis">
+      Test CQ1.3 (definition)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-cq14-definition" class="md-nav__link">
+    <span class="md-ellipsis">
+      Test CQ1.4 (definition)
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -574,6 +592,75 @@
   <a href="#test-cq21-definition" class="md-nav__link">
     <span class="md-ellipsis">
       Test CQ2.1 (definition)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-cq22-definition" class="md-nav__link">
+    <span class="md-ellipsis">
+      Test CQ2.2 (definition)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-cq23-definition" class="md-nav__link">
+    <span class="md-ellipsis">
+      Test CQ2.3 (definition)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-cq24-definition" class="md-nav__link">
+    <span class="md-ellipsis">
+      Test CQ2.4 (definition)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#use-case-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Use case 3
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Use case 3">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#test-cq31-definition" class="md-nav__link">
+    <span class="md-ellipsis">
+      Test CQ3.1 (definition)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-cq32-definition" class="md-nav__link">
+    <span class="md-ellipsis">
+      Test CQ3.2 (definition)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-cq33-definition" class="md-nav__link">
+    <span class="md-ellipsis">
+      Test CQ3.3 (definition)
     </span>
   </a>
   
@@ -610,9 +697,9 @@
   <h1>Tests</h1>
 
 <h2 id="use-case-1">Use case 1</h2>
-<p>Test use case description. <strong>With Markdown formatting</strong>.</p>
+<p><strong>Annotating published datasets and streams.</strong> In this use case, RDF-STaX's stream types are used as metadata of published RDF datasets or streams, for example on the Internet. This published metadata is intended for the various users to understand the content of the stream. The <a href="../../use-it/">usage manual</a> has several examples for this type of usage.</p>
 <h3 id="test-cq11-definition">Test CQ1.1 (<a href="https://github.com/RDF-STaX/rdf-stax.github.io/blob/main/tests/uc1/cq1-1.yaml">definition</a>)</h3>
-<p><strong>Question:</strong> What are the names of all RDF stream types?</p>
+<p><strong>Question:</strong> What are the names and descriptions of all RDF stream types?</p>
 <p><strong>Expectation:</strong> there are 10 query results</p>
 <details class="example">
 <summary>SPARQL query of the test</summary>
@@ -622,13 +709,14 @@
 </span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
 </span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="k">SELECT</span> <span class="o">*</span> <span class="k">WHERE</span> <span class="p">{</span>
 </span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>    <span class="nv">?streamType</span> <span class="k">a</span><span class="o">/</span><span class="nn">rdfs</span><span class="p">:</span><span class="nt">subClassOf</span><span class="o">*</span> <span class="nn">stax</span><span class="p">:</span><span class="nt">RdfStreamType</span> <span class="p">;</span>
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>        <span class="nn">skos</span><span class="p">:</span><span class="nt">prefLabel</span> <span class="nv">?label</span> <span class="p">.</span>
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="p">}</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>        <span class="nn">skos</span><span class="p">:</span><span class="nt">prefLabel</span> <span class="nv">?label</span> <span class="p">;</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>        <span class="nn">skos</span><span class="p">:</span><span class="nt">note</span> <span class="nv">?note</span> <span class="p">.</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="p">}</span>
 </span></code></pre></div>
 </details>
 <h3 id="test-cq12-definition">Test CQ1.2 (<a href="https://github.com/RDF-STaX/rdf-stax.github.io/blob/main/tests/uc1/cq1-2.yaml">definition</a>)</h3>
-<p><strong>Question:</strong> What are the names of all RDF stream types?</p>
-<p><strong>Expectation:</strong> query results are not empty</p>
+<p><strong>Question:</strong> What is the definition for each stream type?</p>
+<p><strong>Expectation:</strong> there are 10 query results</p>
 <details class="example">
 <summary>SPARQL query of the test</summary>
 <div class="language-sparql highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">PREFIX</span> <span class="nn">rdfs</span><span class="p">:</span> <span class="nl">&lt;http://www.w3.org/2000/01/rdf-schema#&gt;</span>
@@ -637,25 +725,162 @@
 </span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
 </span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="k">SELECT</span> <span class="o">*</span> <span class="k">WHERE</span> <span class="p">{</span>
 </span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>    <span class="nv">?streamType</span> <span class="k">a</span><span class="o">/</span><span class="nn">rdfs</span><span class="p">:</span><span class="nt">subClassOf</span><span class="o">*</span> <span class="nn">stax</span><span class="p">:</span><span class="nt">RdfStreamType</span> <span class="p">;</span>
-</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>        <span class="nn">skos</span><span class="p">:</span><span class="nt">prefLabel</span> <span class="nv">?label</span> <span class="p">.</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>        <span class="nn">skos</span><span class="p">:</span><span class="nt">definition</span> <span class="nv">?definition</span> <span class="p">.</span>
 </span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="p">}</span>
 </span></code></pre></div>
 </details>
+<h3 id="test-cq13-definition">Test CQ1.3 (<a href="https://github.com/RDF-STaX/rdf-stax.github.io/blob/main/tests/uc1/cq1-3.yaml">definition</a>)</h3>
+<p><strong>Question:</strong> What is the type of element of each concrete stream type? Provide additional references to external sources for each element type, if available.</p>
+<p><strong>Expectation:</strong> there are 7 query results</p>
+<details class="example">
+<summary>SPARQL query of the test</summary>
+<div class="language-sparql highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">PREFIX</span> <span class="nn">skos</span><span class="p">:</span> <span class="nl">&lt;http://www.w3.org/2004/02/skos/core#&gt;</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="k">PREFIX</span> <span class="nn">stax</span><span class="p">:</span> <span class="nl">&lt;https://w3id.org/stax/ontology#&gt;</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="k">SELECT</span> <span class="o">*</span> <span class="k">WHERE</span> <span class="p">{</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>    <span class="nv">?streamType</span> <span class="k">a</span> <span class="nn">stax</span><span class="p">:</span><span class="nt">ConcreteRdfStreamType</span> <span class="p">;</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>        <span class="nn">stax</span><span class="p">:</span><span class="nt">hasElementType</span> <span class="nv">?elementType</span> <span class="p">.</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>    <span class="k">OPTIONAL</span> <span class="p">{</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>        <span class="nv">?elementType</span> <span class="nn">skos</span><span class="p">:</span><span class="nt">relatedMatch</span> <span class="nv">?reference</span> <span class="p">.</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>    <span class="p">}</span>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="p">}</span>
+</span></code></pre></div>
+</details>
+<h3 id="test-cq14-definition">Test CQ1.4 (<a href="https://github.com/RDF-STaX/rdf-stax.github.io/blob/main/tests/uc1/cq1-4.yaml">definition</a>)</h3>
+<p><strong>Question:</strong> How can each of the concrete stream types be used? Provide a link to one example for each.</p>
+<p><strong>Expectation:</strong> there are 7 query results</p>
+<details class="example">
+<summary>SPARQL query of the test</summary>
+<div class="language-sparql highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">PREFIX</span> <span class="nn">skos</span><span class="p">:</span> <span class="nl">&lt;http://www.w3.org/2004/02/skos/core#&gt;</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="k">PREFIX</span> <span class="nn">stax</span><span class="p">:</span> <span class="nl">&lt;https://w3id.org/stax/ontology#&gt;</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="k">SELECT</span> <span class="nv">?streamType</span> <span class="p">(</span><span class="nf">SAMPLE</span><span class="p">(</span><span class="nv">?example</span><span class="p">)</span> <span class="k">as</span> <span class="nv">?anyExample</span><span class="p">)</span> <span class="k">WHERE</span> <span class="p">{</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>    <span class="nv">?streamType</span> <span class="k">a</span> <span class="nn">stax</span><span class="p">:</span><span class="nt">ConcreteRdfStreamType</span> <span class="p">;</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>        <span class="nn">skos</span><span class="p">:</span><span class="nt">example</span> <span class="nv">?example</span> <span class="p">.</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="p">}</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="k">GROUP BY</span> <span class="nv">?streamType</span>
+</span></code></pre></div>
+</details>
 <h2 id="use-case-2">Use case 2</h2>
-<p>Test use case 2 description. <strong>With Markdown formatting</strong>.</p>
+<p><strong>Embedding metadata in RDF streams.</strong> This use case is similar to use case 1, but more focused on embedding the stream type metadata <em>within</em> the stream itself, with the goal of enabling streaming tool interoperability. For example, a consumer of the stream can check the type of the stream and decide whether it can consume it or not (and if any additional conversions are required).</p>
 <h3 id="test-cq21-definition">Test CQ2.1 (<a href="https://github.com/RDF-STaX/rdf-stax.github.io/blob/main/tests/uc2/cq2-1.yaml">definition</a>)</h3>
-<p><strong>Question:</strong> What are the names of all RDF stream types?</p>
+<p><strong>Question:</strong> Which concrete stream types can be viewed as generalizations of other stream types?</p>
+<p><strong>Expectation:</strong> there are 4 query results</p>
+<details class="example">
+<summary>SPARQL query of the test</summary>
+<div class="language-sparql highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">PREFIX</span> <span class="nn">skos</span><span class="p">:</span> <span class="nl">&lt;http://www.w3.org/2004/02/skos/core#&gt;</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="k">PREFIX</span> <span class="nn">stax</span><span class="p">:</span> <span class="nl">&lt;https://w3id.org/stax/ontology#&gt;</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="k">SELECT</span> <span class="o">*</span> <span class="k">WHERE</span> <span class="p">{</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>    <span class="nv">?broaderStreamType</span> <span class="k">a</span> <span class="nn">stax</span><span class="p">:</span><span class="nt">ConcreteRdfStreamType</span> <span class="p">;</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>        <span class="nn">skos</span><span class="p">:</span><span class="nt">narrower</span><span class="o">+</span> <span class="nv">?narrowerStreamType</span> <span class="p">.</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="p">}</span>
+</span></code></pre></div>
+</details>
+<h3 id="test-cq22-definition">Test CQ2.2 (<a href="https://github.com/RDF-STaX/rdf-stax.github.io/blob/main/tests/uc2/cq2-2.yaml">definition</a>)</h3>
+<p><strong>Question:</strong> Which concrete stream types can be trivially extended (by assuming the default graph) into other stream types?</p>
+<p><strong>Expectation:</strong> there are 3 query results</p>
+<details class="example">
+<summary>SPARQL query of the test</summary>
+<div class="language-sparql highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">PREFIX</span> <span class="nn">skos</span><span class="p">:</span> <span class="nl">&lt;http://www.w3.org/2004/02/skos/core#&gt;</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="k">PREFIX</span> <span class="nn">stax</span><span class="p">:</span> <span class="nl">&lt;https://w3id.org/stax/ontology#&gt;</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="k">SELECT</span> <span class="o">*</span> <span class="k">WHERE</span> <span class="p">{</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>    <span class="nv">?baseStreamType</span> <span class="k">a</span> <span class="nn">stax</span><span class="p">:</span><span class="nt">ConcreteRdfStreamType</span> <span class="p">;</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>        <span class="nn">skos</span><span class="p">:</span><span class="nt">broader</span><span class="o">*/</span><span class="nn">stax</span><span class="p">:</span><span class="nt">canBeTriviallyExtendedInto</span> <span class="nv">?extendedStreamType</span> <span class="p">.</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="p">}</span>
+</span></code></pre></div>
+</details>
+<h3 id="test-cq23-definition">Test CQ2.3 (<a href="https://github.com/RDF-STaX/rdf-stax.github.io/blob/main/tests/uc2/cq2-3.yaml">definition</a>)</h3>
+<p><strong>Question:</strong> Which concrete stream types can be flattened into other stream types?</p>
+<p><strong>Expectation:</strong> there are 9 query results</p>
+<details class="example">
+<summary>SPARQL query of the test</summary>
+<div class="language-sparql highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">PREFIX</span> <span class="nn">skos</span><span class="p">:</span> <span class="nl">&lt;http://www.w3.org/2004/02/skos/core#&gt;</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="k">PREFIX</span> <span class="nn">stax</span><span class="p">:</span> <span class="nl">&lt;https://w3id.org/stax/ontology#&gt;</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="k">SELECT</span> <span class="o">*</span> <span class="k">WHERE</span> <span class="p">{</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>    <span class="nv">?baseStreamType</span> <span class="k">a</span> <span class="nn">stax</span><span class="p">:</span><span class="nt">ConcreteRdfStreamType</span> <span class="p">;</span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>        <span class="nn">skos</span><span class="p">:</span><span class="nt">broader</span><span class="o">*/</span><span class="nn">stax</span><span class="p">:</span><span class="nt">canBeFlattenedInto</span> <span class="nv">?flattenedStreamType</span> <span class="p">.</span>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="p">}</span>
+</span></code></pre></div>
+</details>
+<h3 id="test-cq24-definition">Test CQ2.4 (<a href="https://github.com/RDF-STaX/rdf-stax.github.io/blob/main/tests/uc2/cq2-4.yaml">definition</a>)</h3>
+<p><strong>Question:</strong> Which concrete stream types can be grouped to obtain other stream types?</p>
+<p><strong>Expectation:</strong> there are 2 query results</p>
+<details class="example">
+<summary>SPARQL query of the test</summary>
+<div class="language-sparql highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="k">PREFIX</span> <span class="nn">skos</span><span class="p">:</span> <span class="nl">&lt;http://www.w3.org/2004/02/skos/core#&gt;</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="k">PREFIX</span> <span class="nn">stax</span><span class="p">:</span> <span class="nl">&lt;https://w3id.org/stax/ontology#&gt;</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="k">SELECT</span> <span class="o">*</span> <span class="k">WHERE</span> <span class="p">{</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>    <span class="nv">?baseStreamType</span> <span class="k">a</span> <span class="nn">stax</span><span class="p">:</span><span class="nt">ConcreteRdfStreamType</span> <span class="p">;</span>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>        <span class="nn">skos</span><span class="p">:</span><span class="nt">broader</span><span class="o">*/</span><span class="nn">stax</span><span class="p">:</span><span class="nt">canBeGroupedInto</span> <span class="nv">?groupedStreamType</span> <span class="p">.</span>
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="p">}</span>
+</span></code></pre></div>
+</details>
+<h2 id="use-case-3">Use case 3</h2>
+<p><strong>Analyzing the state of the art of RDF streaming.</strong> This use case is realized with <a href="../../nanopubs/">RDF-STaX's Nanopublication mechanism</a>, which allows anyone to publish statements like "paper/software X uses stream type Y". The collection of such published nanopublications can then be later used to derive insights about the state of the art (SOTA) of RDF streaming. RDF-STaX can also be used in SOTA investigations outside the context of Nanopublications.</p>
+<h3 id="test-cq31-definition">Test CQ3.1 (<a href="https://github.com/RDF-STaX/rdf-stax.github.io/blob/main/tests/uc3/cq3-1.yaml">definition</a>)</h3>
+<p><strong>Question:</strong> What are the taxonomical parents of each stream type, listed in order?</p>
 <p><strong>Expectation:</strong> there are 10 query results</p>
 <details class="example">
 <summary>SPARQL query of the test</summary>
-<div class="language-sparql highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">PREFIX</span> <span class="nn">rdfs</span><span class="p">:</span> <span class="nl">&lt;http://www.w3.org/2000/01/rdf-schema#&gt;</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="k">PREFIX</span> <span class="nn">skos</span><span class="p">:</span> <span class="nl">&lt;http://www.w3.org/2004/02/skos/core#&gt;</span>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="k">PREFIX</span> <span class="nn">stax</span><span class="p">:</span> <span class="nl">&lt;https://w3id.org/stax/ontology#&gt;</span>
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="k">SELECT</span> <span class="o">*</span> <span class="k">WHERE</span> <span class="p">{</span>
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>    <span class="nv">?streamType</span> <span class="k">a</span><span class="o">/</span><span class="nn">rdfs</span><span class="p">:</span><span class="nt">subClassOf</span><span class="o">*</span> <span class="nn">stax</span><span class="p">:</span><span class="nt">RdfStreamType</span> <span class="p">;</span>
-</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>        <span class="nn">skos</span><span class="p">:</span><span class="nt">prefLabel</span> <span class="nv">?label</span> <span class="p">.</span>
-</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="p">}</span>
+<div class="language-sparql highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="k">PREFIX</span> <span class="nn">rdfs</span><span class="p">:</span> <span class="nl">&lt;http://www.w3.org/2000/01/rdf-schema#&gt;</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="k">PREFIX</span> <span class="nn">skos</span><span class="p">:</span> <span class="nl">&lt;http://www.w3.org/2004/02/skos/core#&gt;</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="k">PREFIX</span> <span class="nn">stax</span><span class="p">:</span> <span class="nl">&lt;https://w3id.org/stax/ontology#&gt;</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="k">SELECT</span> <span class="nv">?label</span> <span class="p">(</span><span class="nf">GROUP_CONCAT</span><span class="p">(</span><span class="nv">?broader</span><span class="p">;</span> <span class="nf">SEPARATOR</span><span class="o">=</span><span class="s">&quot;, &quot;</span><span class="p">)</span> <span class="k">as</span> <span class="nv">?parents</span><span class="p">)</span> <span class="k">WHERE</span> <span class="p">{</span>
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>    <span class="nv">?streamType</span> <span class="k">a</span><span class="o">/</span><span class="nn">rdfs</span><span class="p">:</span><span class="nt">subClassOf</span><span class="o">*</span> <span class="nn">stax</span><span class="p">:</span><span class="nt">RdfStreamType</span> <span class="p">;</span>
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>        <span class="nn">skos</span><span class="p">:</span><span class="nt">prefLabel</span> <span class="nv">?label</span> <span class="p">.</span>
+</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>
+</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>    <span class="k">OPTIONAL</span> <span class="p">{</span>
+</span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>        <span class="nv">?streamType</span> <span class="nn">skos</span><span class="p">:</span><span class="nt">broader</span><span class="o">+</span> <span class="p">[</span> <span class="nn">skos</span><span class="p">:</span><span class="nt">prefLabel</span> <span class="nv">?broader</span> <span class="p">]</span> <span class="p">.</span>
+</span><span id="__span-8-11"><a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a>    <span class="p">}</span>
+</span><span id="__span-8-12"><a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a><span class="p">}</span>
+</span><span id="__span-8-13"><a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a><span class="k">GROUP BY</span> <span class="nv">?streamType</span> <span class="nv">?label</span>
+</span></code></pre></div>
+</details>
+<h3 id="test-cq32-definition">Test CQ3.2 (<a href="https://github.com/RDF-STaX/rdf-stax.github.io/blob/main/tests/uc3/cq3-2.yaml">definition</a>)</h3>
+<p><strong>Question:</strong> Is there any stream type that is a taxonomical parent or child of itself?</p>
+<p><strong>Expectation:</strong> query results are empty</p>
+<details class="example">
+<summary>SPARQL query of the test</summary>
+<div class="language-sparql highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="k">PREFIX</span> <span class="nn">rdfs</span><span class="p">:</span> <span class="nl">&lt;http://www.w3.org/2000/01/rdf-schema#&gt;</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="k">PREFIX</span> <span class="nn">skos</span><span class="p">:</span> <span class="nl">&lt;http://www.w3.org/2004/02/skos/core#&gt;</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="k">PREFIX</span> <span class="nn">stax</span><span class="p">:</span> <span class="nl">&lt;https://w3id.org/stax/ontology#&gt;</span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="k">SELECT</span> <span class="o">*</span> <span class="k">WHERE</span> <span class="p">{</span>
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>    <span class="p">{</span>
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>        <span class="nv">?streamType</span> <span class="nn">skos</span><span class="p">:</span><span class="nt">broader</span><span class="o">+</span> <span class="nv">?streamType</span> <span class="p">.</span>
+</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>    <span class="p">}</span>
+</span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>    <span class="k">UNION</span>
+</span><span id="__span-9-10"><a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>    <span class="p">{</span>
+</span><span id="__span-9-11"><a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a>        <span class="nv">?streamType</span> <span class="nn">skos</span><span class="p">:</span><span class="nt">narrower</span><span class="o">+</span> <span class="nv">?streamType</span> <span class="p">.</span>
+</span><span id="__span-9-12"><a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a>    <span class="p">}</span>
+</span><span id="__span-9-13"><a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a><span class="p">}</span>
+</span></code></pre></div>
+</details>
+<h3 id="test-cq33-definition">Test CQ3.3 (<a href="https://github.com/RDF-STaX/rdf-stax.github.io/blob/main/tests/uc3/cq3-3.yaml">definition</a>)</h3>
+<p><strong>Question:</strong> Which conversions between concrete stream types cannot be done in any trivial way (grouping, flattening, extending)? Allow for multiple trivial transformations in series and take into account the taxonomical structure.</p>
+<p><strong>Expectation:</strong> there are 25 query results</p>
+<details class="example">
+<summary>SPARQL query of the test</summary>
+<div class="language-sparql highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="k">PREFIX</span> <span class="nn">rdfs</span><span class="p">:</span> <span class="nl">&lt;http://www.w3.org/2000/01/rdf-schema#&gt;</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="k">PREFIX</span> <span class="nn">skos</span><span class="p">:</span> <span class="nl">&lt;http://www.w3.org/2004/02/skos/core#&gt;</span>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="k">PREFIX</span> <span class="nn">stax</span><span class="p">:</span> <span class="nl">&lt;https://w3id.org/stax/ontology#&gt;</span>
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="k">SELECT</span> <span class="nv">?fromStreamType</span> <span class="nv">?toStreamType</span> <span class="k">WHERE</span> <span class="p">{</span>
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>    <span class="nv">?toStreamType</span> <span class="k">a</span> <span class="nn">stax</span><span class="p">:</span><span class="nt">ConcreteRdfStreamType</span> <span class="p">.</span>
+</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>    <span class="nv">?fromStreamType</span> <span class="k">a</span> <span class="nn">stax</span><span class="p">:</span><span class="nt">ConcreteRdfStreamType</span>
+</span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>
+</span><span id="__span-10-9"><a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>    <span class="k">MINUS</span> <span class="p">{</span>
+</span><span id="__span-10-10"><a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a>        <span class="nv">?fromStreamType</span>
+</span><span id="__span-10-11"><a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a>            <span class="p">(</span><span class="nn">skos</span><span class="p">:</span><span class="nt">broader</span><span class="o">*/</span><span class="p">(</span><span class="nn">stax</span><span class="p">:</span><span class="nt">canBeFlattenedInto</span><span class="err">|</span><span class="nn">stax</span><span class="p">:</span><span class="nt">canBeGroupedInto</span><span class="err">|</span><span class="nn">stax</span><span class="p">:</span><span class="nt">canBeTriviallyExtendedInto</span><span class="p">)</span><span class="err">?</span><span class="p">)</span><span class="o">+</span>
+</span><span id="__span-10-12"><a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a>            <span class="nv">?toStreamType</span> <span class="p">.</span>
+</span><span id="__span-10-13"><a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a>    <span class="p">}</span>
+</span><span id="__span-10-14"><a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a><span class="p">}</span>
 </span></code></pre></div>
 </details>
 
