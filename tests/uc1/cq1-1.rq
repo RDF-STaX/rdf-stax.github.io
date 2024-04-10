@@ -4,5 +4,6 @@ PREFIX stax: <https://w3id.org/stax/ontology#>
 
 SELECT * WHERE {
     ?streamType a/rdfs:subClassOf* stax:RdfStreamType ;
-        skos:prefLabel ?label .
+        skos:prefLabel ?label ;
+        skos:note ?note .
 }

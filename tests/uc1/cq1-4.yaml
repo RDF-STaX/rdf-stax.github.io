@@ -1,0 +1,6 @@
+$schema: https://w3id.org/stax/dev/schema/cq-test
+useCase: 1
+testNumber: 4
+text: How can each of the concrete stream types be used? Provide a link to one example for each.
+expectation:
+  resultsCount: 7

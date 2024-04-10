@@ -1,0 +1,6 @@
+$schema: https://w3id.org/stax/dev/schema/cq-test
+useCase: 3
+testNumber: 3
+text: Which conversions between concrete stream types cannot be done in any trivial way (grouping, flattening, extending)? Allow for multiple trivial transformations in series and take into account the taxonomical structure.
+expectation:
+  resultsCount: 25

@@ -1,1 +1,1 @@
-Test use case description. **With Markdown formatting**.
+**Annotating published datasets and streams.** In this use case, RDF-STaX's stream types are used as metadata of published RDF datasets or streams, for example on the Internet. This published metadata is intended for the various users to understand the content of the stream. The [usage manual](../use-it.md) has several examples for this type of usage.

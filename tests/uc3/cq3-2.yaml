@@ -1,0 +1,5 @@
+$schema: https://w3id.org/stax/dev/schema/cq-test
+useCase: 3
+testNumber: 2
+text: Is there any stream type that is a taxonomical parent or child of itself?
+expectation: empty

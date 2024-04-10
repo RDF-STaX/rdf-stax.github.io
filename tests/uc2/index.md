@@ -1,1 +1,1 @@
-Test use case 2 description. **With Markdown formatting**.
+**Embedding metadata in RDF streams.** This use case is similar to use case 1, but more focused on embedding the stream type metadata *within* the stream itself, with the goal of enabling streaming tool interoperability. For example, a consumer of the stream can check the type of the stream and decide whether it can consume it or not (and if any additional conversions are required).

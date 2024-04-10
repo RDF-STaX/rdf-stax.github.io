@@ -1,0 +1,11 @@
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX stax: <https://w3id.org/stax/ontology#>
+
+SELECT * WHERE {
+    ?streamType a stax:ConcreteRdfStreamType ;
+        stax:hasElementType ?elementType .
+
+    OPTIONAL {
+        ?elementType skos:relatedMatch ?reference .
+    }
+}

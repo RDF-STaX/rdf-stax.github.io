@@ -1,0 +1,6 @@
+$schema: https://w3id.org/stax/dev/schema/cq-test
+useCase: 2
+testNumber: 2
+text: Which concrete stream types can be trivially extended (by assuming the default graph) into other stream types?
+expectation:
+  resultsCount: 3

@@ -122,6 +122,10 @@ The ontology includes several semantic relations between the RDF stream types. Y
 
 These semantic relations are used in [RiverBench](uses/index.md#riverbench) to validate the stream type annotations.
 
+## Example SPARQL queries
+
+The **[competency question tests](uses/cq.md)** provide examples of SPARQL queries that can be used with the RDF-STaX ontology.
+
 ## See also
 
 - [Licensing and citation](licensing.md)

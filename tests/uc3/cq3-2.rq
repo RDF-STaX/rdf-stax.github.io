@@ -3,6 +3,11 @@ PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX stax: <https://w3id.org/stax/ontology#>
 
 SELECT * WHERE {
-    ?streamType a/rdfs:subClassOf* stax:RdfStreamType ;
-        skos:definition ?definition .
+    {
+        ?streamType skos:broader+ ?streamType .
+    }
+    UNION
+    {
+        ?streamType skos:narrower+ ?streamType .
+    }
 }

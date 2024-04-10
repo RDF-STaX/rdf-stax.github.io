@@ -1,0 +1,14 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX stax: <https://w3id.org/stax/ontology#>
+
+SELECT ?fromStreamType ?toStreamType WHERE {
+    ?toStreamType a stax:ConcreteRdfStreamType .
+    ?fromStreamType a stax:ConcreteRdfStreamType
+
+    MINUS {
+        ?fromStreamType
+            (skos:broader*/(stax:canBeFlattenedInto|stax:canBeGroupedInto|stax:canBeTriviallyExtendedInto)?)+
+            ?toStreamType .
+    }
+}
