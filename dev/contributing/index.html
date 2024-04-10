@@ -754,6 +754,7 @@
 <h3 id="competency-question-tests">Competency question tests</h3>
 <p>The competency question tests are stored in the <a href="https://github.com/RDF-STaX/rdf-stax.github.io/tree/main/tests"><code>tests</code> directory</a>, divided into subdirectories by use cases – <code>uc{X}</code>. Each test is defined as a pair of files: a YAML file named <code>cq{X}-{Y}.yaml</code>, and SPARQL file named <code>cq{X}-{Y}.rq</code>, where <code>{X}</code> is the use case number and <code>{Y}</code> is the test number. The YAML file contains the metadata of the test, and the SPARQL file contains the query to be executed against the ontology.</p>
 <p>The YAML file must adhere to the JSON Schema defined in the <a href="https://github.com/RDF-STaX/rdf-stax.github.io/blob/main/tests/test-schema.json"><code>tests/test-schema.json</code> file</a>. The CI will check if the tests are valid when you open a pull request.</p>
+<p>In each use case directory there is also an <code>index.md</code> file that describes the use case. This file is used to generate the documentation on the website.</p>
 <p>A list of all implemented competency question tests can be found in the <a href="../uses/cq/">documentation</a>.</p>
 <h3 id="ci-pipeline">CI pipeline</h3>
 <p>The CI automatically publishes the ontology (see <a href="#releases">the releases section below</a>) and pushes it to the website. The CI does the following:</p>
