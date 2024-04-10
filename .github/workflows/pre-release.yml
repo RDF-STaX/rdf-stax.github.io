@@ -25,6 +25,7 @@ jobs:
       - name: Generate documentation
         run: |
           python /app/tasks/doc_gen.py output/stax.ttl output dev
+          python /app/tasks/tests_doc_gen.py stax/tests output/tests.md main
           mkdir cache
 
       - name: Restore nanopub cache
