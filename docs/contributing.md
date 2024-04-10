@@ -25,6 +25,8 @@ The competency question tests are stored in the [`tests` directory](https://gith
 
 The YAML file must adhere to the JSON Schema defined in the [`tests/test-schema.json` file](https://github.com/RDF-STaX/rdf-stax.github.io/blob/main/tests/test-schema.json). The CI will check if the tests are valid when you open a pull request.
 
+In each use case directory there is also an `index.md` file that describes the use case. This file is used to generate the documentation on the website.
+
 A list of all implemented competency question tests can be found in the [documentation](uses/cq.md).
 
 ### CI pipeline

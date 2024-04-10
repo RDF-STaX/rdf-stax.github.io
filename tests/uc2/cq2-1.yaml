@@ -1,0 +1,6 @@
+$schema: https://w3id.org/stax/dev/schema/cq-test
+useCase: 2
+testNumber: 1
+text: What are the names of all RDF stream types?
+expectation:
+  resultsCount: 10

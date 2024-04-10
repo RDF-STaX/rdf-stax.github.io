@@ -25,6 +25,7 @@ jobs:
       - name: Generate documentation
         run: |
           python /app/tasks/doc_gen.py output/stax.ttl output "$GITHUB_REF_NAME"
+          python /app/tasks/tests_doc_gen.py stax/tests output/tests.md "$GITHUB_REF_NAME"
           mkdir cache
 
       - name: Restore nanopub cache

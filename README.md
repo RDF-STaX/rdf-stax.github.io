@@ -12,6 +12,7 @@ Please file any feature requests, bugs, or other issues in the **[issue tracker]
     - Do not add information about the authors/contributors there. This is done in the `src/authors.ttl` file (see below).
     - Do not set the ontology's version IRI or version – this is done automatically in CI during release.
 - The `src/authors.ttl` file contains information about the authors/contributors of the ontology. It should be edited manually with a text editor.
+- The `tests` directory contains competency question tests that are ran automatically. Implementing new tests is [documented on the RDF-STaX website](https://w3id.org/stax/dev/contributing#competency-question-tests).
 
 ## Editing documentation
 
