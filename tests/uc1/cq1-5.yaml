@@ -1,0 +1,6 @@
+$schema: https://w3id.org/stax/dev/schema/cq-test
+useCase: 1
+testNumber: 5
+text: What are the corresponding terms from other ontologies to those defined in the RDF-STaX ontology?
+expectation:
+  resultsCount: 6

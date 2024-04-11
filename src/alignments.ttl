@@ -1,13 +1,36 @@
+@prefix ldes: <https://w3id.org/ldes#> .
 @prefix sd: <http://www.w3.org/ns/sparql-service-description#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix stax: <https://w3id.org/stax/ontology#> .
+@prefix vocals: <http://w3id.org/rsp/vocals#> .
+@prefix void: <http://rdfs.org/ns/void#> .
 
 # This file provides alignments from RDF-STaX to other ontologies and vocabularies.
 # They are kept separate from the main ontology file, as they may violate the OWL 2 DL profile.
 
-# Alignments to the SPARQL Service Description vocabulary
+# Alignment to the SPARQL Service Description vocabulary
 # The sd:Dataset and sd:Graph classes represent datasets and graphs from RDF 1.1. They are
 # however classes, whereas the corresponding entities in RDF-STaX are instances.
 # This is consistent with the SKOS model, which allows concepts to be either instances or classes.
 stax:dataset skos:relatedMatch sd:Dataset .
 stax:graph skos:relatedMatch sd:Graph .
+
+# Alignment to the VoCaLS vocabulary
+# The vocals:RDFStream class corresponds to the definition of an RDF graph stream or a flat RDF
+# triple stream in RDF-STaX (depending on how you interpret the definition of the class).
+# This is a (loosely) related match, as term in VoCaLS is a class, and not an instance.
+stax:flatTripleStream skos:relatedMatch vocals:RDFStream .
+stax:graphStream skos:relatedMatch vocals:RDFStream .
+
+# Alignment to the VoID vocabulary
+# The void:Dataset class is a set of triples with additional context information. Therefore, it
+# can be viewed as a flat RDF triple stream in RDF-STaX.
+# This is a (loosely) related match, as term in VoID is a class, and not an instance.
+stax:flatTripleStream skos:relatedMatch void:Dataset .
+
+# Alignment with the LDES vocabulary
+# The ldes:EventStream class is by definition a a collection of stream elements – sets of RDF 
+# triples. Each element is identified with its subject node. Therefore, instances of this class
+# can be annotated in RDF-STaX as RDF subject graph streams.
+# This is a (loosely) related match, as term in LDES is a class, and not an instance.
+stax:subjectGraphStream skos:relatedMatch ldes:EventStream .
