@@ -18,7 +18,7 @@ _:usage a stax:RdfStreamTypeUsage ;
 
 It is recommended (but not required) to have one `#!turtle stax:RdfStreamTypeUsage` instance per annotated resource and per RDF stream type. This makes it easier to find all the annotations for a given resource or stream type.
 
-You can also make the statement in reverse, by annotating the resource itself. This can be especially useful when annotating RDF streams on the Web or in a dataset. The following three examples illustrate combining RDF-STaX with other vocabularies for describing datasets and streams ([VoCaLS](http://w3id.org/rsp/vocals), [VoID](https://www.w3.org/TR/void/), [DCAT](https://www.w3.org/TR/vocab-dcat-3/)).
+You can also make the statement in reverse, by annotating the resource itself. This can be especially useful when annotating RDF streams on the Web or in a dataset. The following three examples illustrate combining RDF-STaX with other vocabularies for describing datasets and streams ([VoCaLS](http://w3id.org/rsp/vocals), [VoID](https://www.w3.org/TR/void/), [DCAT](https://www.w3.org/TR/vocab-dcat-3/), [LDES](https://w3id.org/ldes/specification)). RDF-STaX here plays the role of a **bridge between the different ontologies**, providing a way to describe stream types in a universal manner.
 
 ??? example "Example: VoCaLS `RDFStream` (click to expand)"
 
@@ -35,6 +35,8 @@ You can also make the statement in reverse, by annotating the resource itself. T
             stax:hasStreamType stax:graphStream
         ] .
     ```
+
+    VoCaLS defines `#!turtle vocals:RDFStream` as "a stream composed of RDF data elements, i.e. RDF graphs and/or triples". Therefore, RDF-STaX's [RDF graph stream](https://w3id.org/stax/dev/taxonomy/#rdf-graph-stream) type appears to be the most appropriate.
 
 
 ??? example "Example: VoID `Dataset` (click to expand)"
@@ -77,6 +79,25 @@ You can also make the statement in reverse, by annotating the resource itself. T
     ```
 
     Of course, annotating the dataset itself also makes sense, if you want to make a statement about the dataset as a whole.
+
+    In DCAT, all RDF stream types from RDF-STaX are applicable, depending on the content of the dataset.
+
+
+??? example "Example: LDES `EventStream` (click to expand)"
+
+    In [Linked Data Event Streams](https://w3id.org/ldes/specification) (LDES) the `#!turtle ldes:EventStream` is a collection of stream elements – sets of RDF triples. Each element is identified with its subject node. Therefore, instances of this class can be annotated in RDF-STaX as an [RDF subject graph stream](https://w3id.org/stax/dev/taxonomy/#rdf-subject-graph-stream).
+
+    ```turtle
+    @prefix ldes: <https://w3id.org/ldes/specification#> .
+    @prefix stax: <https://w3id.org/stax/ontology#> .
+
+    _:stream a ldes:EventStream ;
+        # ... other properties of the stream ...
+        stax:hasStreamTypeUsage [
+            a stax:RdfStreamTypeUsage ;
+            stax:hasStreamType stax:subjectGraphStream
+        ] .
+    ```
 
 
 ### Adding more information
