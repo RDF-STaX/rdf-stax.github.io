@@ -36,7 +36,7 @@ You can also make the statement in reverse, by annotating the resource itself. T
         ] .
     ```
 
-    VoCaLS defines `#!turtle vocals:RDFStream` as "a stream composed of RDF data elements, i.e. RDF graphs and/or triples". Therefore, RDF-STaX's [RDF graph stream](https://w3id.org/stax/dev/taxonomy/#rdf-graph-stream) type appears to be the most appropriate.
+    VoCaLS defines `#!turtle vocals:RDFStream` as "a stream composed of RDF data elements, i.e. RDF graphs and/or triples". Instances of this class can be thus annotated as [RDF graph stream](taxonomy.md#rdf-graph-stream) or [flat RDF triple streams](taxonomy.md#flat-rdf-triple-stream).
 
 
 ??? example "Example: VoID `Dataset` (click to expand)"
@@ -55,7 +55,7 @@ You can also make the statement in reverse, by annotating the resource itself. T
         ] .
     ```
 
-    In VoID, `#!turtle void:Dataset` refers to a set of triples, which can be viewed as a flat RDF triple stream.
+    In VoID, `#!turtle void:Dataset` refers to a set of triples, which can be viewed as a [flat RDF triple stream](taxonomy.md#flat-rdf-triple-stream).
 
 
 ??? example "Example: DCAT `Distribution` (click to expand)"
@@ -85,7 +85,7 @@ You can also make the statement in reverse, by annotating the resource itself. T
 
 ??? example "Example: LDES `EventStream` (click to expand)"
 
-    In [Linked Data Event Streams](https://w3id.org/ldes/specification) (LDES) the `#!turtle ldes:EventStream` is a collection of stream elements – sets of RDF triples. Each element is identified with its subject node. Therefore, instances of this class can be annotated in RDF-STaX as an [RDF subject graph stream](https://w3id.org/stax/dev/taxonomy/#rdf-subject-graph-stream).
+    In [Linked Data Event Streams](https://w3id.org/ldes/specification) (LDES) the `#!turtle ldes:EventStream` is a collection of stream elements – sets of RDF triples. Each element is identified with its subject node. Therefore, instances of this class can be annotated in RDF-STaX as [RDF subject graph streams](taxonomy.md#rdf-subject-graph-stream).
 
     ```turtle
     @prefix ldes: <https://w3id.org/ldes/specification#> .
