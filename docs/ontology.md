@@ -53,6 +53,16 @@ Released versions of the ontology are available in the JSON-LD, N-Triples, RDF/X
 
 Each RDF-STaX release is archived in Zenodo under this DOI: [10.5281/zenodo.10072907](https://zenodo.org/doi/10.5281/zenodo.10072907).
 
+### Ontology repositories
+
+The RDF-STaX ontology is registered in the following ontology repositories:
+
+- [Linked Open Vocabularies (LOV)](https://lov.linkeddata.es/dataset/lov/vocabs/stax)
+- [DBpedia Archivo](https://archivo.dbpedia.org/info?o=https://w3id.org/stax/ontology)
+- Additionally, the ontology prefix is registered in [prefix.cc](https://prefix.cc/stax).
+
+These repositories provide visibility to RDF-STaX and help ensure its long-term availability.
+
 ## See also
 
 - **[How to use it?](use-it.md)**
