@@ -17,10 +17,12 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          path: stax
 
       - name: Validate ontology's OWL 2 DL profile
         run: |
-          java -jar /app/robot.jar validate-profile --input src/stax.ttl --profile DL --output dl-validation.txt
+          java -jar /app/robot.jar validate-profile --input stax/src/stax.ttl --profile DL --output dl-validation.txt
           cat dl-validation.txt
 
       - name: Package ontology for OWL 2 Full validation
