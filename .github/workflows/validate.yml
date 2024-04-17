@@ -10,7 +10,7 @@ on:
 
 jobs:
   validate:
-    name: Validate ontology
+    name: Validate ontology profile
     runs-on: ubuntu-latest
     container: ghcr.io/rdf-stax/ci-worker:main
 
@@ -18,10 +18,20 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Validate ontology's profile
+      - name: Validate ontology's OWL 2 DL profile
         run: |
           java -jar /app/robot.jar validate-profile --input src/stax.ttl --profile DL --output dl-validation.txt
           cat dl-validation.txt
+
+      - name: Package ontology for OWL 2 Full validation
+        run: |
+          mkdir output
+          python /app/tasks/package.py stax/src output dev
+
+      - name: Validate ontology's OWL 2 Full profile
+        run: |
+          java -jar /app/robot.jar validate-profile --input output/stax.ttl --profile Full --output full-validation.txt
+          cat full-validation.txt
 
   test-cq:
     name: Run competency question tests
