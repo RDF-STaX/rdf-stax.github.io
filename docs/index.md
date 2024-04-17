@@ -6,6 +6,8 @@
 
 RDF-STaX is modeled as an [OWL 2 DL ontology](ontology.md), using [SKOS](https://www.w3.org/TR/skos-reference/) to define the taxonomical structure.
 
+**Ontology IRI:** [`https://w3id.org/stax/ontology`](https://w3id.org/stax/ontology)
+
 ## Getting started
 
 Have a look at the **[taxonomy overview](taxonomy.md)** to get an idea of the different types of RDF streams that are defined in RDF-STaX. You can also see the **[ontology documentation](ontology.md)** for a more detailed description of the ontology.
