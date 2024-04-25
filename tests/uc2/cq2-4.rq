@@ -5,5 +5,5 @@ SELECT * WHERE {
     ?baseStreamType a stax:ConcreteRdfStreamType ;
         # No need for using a "skos:broader*/" path here, as the reasoner will infer 
         # the needed stax:canBeGroupedInto statements automatically.
-  		stax:canBeGroupedInto ?groupedStreamType .
+        stax:canBeGroupedInto ?groupedStreamType .
 }
