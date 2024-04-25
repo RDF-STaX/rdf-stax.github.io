@@ -20,7 +20,7 @@
       
       
       <link rel="icon" href="../../assets/logo_color.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.18">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.19">
     
     
       
@@ -905,7 +905,7 @@
 
 
 <h1 id="competency-question-tests">Competency question tests</h1>
-<p>The following competency question tests are based on the use cases of RDF-STaX. The tests are implemented as SPARQL queries and are used in Continuous Integration (CI) to test the RDF-STaX ontology whenever any change to it is made. The following list is generated automatically based on the tests <a href="https://github.com/RDF-STaX/rdf-stax.github.io/tree/main/tests">defined in the main RDF-STaX repository</a>.</p>
+<p>The following competency question tests are based on the use cases of RDF-STaX. The tests are implemented as SPARQL queries and are used in Continuous Integration (CI) to test the RDF-STaX ontology whenever any change to it is made. The following list is generated automatically based on the tests <a href="https://github.com/RDF-STaX/rdf-stax.github.io/tree/main/tests">defined in the main RDF-STaX repository</a>. The tests are run on the OWL 2 Full version of the ontology, which includes all metadata and alignments to external ontologies.</p>
 <p>These tests can also be used as examples of what can be done with the RDF-STaX ontology.</p>
 <p>The documentation for creating new tests is available <a href="../../contributing/#competency-question-tests">here</a>.</p>
 <h2 id="use-case-1">Use case 1</h2>
@@ -988,7 +988,7 @@
 </span></code></pre></div>
 </details>
 <h2 id="use-case-2">Use case 2</h2>
-<p><strong>Embedding metadata in RDF streams.</strong> This use case is similar to use case 1, but more focused on embedding the stream type metadata <em>within</em> the stream itself, with the goal of enabling streaming tool interoperability. For example, a consumer of the stream can check the type of the stream and decide whether it can consume it or not (and if any additional conversions are required).</p>
+<p><strong>Embedding metadata in RDF streams.</strong> This use case is focused on stream type metadata, with the goal of enabling streaming tool interoperability. For example, a consumer of the stream can check the type of the stream and decide whether it can consume it or not (and if any additional conversions are required).</p>
 <h3 id="test-cq21-definition">Test CQ2.1 (<a href="https://github.com/RDF-STaX/rdf-stax.github.io/blob/main/tests/uc2/cq2-1.yaml">definition</a>)</h3>
 <p><strong>Question:</strong> Which concrete stream types can be viewed as generalizations of other stream types?</p>
 <p><strong>Expectation:</strong> there are 4 query results</p>
@@ -1013,13 +1013,15 @@
 </span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>
 </span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="k">SELECT</span> <span class="o">*</span> <span class="k">WHERE</span> <span class="p">{</span>
 </span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>    <span class="nv">?baseStreamType</span> <span class="k">a</span> <span class="nn">stax</span><span class="p">:</span><span class="nt">ConcreteRdfStreamType</span> <span class="p">;</span>
-</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>        <span class="nn">skos</span><span class="p">:</span><span class="nt">broader</span><span class="o">*/</span><span class="nn">stax</span><span class="p">:</span><span class="nt">canBeTriviallyExtendedInto</span> <span class="nv">?extendedStreamType</span> <span class="p">.</span>
-</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="p">}</span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>        <span class="c"># No need for using a &quot;skos:broader*/&quot; path here, as the reasoner will infer </span>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>        <span class="c"># the needed stax:canBeTriviallyExtendedInto statements automatically.</span>
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>        <span class="nn">stax</span><span class="p">:</span><span class="nt">canBeTriviallyExtendedInto</span> <span class="nv">?extendedStreamType</span> <span class="p">.</span>
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="p">}</span>
 </span></code></pre></div>
 </details>
 <h3 id="test-cq23-definition">Test CQ2.3 (<a href="https://github.com/RDF-STaX/rdf-stax.github.io/blob/main/tests/uc2/cq2-3.yaml">definition</a>)</h3>
 <p><strong>Question:</strong> Which concrete stream types can be flattened into other stream types?</p>
-<p><strong>Expectation:</strong> there are 9 query results</p>
+<p><strong>Expectation:</strong> there are 5 query results</p>
 <details class="example">
 <summary>SPARQL query of the test</summary>
 <div class="language-sparql highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="k">PREFIX</span> <span class="nn">skos</span><span class="p">:</span> <span class="nl">&lt;http://www.w3.org/2004/02/skos/core#&gt;</span>
@@ -1027,8 +1029,10 @@
 </span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>
 </span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="k">SELECT</span> <span class="o">*</span> <span class="k">WHERE</span> <span class="p">{</span>
 </span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>    <span class="nv">?baseStreamType</span> <span class="k">a</span> <span class="nn">stax</span><span class="p">:</span><span class="nt">ConcreteRdfStreamType</span> <span class="p">;</span>
-</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>        <span class="nn">skos</span><span class="p">:</span><span class="nt">broader</span><span class="o">*/</span><span class="nn">stax</span><span class="p">:</span><span class="nt">canBeFlattenedInto</span> <span class="nv">?flattenedStreamType</span> <span class="p">.</span>
-</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="p">}</span>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>        <span class="c"># No need for using a &quot;skos:broader*/&quot; path here, as the reasoner will infer </span>
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>        <span class="c"># the needed stax:canBeFlattenedInto statements automatically.</span>
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>        <span class="nn">stax</span><span class="p">:</span><span class="nt">canBeFlattenedInto</span> <span class="nv">?flattenedStreamType</span> <span class="p">.</span>
+</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="p">}</span>
 </span></code></pre></div>
 </details>
 <h3 id="test-cq24-definition">Test CQ2.4 (<a href="https://github.com/RDF-STaX/rdf-stax.github.io/blob/main/tests/uc2/cq2-4.yaml">definition</a>)</h3>
@@ -1041,8 +1045,10 @@
 </span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>
 </span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="k">SELECT</span> <span class="o">*</span> <span class="k">WHERE</span> <span class="p">{</span>
 </span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>    <span class="nv">?baseStreamType</span> <span class="k">a</span> <span class="nn">stax</span><span class="p">:</span><span class="nt">ConcreteRdfStreamType</span> <span class="p">;</span>
-</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>        <span class="nn">skos</span><span class="p">:</span><span class="nt">broader</span><span class="o">*/</span><span class="nn">stax</span><span class="p">:</span><span class="nt">canBeGroupedInto</span> <span class="nv">?groupedStreamType</span> <span class="p">.</span>
-</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="p">}</span>
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>        <span class="c"># No need for using a &quot;skos:broader*/&quot; path here, as the reasoner will infer </span>
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>        <span class="c"># the needed stax:canBeGroupedInto statements automatically.</span>
+</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>        <span class="nn">stax</span><span class="p">:</span><span class="nt">canBeGroupedInto</span> <span class="nv">?groupedStreamType</span> <span class="p">.</span>
+</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="p">}</span>
 </span></code></pre></div>
 </details>
 <h2 id="use-case-3">Use case 3</h2>
@@ -1184,7 +1190,7 @@
     <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.tracking", "navigation.top", "navigation.indexes", "toc.follow", "search.suggest", "search.highlight", "content.code.copy", "content.action.edit"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"default": ["latest", "stable"], "provider": "mike"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.3220b9d7.min.js"></script>
+      <script src="../../assets/javascripts/bundle.dd8806f2.min.js"></script>
       
         <script src="../../javascripts/mathjax.js"></script>
       
