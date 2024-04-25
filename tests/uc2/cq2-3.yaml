@@ -3,4 +3,4 @@ useCase: 2
 testNumber: 3
 text: Which concrete stream types can be flattened into other stream types?
 expectation:
-  resultsCount: 9
+  resultsCount: 5

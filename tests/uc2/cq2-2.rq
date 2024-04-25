@@ -3,5 +3,7 @@ PREFIX stax: <https://w3id.org/stax/ontology#>
 
 SELECT * WHERE {
     ?baseStreamType a stax:ConcreteRdfStreamType ;
-  		skos:broader*/stax:canBeTriviallyExtendedInto ?extendedStreamType .
+        # No need for using a "skos:broader*/" path here, as the reasoner will infer 
+        # the needed stax:canBeTriviallyExtendedInto statements automatically.
+        stax:canBeTriviallyExtendedInto ?extendedStreamType .
 }
