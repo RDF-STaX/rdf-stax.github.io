@@ -29,7 +29,7 @@ jobs:
           mkdir cache
 
       - name: Restore nanopub cache
-        uses: actions/cache/restore@v3
+        uses: actions/cache/restore@v4
         with:
           path: cache
           key: nanopubs-
@@ -39,13 +39,13 @@ jobs:
         run: python /app/tasks/nanopub_fetch.py cache output dev
 
       - name: Save nanopub cache
-        uses: actions/cache/save@v3
+        uses: actions/cache/save@v4
         with:
           path: cache
           key: nanopubs-${{ hashFiles('cache/*') }}
 
       - name: Upload files for the release
-        uses: ncipollo/release-action@v1.13.0
+        uses: ncipollo/release-action@v1.14.0
         with:
           allowUpdates: true
           prerelease: true
