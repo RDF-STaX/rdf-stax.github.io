@@ -1,0 +1,1494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>RDF Stream Taxonomy</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAC40lEQVRYhe2UT0hUQRzHp6Iss1B3VZKIDbbdfW9mnoi4f3zzjkJQeOgS0SEIb1EWBGGlLLu460zQPQM1unUIIjA6rfpm6ZAhHjoIRVQUFUlEbG+euTsdXG1d3VL3bVD4g+9h+L35fT/8fvN7ADgY9aHY5fpIvK82HO9ysu66wxWOzbkjcekKx0a2ALYA/n2AGi3a6ArFezcidziecQygNhhrcUficjP6PwBqtGijKxy/thnVBePHywYoDsFhl53GV8SEcsTx4usCMLUewTVpc23BNvEzm6Neyf1+KcG2vwqwUjgrOJq2JmHftwmkVBRGTvncFodnbI7vChO/FRznCmHsNM7aHM9Yk7Df5iqsLMw9sMNOK2g+jS4IEz0UJv4iuJZb2RltWnB4UZqH6ioGAgAAGe5vtiZhtzDx7OoRadLmeM7m6IRjhnLMW2Vx1bA5GhAmnhIcz6/xNj4Ujsky8UspwfayjDPjsF2Y6L7N8Vzx/BfP+KPg6LbgSqd8DnfJW2CnbaLhfH5ephpqygJYvQU4Z3P82TLRsDDhUTnmrSq+Y3N0Mg+Xldy/zwEAnLMWZ3pHpNExmfLs/t0dOdVcbT0JeKxUwFP2VljjqiE47Jp53LTXNxhsUZjerTByXWX6VZWRs/4bIQ2ACv+UAomgDzLCISNZxAxZKMhIDjLy1JfsaK+I+eGBUBNk5E2x8RogX/PdcDZUqieWTSh5D6nOVKqfhoycUmlHFFIyu5RXqf7AcQDISCpv/tqbMBqK883RtmpISRoxQyJKPgGn3wNk5NEigDFa6hslqV/Kj+FdBQD0bshIDlKSLlVcoWQo36UhR80BAMB73lulMn0EMpJTqD6qJiOt3mho/8GbkT2BZNgDB/V+RI0fkOrT3kRIVQbaDizJm2hdNbINBxwk5xAj3yEjuV9rZ1iIkgxixkLBA83mz8uCjLwoGwAx0vOnFSy5mtR4VTaAQvVORMnwZgSpzkrV/QmdE2tKe46+MQAAAABJRU5ErkJggg==">
+    <link rel="icon" type="image/png" sizes="16x16" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABhklEQVQ4jbWPzStEURjG3yQLirlGKUnKFO45Z+SjmXvnnmthQcpCoVhYmD/AwmJiI3OvZuZc2U3UlKU0/gAslMw9JgvhHxAr2fko7r0jHSsl+TgbTz2Lt5731/MASEiJW9ONml2QyX6rsGalmnT74v8BDf12hxJfpV8d1uwNKUBYszabdFv84L8B9X0rESVmmUup2fme0cVhJWaZHw4NWL1Sew
+EAfDe6H3Dy6Ll456WEJsRZS630MwCAOI20ei5OBpxse5zcBZw8eS4uPpfIuDiCainIg9umBCU0GZzgLZ9Hn31OgoATL+CkLDGB5H1OKj4nFd/FBxUXJ0UZNb4edw/6nLyJXaj5FeCVyPLNIVmYK8TG1IwWb16L1gEACAFV90ftoT8bdOX0EeyY99gxBXZMgRz6qGb1KantAACI0UvE6F5XJqEjpsdURouI0Vt5gGOUkUNnPu7ObGIIMfNaGqDmjDRi9FZldF1lRgYzeqUyeoiY4ag5Iy3RgOYRM8+/M2bG8efsO4hGrpmJseyMAAAAAElFTkSuQmCC">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    
+    <style>/* Replacement styles for PyLODE docs so that they look good in mkdocs pages */
+
+#pylode a {
+    font-size: 1.8em;
+    font-weight: bold;
+    text-decoration: none;
+    color: #005A9C;
+}
+
+#pylode a:hover {
+    color: #333;
+}
+
+.cardinality {
+    font-style: italic;
+    color: #aa00aa;
+}
+
+dt {
+    font-weight: bold;
+    padding: 5px 0 5px 0;
+}
+
+ul.hlist {
+    list-style-type: none;
+    border: 1px solid var(--md-typeset-kbd-border-color);
+    padding: 5px;
+    margin-left: 0 !important;
+}
+
+ul.hierarchy {
+    border: 1px solid var(--md-typeset-kbd-border-color);
+    padding: 5px 25px 5px 25px;
+}
+
+
+ul.hlist li {
+    display: inline;
+    margin-right: 10px !important;
+    margin-left: 0 !important;
+}
+
+.entity {
+    border: 1px solid var(--md-typeset-kbd-border-color);
+    margin: 5px 0;
+    padding: 5px;
+}
+
+@media screen and (max-width: 600px) {
+    .entity {
+        margin: 5px -10px;
+    }
+
+    .entity > h3 {
+        margin-bottom: 1em;
+    }
+
+    .entity table th, .entity table td {
+        padding: 0.5em 0.35em !important;
+        min-width: unset !important;
+        width: unset !important;
+    }
+
+    .entity table a {
+        word-break: break-word !important;
+    }
+
+    ul.hlist {
+        margin-left: -10px !important;
+        margin-right: -10px;
+    }
+}
+
+.entity th {
+    width: 150px;
+    vertical-align: top;
+}
+
+.entity th,
+.entity td {
+    padding-bottom: 20px;
+}
+
+.entity table th {
+    text-align: left;
+}
+
+section#overview img {
+    width: 100%;
+    margin: auto;
+    max-width: 550px;
+    display: block;
+}
+
+dd {
+    margin-top: 0 !important;
+    margin-bottom: 0.7em !important;
+}
+
+h3 {
+    margin-top: 3px !important;
+    padding-bottom: 5px;
+    border-bottom: 1px solid var(--md-primary-fg-color--light);
+}
+
+h4 {
+    font: bold 100% sans-serif
+}
+
+h5 {
+    font: italic 100% sans-serif
+}
+
+h6 {
+    font: small-caps 100% sans-serif
+}
+
+.figure {
+    margin-bottom: 20px;
+}
+
+.sup-c,
+.sup-op,
+.sup-fp,
+.sup-dp,
+.sup-ap,
+.sup-p,
+.sup-ni,
+.sup-con,
+.sup-col {
+    cursor: help;
+    margin-left: 3px;
+}
+
+.sup-c {
+    color: orange;
+}
+
+.sup-op {
+    color: navy;
+}
+
+.sup-fp {
+    color: lightskyblue;
+}
+
+.sup-dp {
+    color: green;
+}
+
+.sup-ap {
+    color: darkred;
+}
+
+.sup-p {
+    color: black;
+}
+
+.sup-ni {
+    color: brown;
+}
+
+.sup-con {
+    color: orange;
+}
+
+.sup-col {
+    color: darkred;
+}
+
+code {
+    font-size: large;
+    color: darkred;
+}
+
+/* less prominent links for properties */
+.proplink {
+    color: #336;
+    text-decoration: none;
+}
+</style>
+    
+    <script type="application/ld+json">
+      [
+  {
+    "@id": "https://w3id.org/stax/ontology",
+    "@type": [
+      "https://schema.org/DefinedTermSet"
+    ],
+    "https://schema.org/description": [
+      {
+        "@value": "<p>RDF-STaX is an OWL 2 DL ontology that enables describing the types of RDF streams and defines relations between them.</p>"
+      }
+    ],
+    "https://schema.org/license": [
+      {
+        "@id": "https://spdx.org/licenses/CC-BY-4.0"
+      }
+    ],
+    "https://schema.org/name": [
+      {
+        "@value": "RDF Stream Taxonomy"
+      }
+    ]
+  }
+]
+    </script>
+</head>
+<body>
+  <div id="pylode">made by <a href="http://github.com/rdflib/pyLODE">
+    <span style="color:#329545;">p</span><span style="color:#f9cb33;">y</span>LODE</a>
+    <span style="font-size:smaller;">2.13.2</span>
+  </div>
+  
+<section id="metadata">
+    <h2 style="display:none;">Metadata</h2>
+    <dl>
+        <dt>URI</dt>
+        <dd><code>https://w3id.org/stax/ontology</code></dd>
+        <dt><a class="proplink" href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/publisher">Publisher</a>(s)</dt>
+        <dd>
+            
+    <a href="https://orcid.org/0000-0002-2543-9461">0000-0002-2543-9461</a>
+    <a href="">
+  <svg width="15px" height="15px" viewBox="0 0 72 72" version="1.1"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Orcid logo</title>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="hero" transform="translate(-924.000000, -72.000000)" fill-rule="nonzero">
+            <g id="Group-4">
+                <g id="vector_iD_icon" transform="translate(924.000000, 72.000000)">
+                    <path d="M72,36 C72,55.884375 55.884375,72 36,72 C16.115625,72 0,55.884375 0,36 C0,16.115625 16.115625,0 36,0 C55.884375,0 72,16.115625 72,36 Z" id="Path" fill="#A6CE39"></path>
+                    <g id="Group" transform="translate(18.868966, 12.910345)" fill="#FFFFFF">
+                        <polygon id="Path" points="5.03734929 39.1250878 0.695429861 39.1250878 0.695429861 9.14431787 5.03734929 9.14431787 5.03734929 22.6930505 5.03734929 39.1250878"></polygon>
+                        <path d="M11.409257,9.14431787 L23.1380784,9.14431787 C34.303014,9.14431787 39.2088191,17.0664074 39.2088191,24.1486995 C39.2088191,31.846843 33.1470485,39.1530811 23.1944669,39.1530811 L11.409257,39.1530811 L11.409257,9.14431787 Z M15.7511765,35.2620194 L22.6587756,35.2620194 C32.49858,35.2620194 34.7541226,27.8438084 34.7541226,24.1486995 C34.7541226,18.1301509 30.8915059,13.0353795 22.4332213,13.0353795 L15.7511765,13.0353795 L15.7511765,35.2620194 Z" id="Shape"></path>
+                        <path d="M5.71401206,2.90182329 C5.71401206,4.441452 4.44526937,5.72914146 2.86638958,5.72914146 C1.28750978,5.72914146 0.0187670918,4.441452 0.0187670918,2.90182329 C0.0187670918,1.33420133 1.28750978,0.0745051096 2.86638958,0.0745051096 C4.44526937,0.0745051096 5.71401206,1.36219458 5.71401206,2.90182329 Z" id="Path"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+  </svg>
+</a><br/>
+        </dd>
+        <dt><a class="proplink" href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/creator">Creator</a>(s)</dt>
+        <dd>
+            
+    <a href="https://orcid.org/0000-0002-2543-9461">Piotr Sowiński</a>
+    <a href="">
+  <svg width="15px" height="15px" viewBox="0 0 72 72" version="1.1"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Orcid logo</title>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="hero" transform="translate(-924.000000, -72.000000)" fill-rule="nonzero">
+            <g id="Group-4">
+                <g id="vector_iD_icon" transform="translate(924.000000, 72.000000)">
+                    <path d="M72,36 C72,55.884375 55.884375,72 36,72 C16.115625,72 0,55.884375 0,36 C0,16.115625 16.115625,0 36,0 C55.884375,0 72,16.115625 72,36 Z" id="Path" fill="#A6CE39"></path>
+                    <g id="Group" transform="translate(18.868966, 12.910345)" fill="#FFFFFF">
+                        <polygon id="Path" points="5.03734929 39.1250878 0.695429861 39.1250878 0.695429861 9.14431787 5.03734929 9.14431787 5.03734929 22.6930505 5.03734929 39.1250878"></polygon>
+                        <path d="M11.409257,9.14431787 L23.1380784,9.14431787 C34.303014,9.14431787 39.2088191,17.0664074 39.2088191,24.1486995 C39.2088191,31.846843 33.1470485,39.1530811 23.1944669,39.1530811 L11.409257,39.1530811 L11.409257,9.14431787 Z M15.7511765,35.2620194 L22.6587756,35.2620194 C32.49858,35.2620194 34.7541226,27.8438084 34.7541226,24.1486995 C34.7541226,18.1301509 30.8915059,13.0353795 22.4332213,13.0353795 L15.7511765,13.0353795 L15.7511765,35.2620194 Z" id="Shape"></path>
+                        <path d="M5.71401206,2.90182329 C5.71401206,4.441452 4.44526937,5.72914146 2.86638958,5.72914146 C1.28750978,5.72914146 0.0187670918,4.441452 0.0187670918,2.90182329 C0.0187670918,1.33420133 1.28750978,0.0745051096 2.86638958,0.0745051096 C4.44526937,0.0745051096 5.71401206,1.36219458 5.71401206,2.90182329 Z" id="Path"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+  </svg>
+</a><br/>
+        </dd>
+        <dt><a class="proplink" href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/contributor">Contributor</a>(s)</dt>
+        <dd>
+            
+    <a href="https://orcid.org/0000-0003-0869-3836">Paweł Szmeja</a>
+    <a href="">
+  <svg width="15px" height="15px" viewBox="0 0 72 72" version="1.1"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Orcid logo</title>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="hero" transform="translate(-924.000000, -72.000000)" fill-rule="nonzero">
+            <g id="Group-4">
+                <g id="vector_iD_icon" transform="translate(924.000000, 72.000000)">
+                    <path d="M72,36 C72,55.884375 55.884375,72 36,72 C16.115625,72 0,55.884375 0,36 C0,16.115625 16.115625,0 36,0 C55.884375,0 72,16.115625 72,36 Z" id="Path" fill="#A6CE39"></path>
+                    <g id="Group" transform="translate(18.868966, 12.910345)" fill="#FFFFFF">
+                        <polygon id="Path" points="5.03734929 39.1250878 0.695429861 39.1250878 0.695429861 9.14431787 5.03734929 9.14431787 5.03734929 22.6930505 5.03734929 39.1250878"></polygon>
+                        <path d="M11.409257,9.14431787 L23.1380784,9.14431787 C34.303014,9.14431787 39.2088191,17.0664074 39.2088191,24.1486995 C39.2088191,31.846843 33.1470485,39.1530811 23.1944669,39.1530811 L11.409257,39.1530811 L11.409257,9.14431787 Z M15.7511765,35.2620194 L22.6587756,35.2620194 C32.49858,35.2620194 34.7541226,27.8438084 34.7541226,24.1486995 C34.7541226,18.1301509 30.8915059,13.0353795 22.4332213,13.0353795 L15.7511765,13.0353795 L15.7511765,35.2620194 Z" id="Shape"></path>
+                        <path d="M5.71401206,2.90182329 C5.71401206,4.441452 4.44526937,5.72914146 2.86638958,5.72914146 C1.28750978,5.72914146 0.0187670918,4.441452 0.0187670918,2.90182329 C0.0187670918,1.33420133 1.28750978,0.0745051096 2.86638958,0.0745051096 C4.44526937,0.0745051096 5.71401206,1.36219458 5.71401206,2.90182329 Z" id="Path"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+  </svg>
+</a><br/>
+        </dd>
+        <dt><a class="proplink" href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/created">Created</a></dt>
+        <dd>2023-10-22T00:00:00</dd>
+        <dt><a class="proplink" href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/modified">Modified</a></dt>
+        <dd>2024-05-08T09:49:47</dd>
+        <dt><a class="proplink" href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/issued">Issued</a></dt>
+        <dd>2023-10-23T00:00:00</dd>
+        <dt>Version Information</dt>
+        <dd>1.1.0</dd>
+        <dt>Version URI</dt>
+        <dd><a href="https://w3id.org/stax/1.1.0/ontology">https://w3id.org/stax/1.1.0/ontology</a></dd>
+        <dt>Imports</dt>
+        <dd>
+            <a href="http://www.w3.org/TR/skos-reference/skos-owl1-dl.rdf">http://www.w3.org/TR/skos-reference/skos-owl1-dl.rdf</a><br/>
+        </dd>
+        <dt>License</dt>
+        <dd><a href="https://spdx.org/licenses/CC-BY-4.0">https://spdx.org/licenses/CC-BY-4.0</a></dd>
+        <dt>Source</dt>
+        <dd><a href="https://github.com/RDF-STaX/rdf-stax.github.io/tree/v1.1.0">https://github.com/RDF-STaX/rdf-stax.github.io/tree/v1.1.0</a></dd>
+        
+    </dl>
+    <h2>Description</h2>
+    <div id="description">
+        <p>RDF-STaX is an OWL 2 DL ontology that enables describing the types of RDF streams and defines relations between them.</p>
+    </div>
+</section>
+<section id="toc">
+    <h2>Table of Contents</h2>
+    <ol>
+        <li><a href="#classes">Classes</a></li>
+        <li><a href="#objectproperties">Object Properties</a></li>
+        <li><a href="#annotationproperties">Annotation Properties</a></li>
+        <li><a href="#namedindividuals">Named Individuals</a></li>
+        <li><a href="#namespaces">Namespaces</a></li>
+        <li><a href="#legend">Legend</a></li>
+    </ol>
+</section>
+<section id="overview">
+    <h2>Overview</h2>
+    <div class="figure">
+        <img src="/1.1.0/assets/ontology.png" alt="Ontology diagram" >
+        <div class="caption"><strong>Figure 1:</strong> Ontology overview</div>
+    </div>
+</section>
+  <section id="classes">
+    <h2>Classes <span style="float:right; font-size:smaller;"><a href="">&uparrow;</a></span></h2>
+    <ul class="hlist">
+      <li><a href="#AbstractRDFstreamtype">Abstract RDF stream type</a></li>
+      <li><a href="#ConcreteRDFstreamtype">Concrete RDF stream type</a></li>
+      <li><a href="#RDFelementtype">RDF element type</a></li>
+      <li><a href="#RDFstreamtype">RDF stream type</a></li>
+      <li><a href="#RDFstreamtypeusage">RDF stream type usage</a></li>
+    </ul>
+    <div class="entity class" id="AbstractRDFstreamtype">
+        <h3>
+          Abstract RDF stream type<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#AbstractRDFstreamtype" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/stax/ontology#AbstractRdfStreamType</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>Class for abstract RDF stream types in the taxonomy. Instances of this class have abstract definitions, i.e., they cannot be used to annotate real streams. They are only intended to be used for reasoning about stream types.</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="#RDFstreamtype">RDF stream type</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Members</th>
+                <td>
+                    <a href="https://w3id.org/stax/ontology#flatStream">stax:flatStream</a><br/>
+                    <a href="https://w3id.org/stax/ontology#rdfStream">stax:rdfStream</a><br/>
+                    <a href="https://w3id.org/stax/ontology#groupedStream">stax:groupedStream</a><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="ConcreteRDFstreamtype">
+        <h3>
+          Concrete RDF stream type<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#ConcreteRDFstreamtype" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/stax/ontology#ConcreteRdfStreamType</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>Class for the concrete RDF stream types in the taxonomy. Instances of this class have concrete definitions, and they can be used to annotate real streams.</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="#RDFstreamtype">RDF stream type</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Restrictions</th>
+                <td>
+                    <a href="#haselementtype">has element type</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">some</span> <a href="#RDFelementtype">RDF element type</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#haselementtype">has element type</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">only</span> <a href="#RDFelementtype">RDF element type</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In domain of</th>
+                <td>
+                    <a href="#isinstreamtypesemanticrelationwith">is in stream type semantic relation with</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#canbegroupedinto">can be grouped into</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#haselementtype">has element type</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#canbetriviallyextendedinto">can be trivially extended into</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#canbeflattenedinto">can be flattened into</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In range of</th>
+                <td>
+                    <a href="#canbetriviallyextendedinto">can be trivially extended into</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hasstreamtype">has stream type</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#isinstreamtypesemanticrelationwith">is in stream type semantic relation with</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#canbeflattenedinto">can be flattened into</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#canbegroupedinto">can be grouped into</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Members</th>
+                <td>
+                    <a href="https://w3id.org/stax/ontology#namedGraphStream">stax:namedGraphStream</a><br/>
+                    <a href="https://w3id.org/stax/ontology#flatTripleStream">stax:flatTripleStream</a><br/>
+                    <a href="https://w3id.org/stax/ontology#flatQuadStream">stax:flatQuadStream</a><br/>
+                    <a href="https://w3id.org/stax/ontology#subjectGraphStream">stax:subjectGraphStream</a><br/>
+                    <a href="https://w3id.org/stax/ontology#timestampedNamedGraphStream">stax:timestampedNamedGraphStream</a><br/>
+                    <a href="https://w3id.org/stax/ontology#datasetStream">stax:datasetStream</a><br/>
+                    <a href="https://w3id.org/stax/ontology#graphStream">stax:graphStream</a><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="RDFelementtype">
+        <h3>
+          RDF element type<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#RDFelementtype" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/stax/ontology#RdfElementType</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>Class for base types of elements in RDF streams. There are four instances of this class (triple, quad, graph, dataset) and they should not be further specialized. The instances of this class do NOT form a taxonomical structure.</p>
+                </td>
+            </tr>
+            <tr>
+                <th>In range of</th>
+                <td>
+                    <a href="#haselementtype">has element type</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Members</th>
+                <td>
+                    <a href="https://w3id.org/stax/ontology#dataset">stax:dataset</a><br/>
+                    <a href="https://w3id.org/stax/ontology#graph">stax:graph</a><br/>
+                    <a href="https://w3id.org/stax/ontology#triple">stax:triple</a><br/>
+                    <a href="https://w3id.org/stax/ontology#quad">stax:quad</a><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="RDFstreamtype">
+        <h3>
+          RDF stream type<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#RDFstreamtype" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/stax/ontology#RdfStreamType</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>Base class for RDF stream types. This class should not be used directly – use instead either stax:AbstractRdfStreamType or stax:ConcreteRdfStreamType.</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Sub-classes</th>
+                <td>
+                    <a href="#AbstractRDFstreamtype">Abstract RDF stream type</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#ConcreteRDFstreamtype">Concrete RDF stream type</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="RDFstreamtypeusage">
+        <h3>
+          RDF stream type usage<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#RDFstreamtypeusage" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/stax/ontology#RdfStreamTypeUsage</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>Class for instances of using an RDF stream type, in a program, an academic paper, or elsewhere. This class is suitable for annotating both theoretical uses and practical ones, i.e., real streams or datasets.</p>
+<p>Instances of this class should have the stax:hasStreamType property pointing to a concrete stream type. The stax:usedIn property is recommended to indicate where the stream is used – alternatively you can use its inverse (stax:hasStreamTypeUsage). The use of other properties (e.g., rdfs:label, rdfs:comment) is encouraged to give more context about the usage.</p>
+<p>Note that "stream type usage" is a subjective assertion and instances of this class may be annotated with additional provenance properties to explain who made the assertion. There can be multiple views on what type of stream is in use, depending on the involved actor, processing step, etc.</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Example(s)</th>
+                <td>
+                    <a href="https://w3id.org/stax/dev/use-it/">https://w3id.org/stax/dev/use-it/</a><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Restrictions</th>
+                <td>
+                    <a href="#hasstreamtype">has stream type</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">only</span> <a href="#ConcreteRDFstreamtype">Concrete RDF stream type</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In domain of</th>
+                <td>
+                    <a href="#hasstreamtype">has stream type</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#isusageof">is usage of</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In range of</th>
+                <td>
+                    <a href="#hasstreamtypeusage">has stream type usage</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+</section>
+<section id="objectproperties">
+    <h2>Object Properties <span style="float:right; font-size:smaller;"><a href="">&uparrow;</a></span></h2>
+    <ul class="hlist">
+        <li><a href="#canbeflattenedinto">can be flattened into</a></li>
+        <li><a href="#canbegroupedinto">can be grouped into</a></li>
+        <li><a href="#canbetriviallyextendedinto">can be trivially extended into</a></li>
+        <li><a href="#haselementtype">has element type</a></li>
+        <li><a href="#hasstreamtype">has stream type</a></li>
+        <li><a href="#hasstreamtypeusage">has stream type usage</a></li>
+        <li><a href="#isusageof">is usage of</a></li>
+        <li><a href="#isinstreamtypesemanticrelationwith">is in stream type semantic relation with</a></li>
+    </ul>
+    <div class="entity property" id="canbeflattenedinto">
+        <h3>can be flattened into<sup title="object property" class="sup-op">op</sup><span style="float:right; margin-right:10px; font-size:smaller;">
+            <a href="#canbeflattenedinto" title="fragment link to here">#</a>&nbsp;<a href="#objectproperties" title="Object Properties Index">OPs</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/stax/ontology#canBeFlattenedInto</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>Indicates that the subject stream type can be flattened into the object.</p>
+<p>The flattening is done by enumerating all components of the stream elements in one, flat stream. For example, a graph stream can be flattened into a flat triple stream.</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="#isinstreamtypesemanticrelationwith">is in stream type semantic relation with</a><sup class="sup-op" title="object property">op</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#ConcreteRDFstreamtype">Concrete RDF stream type</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="https://w3id.org/stax/ontology#ConcreteRdfStreamType">stax:ConcreteRdfStreamType</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="canbegroupedinto">
+        <h3>can be grouped into<sup title="object property" class="sup-op">op</sup><span style="float:right; margin-right:10px; font-size:smaller;">
+            <a href="#canbegroupedinto" title="fragment link to here">#</a>&nbsp;<a href="#objectproperties" title="Object Properties Index">OPs</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/stax/ontology#canBeGroupedInto</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>Indicates that the subject stream type can be grouped into the object.</p>
+<p>The grouping is done by splitting the flat stream of statements into groups, which then can be used to construct elements of the grouped stream. For example, a flat triple stream can be grouped into a graph stream. In this operation, the ordering information within a group is lost.</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="#isinstreamtypesemanticrelationwith">is in stream type semantic relation with</a><sup class="sup-op" title="object property">op</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#ConcreteRDFstreamtype">Concrete RDF stream type</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="https://w3id.org/stax/ontology#ConcreteRdfStreamType">stax:ConcreteRdfStreamType</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="canbetriviallyextendedinto">
+        <h3>can be trivially extended into<sup title="object property" class="sup-op">op</sup><span style="float:right; margin-right:10px; font-size:smaller;">
+            <a href="#canbetriviallyextendedinto" title="fragment link to here">#</a>&nbsp;<a href="#objectproperties" title="Object Properties Index">OPs</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/stax/ontology#canBeTriviallyExtendedInto</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>Indicates that the subject stream type that uses triples or graphs can be trivially extended into the object type that uses quads or datasets.</p>
+<p>The extension is done by (in case of flat RDF streams) adding a fourth component, corresponding to the default graph. In case of grouped RDF streams, the contents of the graph are placed explicitly in the default graph.</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="#isinstreamtypesemanticrelationwith">is in stream type semantic relation with</a><sup class="sup-op" title="object property">op</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#ConcreteRDFstreamtype">Concrete RDF stream type</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="https://w3id.org/stax/ontology#ConcreteRdfStreamType">stax:ConcreteRdfStreamType</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="haselementtype">
+        <h3>has element type<sup title="object property" class="sup-op">op</sup><span style="float:right; margin-right:10px; font-size:smaller;">
+            <a href="#haselementtype" title="fragment link to here">#</a>&nbsp;<a href="#objectproperties" title="Object Properties Index">OPs</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/stax/ontology#hasElementType</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>For an RDF stream type, indicates the base (primitive) type of elements in the stream (e.g., triple, quad, graph, dataset).</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#ConcreteRDFstreamtype">Concrete RDF stream type</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="https://w3id.org/stax/ontology#RdfElementType">stax:RdfElementType</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="hasstreamtype">
+        <h3>has stream type<sup title="object property" class="sup-op">op</sup><span style="float:right; margin-right:10px; font-size:smaller;">
+            <a href="#hasstreamtype" title="fragment link to here">#</a>&nbsp;<a href="#objectproperties" title="Object Properties Index">OPs</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/stax/ontology#hasStreamType</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>For an RDF stream type usage, this property indicates which stream type is used.</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#RDFstreamtypeusage">RDF stream type usage</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="https://w3id.org/stax/ontology#ConcreteRdfStreamType">stax:ConcreteRdfStreamType</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="hasstreamtypeusage">
+        <h3>has stream type usage<sup title="object property" class="sup-op">op</sup><span style="float:right; margin-right:10px; font-size:smaller;">
+            <a href="#hasstreamtypeusage" title="fragment link to here">#</a>&nbsp;<a href="#objectproperties" title="Object Properties Index">OPs</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/stax/ontology#hasStreamTypeUsage</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>Inverse of stax:isUsageOf – indicates that the subject is related to a usage of an RDF stream type.</p>
+<p>The subject for this property can be for example a published stream on the Web (e.g., vocals:RDFStream) or a scientific publication that discusses a usage of an RDF stream type.</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Inverse properties</th>
+                <td>
+                    <a href="#isusageof">is usage of</a><sup class="sup-op" title="object property">op</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="https://w3id.org/stax/ontology#RdfStreamTypeUsage">stax:RdfStreamTypeUsage</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="isusageof">
+        <h3>is usage of<sup title="object property" class="sup-op">op</sup><span style="float:right; margin-right:10px; font-size:smaller;">
+            <a href="#isusageof" title="fragment link to here">#</a>&nbsp;<a href="#objectproperties" title="Object Properties Index">OPs</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/stax/ontology#isUsageOf</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>For an RDF stream type usage, this property indicates where the stream was used or from where the usage was derived. The value of this property can be anything that makes sense for the desired use case. The value can be for example: the DOI URL of an academic work, URL of a piece of software, IRI of a published stream, IRI of an RDF dataset.</p>
+<p>Inverse of stax:hasStreamTypeUsage.</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#RDFstreamtypeusage">RDF stream type usage</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="isinstreamtypesemanticrelationwith">
+        <h3>is in stream type semantic relation with<sup title="object property" class="sup-op">op</sup><span style="float:right; margin-right:10px; font-size:smaller;">
+            <a href="#isinstreamtypesemanticrelationwith" title="fragment link to here">#</a>&nbsp;<a href="#objectproperties" title="Object Properties Index">OPs</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/stax/ontology#streamTypeSemanticRelation</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>This property should not be used directly, but as a super-property for all properties denoting a relationship of meaning between RDF stream types.</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="http://www.w3.org/2004/02/skos/core#semanticRelation">skos:semanticRelation</a>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#ConcreteRDFstreamtype">Concrete RDF stream type</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="https://w3id.org/stax/ontology#ConcreteRdfStreamType">stax:ConcreteRdfStreamType</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+</section>
+
+<section id="annotationproperties">
+    <h2>Annotation Properties <span style="float:right; font-size:smaller;"><a href="">&uparrow;</a></span></h2>
+    <ul class="hlist">
+        <li><a href="#description">description</a></li>
+        <li><a href="#title">title</a></li>
+        <li><a href="#created">created</a></li>
+        <li><a href="#issued">issued</a></li>
+        <li><a href="#license">license</a></li>
+        <li><a href="#modified">modified</a></li>
+        <li><a href="#publisher">publisher</a></li>
+        <li><a href="#source">source</a></li>
+        <li><a href="#status">status</a></li>
+        <li><a href="#preferredNamespacePrefix">preferredNamespacePrefix</a></li>
+        <li><a href="#preferredNamespaceUri">preferredNamespaceUri</a></li>
+        <li><a href="#citation">citation</a></li>
+        <li><a href="#homepage">homepage</a></li>
+        <li><a href="#logo">logo</a></li>
+    </ul>
+    <div class="entity property" id="description">
+        <h3>description<sup title="annotation property" class="sup-ap">ap</sup><span style="float:right; margin-right:10px; font-size:smaller;">
+            <a href="#description" title="fragment link to here">#</a>&nbsp;<a href="#annotationproperties" title="Annotation Properties Index">APs</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://purl.org/dc/elements/1.1/description</code></td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="title">
+        <h3>title<sup title="annotation property" class="sup-ap">ap</sup><span style="float:right; margin-right:10px; font-size:smaller;">
+            <a href="#title" title="fragment link to here">#</a>&nbsp;<a href="#annotationproperties" title="Annotation Properties Index">APs</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://purl.org/dc/elements/1.1/title</code></td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="created">
+        <h3>created<sup title="annotation property" class="sup-ap">ap</sup><span style="float:right; margin-right:10px; font-size:smaller;">
+            <a href="#created" title="fragment link to here">#</a>&nbsp;<a href="#annotationproperties" title="Annotation Properties Index">APs</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://purl.org/dc/terms/created</code></td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="issued">
+        <h3>issued<sup title="annotation property" class="sup-ap">ap</sup><span style="float:right; margin-right:10px; font-size:smaller;">
+            <a href="#issued" title="fragment link to here">#</a>&nbsp;<a href="#annotationproperties" title="Annotation Properties Index">APs</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://purl.org/dc/terms/issued</code></td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="license">
+        <h3>license<sup title="annotation property" class="sup-ap">ap</sup><span style="float:right; margin-right:10px; font-size:smaller;">
+            <a href="#license" title="fragment link to here">#</a>&nbsp;<a href="#annotationproperties" title="Annotation Properties Index">APs</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://purl.org/dc/terms/license</code></td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="modified">
+        <h3>modified<sup title="annotation property" class="sup-ap">ap</sup><span style="float:right; margin-right:10px; font-size:smaller;">
+            <a href="#modified" title="fragment link to here">#</a>&nbsp;<a href="#annotationproperties" title="Annotation Properties Index">APs</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://purl.org/dc/terms/modified</code></td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="publisher">
+        <h3>publisher<sup title="annotation property" class="sup-ap">ap</sup><span style="float:right; margin-right:10px; font-size:smaller;">
+            <a href="#publisher" title="fragment link to here">#</a>&nbsp;<a href="#annotationproperties" title="Annotation Properties Index">APs</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://purl.org/dc/terms/publisher</code></td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="source">
+        <h3>source<sup title="annotation property" class="sup-ap">ap</sup><span style="float:right; margin-right:10px; font-size:smaller;">
+            <a href="#source" title="fragment link to here">#</a>&nbsp;<a href="#annotationproperties" title="Annotation Properties Index">APs</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://purl.org/dc/terms/source</code></td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="status">
+        <h3>status<sup title="annotation property" class="sup-ap">ap</sup><span style="float:right; margin-right:10px; font-size:smaller;">
+            <a href="#status" title="fragment link to here">#</a>&nbsp;<a href="#annotationproperties" title="Annotation Properties Index">APs</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://purl.org/ontology/bibo/status</code></td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="preferredNamespacePrefix">
+        <h3>preferredNamespacePrefix<sup title="annotation property" class="sup-ap">ap</sup><span style="float:right; margin-right:10px; font-size:smaller;">
+            <a href="#preferredNamespacePrefix" title="fragment link to here">#</a>&nbsp;<a href="#annotationproperties" title="Annotation Properties Index">APs</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://purl.org/vocab/vann/preferredNamespacePrefix</code></td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="preferredNamespaceUri">
+        <h3>preferredNamespaceUri<sup title="annotation property" class="sup-ap">ap</sup><span style="float:right; margin-right:10px; font-size:smaller;">
+            <a href="#preferredNamespaceUri" title="fragment link to here">#</a>&nbsp;<a href="#annotationproperties" title="Annotation Properties Index">APs</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://purl.org/vocab/vann/preferredNamespaceUri</code></td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="citation">
+        <h3>citation<sup title="annotation property" class="sup-ap">ap</sup><span style="float:right; margin-right:10px; font-size:smaller;">
+            <a href="#citation" title="fragment link to here">#</a>&nbsp;<a href="#annotationproperties" title="Annotation Properties Index">APs</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://schema.org/citation</code></td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="homepage">
+        <h3>homepage<sup title="annotation property" class="sup-ap">ap</sup><span style="float:right; margin-right:10px; font-size:smaller;">
+            <a href="#homepage" title="fragment link to here">#</a>&nbsp;<a href="#annotationproperties" title="Annotation Properties Index">APs</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://xmlns.com/foaf/0.1/homepage</code></td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="logo">
+        <h3>logo<sup title="annotation property" class="sup-ap">ap</sup><span style="float:right; margin-right:10px; font-size:smaller;">
+            <a href="#logo" title="fragment link to here">#</a>&nbsp;<a href="#annotationproperties" title="Annotation Properties Index">APs</a></span>
+        </h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://xmlns.com/foaf/0.1/logo</code></td>
+            </tr>
+        </table>
+    </div>
+</section>
+
+  
+    <section id="namedindividuals">
+        <h2>Named Individuals <span style="float:right; font-size:smaller;"><a href="">&uparrow;</a></span></h2>
+        <ul class="hlist">
+            <li><a href="#FlatRDFquadstream">Flat RDF quad stream</a></li>
+            <li><a href="#FlatRDFstream">Flat RDF stream</a></li>
+            <li><a href="#FlatRDFtriplestream">Flat RDF triple stream</a></li>
+            <li><a href="#GroupedRDFstream">Grouped RDF stream</a></li>
+            <li><a href="#RDFStreamTaxonomy">RDF Stream Taxonomy</a></li>
+            <li><a href="#RDFdataset">RDF dataset</a></li>
+            <li><a href="#RDFdatasetstream">RDF dataset stream</a></li>
+            <li><a href="#RDFgraph">RDF graph</a></li>
+            <li><a href="#RDFgraphstream">RDF graph stream</a></li>
+            <li><a href="#RDFnamedgraphstream">RDF named graph stream</a></li>
+            <li><a href="#RDFquad">RDF quad</a></li>
+            <li><a href="#RDFstream">RDF stream</a></li>
+            <li><a href="#RDFsubjectgraphstream">RDF subject graph stream</a></li>
+            <li><a href="#RDFtriple">RDF triple</a></li>
+            <li><a href="#TimestampedRDFnamedgraphstream">Timestamped RDF named graph stream</a></li>
+        </ul>
+            <div class="entity named_individual" id="RDFStreamTaxonomy">
+        <h3>RDF Stream Taxonomy<sup title="named individual" class="sup-ni">ni</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td>
+                  <code>
+                      https://w3id.org/stax/ontology
+                  
+                  </code>
+                </td>
+            </tr>
+            <dt>Class(es)</dt>
+            <dd>
+                <a href="http://www.w3.org/2004/02/skos/core#ConceptScheme">skos:ConceptScheme</a><br/>
+                <a href="http://www.w3.org/2002/07/owl#Ontology">owl:Ontology</a><br/>
+            </dd>
+            <tr>
+                <th>Source</th>
+                <td>
+                    <a href="https://github.com/RDF-STaX/rdf-stax.github.io/tree/v1.1.0">https://github.com/RDF-STaX/rdf-stax.github.io/tree/v1.1.0</a>
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    RDF-STaX is an OWL 2 DL ontology that enables describing the types of RDF streams and defines relations between them.
+                </td>
+            </tr>
+        </table>
+    </div>
+            <div class="entity named_individual" id="RDFdataset">
+        <h3>RDF dataset<sup title="named individual" class="sup-ni">ni</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td>
+                  <code>
+                      https://w3id.org/stax/ontology#dataset
+                  
+                  </code>
+                </td>
+            </tr>
+            <dt>Class(es)</dt>
+            <dd>
+                <a href="https://w3id.org/stax/ontology#RdfElementType">stax:RdfElementType</a><br/>
+            </dd>
+            <tr>
+                <th>Description</th>
+                <td>
+                    https://www.w3.org/TR/rdf11-concepts/#section-dataset
+                </td>
+            </tr>
+        </table>
+    </div>
+            <div class="entity named_individual" id="RDFdatasetstream">
+        <h3>RDF dataset stream<sup title="named individual" class="sup-ni">ni</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td>
+                  <code>
+                      https://w3id.org/stax/ontology#datasetStream
+                  
+                  </code>
+                </td>
+            </tr>
+            <dt>Class(es)</dt>
+            <dd>
+                <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a><br/>
+                <a href="https://w3id.org/stax/ontology#ConcreteRdfStreamType">stax:ConcreteRdfStreamType</a><br/>
+            </dd>
+            <tr>
+                <th>Description</th>
+                <td>
+                    An RDF dataset stream is a grouped RDF stream whose elements are RDF datasets.
+                </td>
+            </tr>
+        </table>
+    </div>
+            <div class="entity named_individual" id="FlatRDFquadstream">
+        <h3>Flat RDF quad stream<sup title="named individual" class="sup-ni">ni</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td>
+                  <code>
+                      https://w3id.org/stax/ontology#flatQuadStream
+                  
+                  </code>
+                </td>
+            </tr>
+            <dt>Class(es)</dt>
+            <dd>
+                <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a><br/>
+                <a href="https://w3id.org/stax/ontology#ConcreteRdfStreamType">stax:ConcreteRdfStreamType</a><br/>
+            </dd>
+            <tr>
+                <th>Description</th>
+                <td>
+                    A flat RDF quad stream is a flat RDF stream whose elements are quads.
+                </td>
+            </tr>
+        </table>
+    </div>
+            <div class="entity named_individual" id="FlatRDFstream">
+        <h3>Flat RDF stream<sup title="named individual" class="sup-ni">ni</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td>
+                  <code>
+                      https://w3id.org/stax/ontology#flatStream
+                  
+                  </code>
+                </td>
+            </tr>
+            <dt>Class(es)</dt>
+            <dd>
+                <a href="https://w3id.org/stax/ontology#AbstractRdfStreamType">stax:AbstractRdfStreamType</a><br/>
+                <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a><br/>
+            </dd>
+            <tr>
+                <th>Description</th>
+                <td>
+                    A flat RDF stream is an RDF stream whose elements are statements (either RDF triples or RDF quads).
+                </td>
+            </tr>
+        </table>
+    </div>
+            <div class="entity named_individual" id="FlatRDFtriplestream">
+        <h3>Flat RDF triple stream<sup title="named individual" class="sup-ni">ni</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td>
+                  <code>
+                      https://w3id.org/stax/ontology#flatTripleStream
+                  
+                  </code>
+                </td>
+            </tr>
+            <dt>Class(es)</dt>
+            <dd>
+                <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a><br/>
+                <a href="https://w3id.org/stax/ontology#ConcreteRdfStreamType">stax:ConcreteRdfStreamType</a><br/>
+            </dd>
+            <tr>
+                <th>Description</th>
+                <td>
+                    A flat RDF triple stream is a flat RDF stream whose elements are triples.
+                </td>
+            </tr>
+        </table>
+    </div>
+            <div class="entity named_individual" id="RDFgraph">
+        <h3>RDF graph<sup title="named individual" class="sup-ni">ni</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td>
+                  <code>
+                      https://w3id.org/stax/ontology#graph
+                  
+                  </code>
+                </td>
+            </tr>
+            <dt>Class(es)</dt>
+            <dd>
+                <a href="https://w3id.org/stax/ontology#RdfElementType">stax:RdfElementType</a><br/>
+            </dd>
+            <tr>
+                <th>Description</th>
+                <td>
+                    https://www.w3.org/TR/rdf11-concepts/#section-rdf-graph
+                </td>
+            </tr>
+        </table>
+    </div>
+            <div class="entity named_individual" id="RDFgraphstream">
+        <h3>RDF graph stream<sup title="named individual" class="sup-ni">ni</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td>
+                  <code>
+                      https://w3id.org/stax/ontology#graphStream
+                  
+                  </code>
+                </td>
+            </tr>
+            <dt>Class(es)</dt>
+            <dd>
+                <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a><br/>
+                <a href="https://w3id.org/stax/ontology#ConcreteRdfStreamType">stax:ConcreteRdfStreamType</a><br/>
+            </dd>
+            <tr>
+                <th>Description</th>
+                <td>
+                    An RDF graph stream is a grouped RDF stream whose elements are unnamed (default) RDF graphs.
+                </td>
+            </tr>
+        </table>
+    </div>
+            <div class="entity named_individual" id="GroupedRDFstream">
+        <h3>Grouped RDF stream<sup title="named individual" class="sup-ni">ni</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td>
+                  <code>
+                      https://w3id.org/stax/ontology#groupedStream
+                  
+                  </code>
+                </td>
+            </tr>
+            <dt>Class(es)</dt>
+            <dd>
+                <a href="https://w3id.org/stax/ontology#AbstractRdfStreamType">stax:AbstractRdfStreamType</a><br/>
+                <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a><br/>
+            </dd>
+            <tr>
+                <th>Description</th>
+                <td>
+                    A grouped RDF stream is an RDF stream whose elements are either RDF graphs or RDF datasets.
+                </td>
+            </tr>
+        </table>
+    </div>
+            <div class="entity named_individual" id="RDFnamedgraphstream">
+        <h3>RDF named graph stream<sup title="named individual" class="sup-ni">ni</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td>
+                  <code>
+                      https://w3id.org/stax/ontology#namedGraphStream
+                  
+                  </code>
+                </td>
+            </tr>
+            <dt>Class(es)</dt>
+            <dd>
+                <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a><br/>
+                <a href="https://w3id.org/stax/ontology#ConcreteRdfStreamType">stax:ConcreteRdfStreamType</a><br/>
+            </dd>
+            <tr>
+                <th>Description</th>
+                <td>
+                    An RDF named graph stream is an RDF dataset stream in which every element has exactly one named RDF graph pair <n, G>, where G is an RDF graph, and n is the graph name. Apart from graph G, the dataset may contain any number of triples in the default graph.
+                </td>
+            </tr>
+        </table>
+    </div>
+            <div class="entity named_individual" id="RDFquad">
+        <h3>RDF quad<sup title="named individual" class="sup-ni">ni</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td>
+                  <code>
+                      https://w3id.org/stax/ontology#quad
+                  
+                  </code>
+                </td>
+            </tr>
+            <dt>Class(es)</dt>
+            <dd>
+                <a href="https://w3id.org/stax/ontology#RdfElementType">stax:RdfElementType</a><br/>
+            </dd>
+            <tr>
+                <th>Description</th>
+                <td>
+                    https://www.w3.org/TR/2023/WD-rdf12-concepts-20231013/#section-dataset-quad
+                </td>
+            </tr>
+        </table>
+    </div>
+            <div class="entity named_individual" id="RDFstream">
+        <h3>RDF stream<sup title="named individual" class="sup-ni">ni</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td>
+                  <code>
+                      https://w3id.org/stax/ontology#rdfStream
+                  
+                  </code>
+                </td>
+            </tr>
+            <dt>Class(es)</dt>
+            <dd>
+                <a href="https://w3id.org/stax/ontology#AbstractRdfStreamType">stax:AbstractRdfStreamType</a><br/>
+                <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a><br/>
+            </dd>
+            <tr>
+                <th>Description</th>
+                <td>
+                    An RDF stream is an ordered, potentially infinite sequence of RDF stream elements.
+                </td>
+            </tr>
+        </table>
+    </div>
+            <div class="entity named_individual" id="RDFsubjectgraphstream">
+        <h3>RDF subject graph stream<sup title="named individual" class="sup-ni">ni</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td>
+                  <code>
+                      https://w3id.org/stax/ontology#subjectGraphStream
+                  
+                  </code>
+                </td>
+            </tr>
+            <dt>Class(es)</dt>
+            <dd>
+                <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a><br/>
+                <a href="https://w3id.org/stax/ontology#ConcreteRdfStreamType">stax:ConcreteRdfStreamType</a><br/>
+            </dd>
+            <tr>
+                <th>Description</th>
+                <td>
+                    An RDF subject graph stream is an RDF graph stream in which every element contains an IRI node (called the subject node) that uniquely identifies the graph in the stream. Every other node in the graph can be reached by traversing triples, starting from the subject node.
+                </td>
+            </tr>
+        </table>
+    </div>
+            <div class="entity named_individual" id="TimestampedRDFnamedgraphstream">
+        <h3>Timestamped RDF named graph stream<sup title="named individual" class="sup-ni">ni</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td>
+                  <code>
+                      https://w3id.org/stax/ontology#timestampedNamedGraphStream
+                  
+                  </code>
+                </td>
+            </tr>
+            <dt>Class(es)</dt>
+            <dd>
+                <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a><br/>
+                <a href="https://w3id.org/stax/ontology#ConcreteRdfStreamType">stax:ConcreteRdfStreamType</a><br/>
+            </dd>
+            <tr>
+                <th>Description</th>
+                <td>
+                    A timestamped named graph is an RDF dataset in which: (1) there is exactly one named RDF graph pair <n, G>, where G is an RDF graph, and n is the graph name; (2) the default graph includes a timestamp triple <n, p, t>, where p is a timestamp predicate that relates t, called the timestamp, and the graph G.
+
+A timestamped RDF named graph stream is an RDF named graph stream in which every element is a timestamped named graph. The elements that share the same timestamp predicate p are ordered by the partial order associated with p.
+                </td>
+            </tr>
+        </table>
+    </div>
+            <div class="entity named_individual" id="RDFtriple">
+        <h3>RDF triple<sup title="named individual" class="sup-ni">ni</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td>
+                  <code>
+                      https://w3id.org/stax/ontology#triple
+                  
+                  </code>
+                </td>
+            </tr>
+            <dt>Class(es)</dt>
+            <dd>
+                <a href="https://w3id.org/stax/ontology#RdfElementType">stax:RdfElementType</a><br/>
+            </dd>
+            <tr>
+                <th>Description</th>
+                <td>
+                    https://www.w3.org/TR/rdf11-concepts/#section-triples
+                </td>
+            </tr>
+        </table>
+    </div>
+    </section>
+
+  <section id="namespaces">
+    <h2>Namespaces <span style="float:right; font-size:smaller;"><a href="">&uparrow;</a></span></h2>
+    <dl>
+        <dt>default (stax)</dt>
+        <dd><code>https://w3id.org/stax/ontology#</code></dd>
+        <dt>brick</dt>
+        <dd><code>https://brickschema.org/schema/Brick#</code></dd>
+        <dt>csvw</dt>
+        <dd><code>http://www.w3.org/ns/csvw#</code></dd>
+        <dt>dc</dt>
+        <dd><code>http://purl.org/dc/elements/1.1/</code></dd>
+        <dt>dcam</dt>
+        <dd><code>http://purl.org/dc/dcam/</code></dd>
+        <dt>dcat</dt>
+        <dd><code>http://www.w3.org/ns/dcat#</code></dd>
+        <dt>dcmitype</dt>
+        <dd><code>http://purl.org/dc/dcmitype/</code></dd>
+        <dt>dcterms</dt>
+        <dd><code>http://purl.org/dc/terms/</code></dd>
+        <dt>doap</dt>
+        <dd><code>http://usefulinc.com/ns/doap#</code></dd>
+        <dt>foaf</dt>
+        <dd><code>http://xmlns.com/foaf/0.1/</code></dd>
+        <dt>geo</dt>
+        <dd><code>http://www.opengis.net/ont/geosparql#</code></dd>
+        <dt>ldes</dt>
+        <dd><code>https://w3id.org/ldes#</code></dd>
+        <dt>ns1</dt>
+        <dd><code>http://purl.org/ontology/bibo/</code></dd>
+        <dt>odrl</dt>
+        <dd><code>http://www.w3.org/ns/odrl/2/</code></dd>
+        <dt>org</dt>
+        <dd><code>http://www.w3.org/ns/org#</code></dd>
+        <dt>owl</dt>
+        <dd><code>http://www.w3.org/2002/07/owl#</code></dd>
+        <dt>prof</dt>
+        <dd><code>http://www.w3.org/ns/dx/prof/</code></dd>
+        <dt>prov</dt>
+        <dd><code>http://www.w3.org/ns/prov#</code></dd>
+        <dt>qb</dt>
+        <dd><code>http://purl.org/linked-data/cube#</code></dd>
+        <dt>rdf</dt>
+        <dd><code>http://www.w3.org/1999/02/22-rdf-syntax-ns#</code></dd>
+        <dt>rdfs</dt>
+        <dd><code>http://www.w3.org/2000/01/rdf-schema#</code></dd>
+        <dt>schema1</dt>
+        <dd><code>http://schema.org/</code></dd>
+        <dt>sd</dt>
+        <dd><code>http://www.w3.org/ns/sparql-service-description#</code></dd>
+        <dt>sdo</dt>
+        <dd><code>https://schema.org/</code></dd>
+        <dt>sh</dt>
+        <dd><code>http://www.w3.org/ns/shacl#</code></dd>
+        <dt>skos</dt>
+        <dd><code>http://www.w3.org/2004/02/skos/core#</code></dd>
+        <dt>sosa</dt>
+        <dd><code>http://www.w3.org/ns/sosa/</code></dd>
+        <dt>ssn</dt>
+        <dd><code>http://www.w3.org/ns/ssn/</code></dd>
+        <dt>time</dt>
+        <dd><code>http://www.w3.org/2006/time#</code></dd>
+        <dt>vann</dt>
+        <dd><code>http://purl.org/vocab/vann/</code></dd>
+        <dt>vocals</dt>
+        <dd><code>http://w3id.org/rsp/vocals#</code></dd>
+        <dt>void</dt>
+        <dd><code>http://rdfs.org/ns/void#</code></dd>
+        <dt>wgs</dt>
+        <dd><code>https://www.w3.org/2003/01/geo/wgs84_pos#</code></dd>
+        <dt>xsd</dt>
+        <dd><code>http://www.w3.org/2001/XMLSchema#</code></dd>
+    </dl>
+</section>
+  <section id="legend">
+      <h2>Legend</h2>
+      <table class="entity">
+          <tr><td><sup class="sup-c" title="Classes">c</sup></td><td>Classes</td></tr>
+          <tr><td><sup class="sup-op" title="Object Properties">op</sup></td><td>Object Properties</td></tr>
+          <tr><td><sup class="sup-fp" title="Functional Properties">fp</sup></td><td>Functional Properties</td></tr>
+          <tr><td><sup class="sup-dp" title="Data Properties">dp</sup></td><td>Data Properties</td></tr>
+          <tr><td><sup class="sup-ap" title="Annotation Properties">ap</sup></td><td>Annotation Properties</td></tr>
+          <tr><td><sup class="sup-p" title="Properties">p</sup></td><td>Properties</td></tr>
+          <tr><td><sup class="sup-ni" title="Named Individuals">ni</sup></td><td>Named Individuals</td></tr>
+      </table>
+  </section>
+</body>
+</html>
