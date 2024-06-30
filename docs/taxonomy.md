@@ -2,6 +2,8 @@
 
 The diagram below is an overview of the RDF Stream Taxonomy (RDF-STaX). Each term in the diagram is represented by an instance of the `#!turtle stax:RdfStreamType` class in the [RDF-STaX ontology](ontology.md). The ontology also contains the formal definitions of each stream type.
 
+The paper about RDF-STaX contains additional discussion about the definitions and the taxonomy itself. The paper is open-access and can be found [here](https://doi.org/10.3390/electronics13132558).
+
 <figure markdown>
   ![RDF Stream Taxonomy](assets/taxonomy.png){ width="600" }
   <figcaption>Overview of the taxonomy – click to enlarge.</figcaption>
@@ -118,7 +120,7 @@ Can be grouped[^2] into an [RDF dataset stream](#rdf-dataset-stream).
 
 ## See also
 
-- You can find a detailed discussion on the taxonomy in the **[RDF-STaX paper](https://arxiv.org/abs/2311.14540)**.
+- You can find a detailed discussion on the taxonomy in the **[RDF-STaX paper](https://doi.org/10.3390/electronics13132558)**.
 - [Ontology documentation](ontology.md)
 - [How to use RDF-STaX?](use-it.md)
 
