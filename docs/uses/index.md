@@ -4,7 +4,7 @@ Are you using RDF-STaX in your project or paper? We would be glad to list it her
 
 ## Papers using RDF-STaX
 
-- Sowiński, P., Szmeja, P. Ganzha, M., & Paprzycki, M. (2023). RDF Stream Taxonomy: Systematizing RDF Stream Types in Research and Practice. _[arXiv preprint arXiv:2311.14540](https://arxiv.org/abs/2311.14540)_.
+- Sowiński, P.; Szmeja, P.; Ganzha, M.; Paprzycki, M. (2024). RDF Stream Taxonomy: Systematizing RDF Stream Types in Research and Practice. _Electronics_, _13_(13), 2558. [https://doi.org/10.3390/electronics13132558](https://doi.org/10.3390/electronics13132558)
 - Sowiński, P., Ganzha, M., & Paprzycki, M. (2023). RiverBench: an Open RDF Streaming Benchmark Suite. _[arXiv preprint arXiv:2305.06226](https://arxiv.org/abs/2305.06226)_.
 
 ## Projects using RDF-STaX
