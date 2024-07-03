@@ -29,7 +29,7 @@ Sowiński, P.; Szmeja, P.; Ganzha, M.; Paprzycki, M. (2024). RDF Stream Taxonomy
 Or use this BibTeX entry:
 
 ```bibtex
-@article{sowinski2023rdfstax,
+@article{sowinski2024rdfstax,
   title={RDF Stream Taxonomy: Systematizing RDF Stream Types in Research and Practice}, 
   author={Piotr Sowinski and Pawel Szmeja and Maria Ganzha and Marcin Paprzycki},
   journal={Electronics},
