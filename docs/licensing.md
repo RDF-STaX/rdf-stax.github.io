@@ -27,4 +27,4 @@ Or use this BibTeX entry:
 
 ## RDF-STaX maintainer
 
-RDF-STaX was created and is maintained by [Piotr Sowiński (Ostrzyciel)](https://github.com/Ostrzyciel) [(ORCID)](https://orcid.org/0000-0002-2543-9461).
+RDF-STaX was created and is maintained by [Piotr Sowiński (Ostrzyciel)](https://ostrzyciel.eu) – [GitHub](https://github.com/Ostrzyciel).
