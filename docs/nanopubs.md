@@ -2,6 +2,8 @@
 
 [Nanopublications](https://nanopub.net/) are small units of publishable knowledge. RDF-STaX provides some [helpful tools](#making-new-nanopublications) to aid you making nanopublications about RDF stream types in papers, software, on the Web, or elsewhere. You can also browse the existing nanopublications and use them in your work.
 
+These Nanopublications essentially serve as a **collaborative, living literature review** of RDF streaming. You can query them to find out how RDF stream types are used in practice, and you can also contribute your own findings.
+
 ## Existing nanopublications
 
 --8<-- "docs/includes/nanopub_links.md"
