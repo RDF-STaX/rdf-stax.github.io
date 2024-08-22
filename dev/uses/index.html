@@ -564,6 +564,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#jelly" class="md-nav__link">
+    <span class="md-ellipsis">
+      Jelly
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#nanopublications" class="md-nav__link">
     <span class="md-ellipsis">
       Nanopublications
@@ -619,7 +628,7 @@
 
 
 <h1 id="rdf-stax-uses-and-publications">RDF-STaX uses and publications</h1>
-<p>Are you using RDF-STaX in your project or paper? We would be glad to list it here! <strong>Please <a href="https://github.com/RDF-STaX/rdf-stax.github.io/issues/new">open an issue</a></strong> with a link or a brief explanation of how you use RDF-STaX.</p>
+<p><strong>Are you using RDF-STaX in your project or paper?</strong> We would be glad to list it here! <strong>Please <a href="https://github.com/RDF-STaX/rdf-stax.github.io/issues/new">open an issue</a></strong> with a link or a brief explanation of how you use RDF-STaX.</p>
 <h2 id="papers-using-rdf-stax">Papers using RDF-STaX</h2>
 <ul>
 <li>Sowiński, P.; Szmeja, P.; Ganzha, M.; Paprzycki, M. (2024). RDF Stream Taxonomy: Systematizing RDF Stream Types in Research and Practice. <em>Electronics</em>, <em>13</em>(13), 2558. <a href="https://doi.org/10.3390/electronics13132558">https://doi.org/10.3390/electronics13132558</a></li>
@@ -657,6 +666,63 @@
 </ul>
 </li>
 <li><a href="https://w3id.org/riverbench/dumps/dev.ttl.gz">Complete metadata dump</a></li>
+</ul>
+<h3 id="jelly">Jelly</h3>
+<p><a href="https://w3id.org/jelly">Jelly</a> is a high-performance binary RDF serialization format and streaming protocol. It <a href="https://w3id.org/jelly/dev/user-guide/#stream-types">uses RDF-STaX stream types</a> in its stream metadata to specify how the RDF stream should be interpreted at the receiving end.
+For performance reasons, Jelly's stream metadata specifies the stream type not in RDF (like RiverBench, for example), but as an <a href="https://w3id.org/jelly/dev/specification/reference/#logicalstreamtype">integer identifier</a>.</p>
+<p>Jelly is implemented in <a href="https://w3id.org/jelly/jelly-jvm/dev/">Jelly-JVM</a>, which works with Apache Jena and RDF4J. This implementation uses RDF-STaX in the parser/consumer to check if the consumed stream is of the expected type or its subtype. It also checks if the consumed stream's physical (binary) layout is compatible with the expected stream type and can be interpreted as such.</p>
+<details class="example">
+<summary>Jelly-JVM consumer example (click to expand)</summary>
+<p>Example of using Jelly-JVM in Scala to decode a flat RDF quad stream either as such, or as an RDF dataset stream.
+Adapted from <a href="https://github.com/Jelly-RDF/jelly-jvm/blob/485b01e0c994db5aaad80c53547ff6a5dd7f1caa/examples/src/main/scala/eu/ostrzyciel/jelly/examples/PekkoStreamsDecoderFlow.scala">Jelly-JVM usage examples</a>.</p>
+<div class="language-scala highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kd">val</span><span class="w"> </span><span class="n">decodedQuads</span><span class="p">:</span><span class="w"> </span><span class="nc">Future</span><span class="p">[</span><span class="nc">Seq</span><span class="p">[</span><span class="nc">Quad</span><span class="p">]]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">Source</span><span class="p">(</span><span class="n">bytes</span><span class="p">)</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="p">.</span><span class="n">via</span><span class="p">(</span><span class="nc">JellyIo</span><span class="p">.</span><span class="n">fromBytes</span><span class="p">)</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span><span class="c1">// We use &quot;decodeQuads&quot; because the physical stream type is QUADS.</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">  </span><span class="c1">// And then we want to treat it as a flat RDF quad stream, so we call &quot;asFlatQuadStreamStrict&quot;.</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">  </span><span class="c1">// We use the &quot;Strict&quot; method to tell the decoder to check if the incoming logical stream type</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">  </span><span class="c1">// is the same as we are expecting: flat RDF quad stream.</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">  </span><span class="p">.</span><span class="n">via</span><span class="p">(</span><span class="nc">DecoderFlow</span><span class="p">.</span><span class="n">decodeQuads</span><span class="p">.</span><span class="n">asFlatQuadStreamStrict</span><span class="p">)</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">  </span><span class="p">.</span><span class="n">runWith</span><span class="p">(</span><span class="nc">Sink</span><span class="p">.</span><span class="n">seq</span><span class="p">)</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="c1">// We can also treat each stream frame as a separate dataset. This way we would get an</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="c1">// RDF dataset stream.</span>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="kd">val</span><span class="w"> </span><span class="n">decodedDatasets</span><span class="p">:</span><span class="w"> </span><span class="nc">Future</span><span class="p">[</span><span class="nc">Seq</span><span class="p">[</span><span class="nc">DatasetGraph</span><span class="p">]]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">Source</span><span class="p">(</span><span class="n">bytes</span><span class="p">)</span>
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">  </span><span class="p">.</span><span class="n">via</span><span class="p">(</span><span class="nc">JellyIo</span><span class="p">.</span><span class="n">fromBytes</span><span class="p">)</span>
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="w">  </span><span class="c1">// Note that we cannot use the strict variant (asDatasetStreamOfQuadsStrict) here,</span>
+</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="w">  </span><span class="c1">// because the stream says its logical type is flat RDF quad stream.</span>
+</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="w">  </span><span class="p">.</span><span class="n">via</span><span class="p">(</span><span class="nc">DecoderFlow</span><span class="p">.</span><span class="n">decodeQuads</span><span class="p">.</span><span class="n">asDatasetStreamOfQuads</span><span class="p">)</span>
+</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="w">  </span><span class="p">.</span><span class="n">runWith</span><span class="p">(</span><span class="nc">Sink</span><span class="p">.</span><span class="n">seq</span><span class="p">)</span>
+</span></code></pre></div>
+</details>
+<p>Similarly, the producer in Jelly-JVM has an API based on RDF-STaX types to specify the RDF-STaX type of the produced stream. These streams are type-safe, so their compatibility with a given RDF-STaX type is checked at compile time.</p>
+<details class="example">
+<summary>Jelly-JVM producer example (click to expand)</summary>
+<p>Example of using Jelly-JVM in Scala to encode a sequence of RDF graphs either as an RDF graph stream or as a flat RDF triple stream. Adapted from <a href="https://github.com/Jelly-RDF/jelly-jvm/blob/485b01e0c994db5aaad80c53547ff6a5dd7f1caa/examples/src/main/scala/eu/ostrzyciel/jelly/examples/PekkoStreamsEncoderFlow.scala">Jelly-JVM usage examples</a>.</p>
+<div class="language-scala highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1">// A sequence of RDF graphs -- we skip the initialization for brevity.</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="kd">val</span><span class="w"> </span><span class="n">graphs</span><span class="p">:</span><span class="w"> </span><span class="nc">Seq</span><span class="p">[</span><span class="nc">Set</span><span class="p">[</span><span class="nc">Triple</span><span class="p">]]</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="kd">val</span><span class="w"> </span><span class="n">graphStream</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">Source</span><span class="p">(</span><span class="n">graphs</span><span class="p">)</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">  </span><span class="c1">// Make an RDF graph stream out of the sequence of RDF graphs.</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">  </span><span class="p">.</span><span class="n">via</span><span class="p">(</span><span class="nc">EncoderFlow</span><span class="p">.</span><span class="n">graphStream</span><span class="p">(</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">    </span><span class="c1">// Do not use a size limiter here – we want exactly one graph in each frame</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">    </span><span class="nc">None</span><span class="p">,</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">    </span><span class="nc">JellyOptions</span><span class="p">.</span><span class="n">smallStrict</span><span class="p">,</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">  </span><span class="p">))</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="c1">// We can also treat this as a flat RDF triple stream, with each Seq[Triple]</span>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="c1">// being simply treated as a batch of triples (Jelly jargon: a &quot;frame&quot;).</span>
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="kd">val</span><span class="w"> </span><span class="n">flatTripleStream</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">Source</span><span class="p">(</span><span class="n">graphs</span><span class="p">)</span>
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="w">  </span><span class="p">.</span><span class="n">via</span><span class="p">(</span><span class="nc">EncoderFlow</span><span class="p">.</span><span class="n">flatTripleStreamGrouped</span><span class="p">(</span><span class="nc">None</span><span class="p">,</span><span class="w"> </span><span class="nc">JellyOptions</span><span class="p">.</span><span class="n">smallStrict</span><span class="p">))</span>
+</span></code></pre></div>
+</details>
+<p><strong>Links:</strong></p>
+<ul>
+<li><a href="https://w3id.org/jelly/dev/">Jelly documentation</a><ul>
+<li><a href="https://w3id.org/jelly/dev/user-guide/#stream-types">Stream type handling – user guide</a></li>
+<li><a href="https://w3id.org/jelly/dev/specification/reference/#logicalstreamtype">Definition of binary stream type encoding</a></li>
+<li><a href="https://w3id.org/jelly/dev/specification/serialization/#logical-stream-types">Specification defining how Jelly implementations should handle RDF-STaX types</a></li>
+</ul>
+</li>
+<li><a href="https://w3id.org/jelly/jelly-jvm/dev/">Jelly-JVM documentation</a></li>
 </ul>
 <h3 id="nanopublications">Nanopublications</h3>
 <p>RDF-STaX is used in <a href="../nanopubs/">nanopublications</a> to annotate stream types in research works or software. You can find more information on the <a href="../nanopubs/">dedicated page about nanopublications</a>.</p>
