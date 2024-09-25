@@ -39,6 +39,8 @@ To create a nanopublication about RDF stream type usage, simply use **[this temp
 
 The published nanopublications can be later updated or retracted, if needed.
 
+Your nanopublications will automatically appear on this page after at most a day or two. The SPARQL endpoint listed above is updated much faster, usually within a few minutes.
+
 ### Example nanopublication
 
 You can see an example nanopublication using this template [here](https://w3id.org/np/RAh9bvQwkL2SDp7iqmH7G6rOrCnWtTMHgHR_St0udrRKo) and in [Nanodash](https://nanodash.petapico.org/explore?188&id=https://w3id.org/np/RAh9bvQwkL2SDp7iqmH7G6rOrCnWtTMHgHR_St0udrRKo).
