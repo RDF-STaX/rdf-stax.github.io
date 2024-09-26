@@ -28,7 +28,7 @@ The dropdown at the top of the page allows you to switch between different versi
 
 The released versions of the ontology include also the inferred statements, authorship information, and alignments to other ontologies. If you would like to get the raw ontology without these additions (OWL 2 DL), append `/dl` to the URL, e.g., `https://w3id.org/stax/ontology/dl`.
 
-Released versions of the ontology are available in the JSON-LD, N-Triples, RDF/XML, and Turtle formats, by appending their respective extension at the end of the ontology's URL, or with the [content negotiation mechanism](https://developer.mozilla.org/en-US/docs/Web/HTTP/Content_negotiation). Some examples of links that would work:
+Released versions of the ontology are available in the JSON-LD, N-Triples, RDF/XML, Turtle, and [Jelly](https://w3id.org/jelly) formats, by appending their respective extension at the end of the ontology's URL, or with the [content negotiation mechanism](https://developer.mozilla.org/en-US/docs/Web/HTTP/Content_negotiation). Some examples of links that would work:
 
 - `https://w3id.org/stax/ontology` (content negotiation)
 - `https://w3id.org/stax/ontology.rdf` (explicitly ask for RDF/XML)
@@ -36,6 +36,7 @@ Released versions of the ontology are available in the JSON-LD, N-Triples, RDF/X
 - `https://w3id.org/stax/dev/ontology` (content negotiation)
 - `https://w3id.org/stax/dev/ontology/dl` (OWL 2 DL version, content negotiation)
 - `https://w3id.org/stax/dev/ontology.ttl` (explicitly ask for Turtle)
+- `https://w3id.org/stax/dev/ontology.jelly` (explicitly ask for [Jelly](https://w3id.org/jelly))
 - `https://w3id.org/stax/1.0.0/ontology` (content negotiation)
 - `https://w3id.org/stax/1.0.0/ontology.jsonld` (explicitly ask for JSON-LD)
 
