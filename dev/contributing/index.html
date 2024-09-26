@@ -762,7 +762,10 @@
 <li>Check if the ontology is valid and matches the OWL 2 DL profile (with <a href="https://robot.obolibrary.org/">ROBOT</a>).</li>
 <li>Validate the competency question tests and run them agains the ontology.</li>
 <li>Set the ontology's version IRI and version.</li>
-<li>Save an OWL 2 DL version of the ontology in all supported formats.</li>
+<li>Save an OWL 2 DL version of the ontology in all supported formats.<ul>
+<li>For <a href="https://w3id.org/jelly">Jelly</a>, the CI uses the <a href="https://jena.apache.org/documentation/tools/index.html">Apache Jena RIOT utility</a> with the <a href="https://w3id.org/jelly/jelly-jvm/dev/getting-started-plugins/">Jelly-JVM plugin for Jena</a>.</li>
+</ul>
+</li>
 <li>Infer additional statements with <a href="https://robot.obolibrary.org/reason">ROBOT</a>.</li>
 <li>Merge in the author information from <code>src/authors.ttl</code>.</li>
 <li>Merge in the alignments to other vocabularies from <code>src/alignments.ttl</code>.</li>
