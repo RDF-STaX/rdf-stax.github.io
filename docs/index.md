@@ -52,4 +52,5 @@ Have a look at the **[taxonomy overview](taxonomy.md)** to get an idea of the di
 - **[Nanopublications](nanopubs.md)** – publishing assertions about RDF stream type usage
 - **[Use cases and publications](uses/index.md)**
 - **[Contributing](contributing.md)**
+- **[Discord chat](https://discord.gg/e4TaZgsYNQ)**
 - **[Licensing and citation](licensing.md)**

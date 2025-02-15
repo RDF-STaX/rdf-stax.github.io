@@ -6,6 +6,10 @@ Do you have an idea for how to improve RDF-STaX? Or maybe you found a bug? **Any
 
 Feature requests, bug reports, and other issues can be filed in the [issue tracker on GitHub](https://github.com/RDF-STaX/rdf-stax.github.io/issues).
 
+## Communication
+
+You can join the **[Discord chat](https://discord.gg/e4TaZgsYNQ)** to discuss RDF-STaX with the community.
+
 ## Editing the ontology
 
 The ontology is stored in the [`src` directory of the main repository](https://github.com/RDF-STaX/rdf-stax.github.io/tree/main/src). It is split into two files:
