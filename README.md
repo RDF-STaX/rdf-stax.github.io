@@ -1,4 +1,4 @@
-[![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/RDF-STaX/rdf-stax.github.io?sort=semver)](https://w3id.org/stax/stable) [![Website](https://img.shields.io/website?down_color=red&down_message=offline&up_color=green&up_message=up&url=https%3A%2F%2Fw3id.org%2Fstax)](https://w3id.org/stax) [![.github/workflows/validate.yml](https://github.com/RDF-STaX/rdf-stax.github.io/actions/workflows/validate.yml/badge.svg)](https://github.com/RDF-STaX/rdf-stax.github.io/actions/workflows/validate.yml) [![GitHub License](https://img.shields.io/github/license/RDF-STaX/rdf-stax.github.io)](https://github.com/RDF-STaX/rdf-stax.github.io/blob/main/LICENSE) [![GitHub issues](https://img.shields.io/github/issues/RDF-STaX/rdf-stax.github.io)](https://github.com/RDF-STaX/rdf-stax.github.io/issues)
+[![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/RDF-STaX/rdf-stax.github.io?sort=semver)](https://w3id.org/stax/stable) [![Website](https://img.shields.io/website?down_color=red&down_message=offline&up_color=green&up_message=up&url=https%3A%2F%2Fw3id.org%2Fstax)](https://w3id.org/stax) [![.github/workflows/validate.yml](https://github.com/RDF-STaX/rdf-stax.github.io/actions/workflows/validate.yml/badge.svg)](https://github.com/RDF-STaX/rdf-stax.github.io/actions/workflows/validate.yml) [![GitHub License](https://img.shields.io/github/license/RDF-STaX/rdf-stax.github.io)](https://github.com/RDF-STaX/rdf-stax.github.io/blob/main/LICENSE) [![GitHub issues](https://img.shields.io/github/issues/RDF-STaX/rdf-stax.github.io)](https://github.com/RDF-STaX/rdf-stax.github.io/issues) [![Discord](https://img.shields.io/discord/1333391881404420179?label=Discord%20chat)](https://discord.gg/e4TaZgsYNQ)
 
 # RDF Stream Taxonomy (RDF-STaX)
 
@@ -7,6 +7,8 @@ This is the main repository of the RDF Stream Taxonomy. Here you will find the o
 **Read more about RDF-STaX on the [official website](https://w3id.org/stax/).**
 
 Please file any feature requests, bugs, or other issues in the **[issue tracker](https://github.com/RDF-STaX/rdf-stax.github.io/issues)**.
+
+You can also join the **[Discord chat](https://discord.gg/e4TaZgsYNQ)** to discuss RDF-STaX with the community.
 
 ## Editing the ontology
 
