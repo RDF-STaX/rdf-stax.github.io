@@ -367,7 +367,7 @@ code {
      </a>
     </dt>
     <dd>
-     2025-03-08T04:29:35
+     2025-03-09T04:31:05
     </dd>
     <dt>
      <a class="proplink" href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/issued">
@@ -646,7 +646,7 @@ code {
         op
        </sup>
        <span class="cardinality">
-        only
+        some
        </span>
        <a href="#RdfElementType">
         RDF element type
@@ -662,7 +662,7 @@ code {
         op
        </sup>
        <span class="cardinality">
-        some
+        only
        </span>
        <a href="#RdfElementType">
         RDF element type
@@ -678,15 +678,8 @@ code {
        In domain of
       </th>
       <td>
-       <a href="#streamTypeSemanticRelation">
-        is in stream type semantic relation with
-       </a>
-       <sup class="sup-op" title="object property">
-        op
-       </sup>
-       <br/>
-       <a href="#canBeFlattenedInto">
-        can be flattened into
+       <a href="#hasElementType">
+        has element type
        </a>
        <sup class="sup-op" title="object property">
         op
@@ -694,13 +687,6 @@ code {
        <br/>
        <a href="#canBeGroupedInto">
         can be grouped into
-       </a>
-       <sup class="sup-op" title="object property">
-        op
-       </sup>
-       <br/>
-       <a href="#hasElementType">
-        has element type
        </a>
        <sup class="sup-op" title="object property">
         op
@@ -713,13 +699,6 @@ code {
         op
        </sup>
        <br/>
-      </td>
-     </tr>
-     <tr>
-      <th>
-       In range of
-      </th>
-      <td>
        <a href="#canBeFlattenedInto">
         can be flattened into
        </a>
@@ -727,15 +706,22 @@ code {
         op
        </sup>
        <br/>
-       <a href="#canBeGroupedInto">
-        can be grouped into
+       <a href="#streamTypeSemanticRelation">
+        is in stream type semantic relation with
        </a>
        <sup class="sup-op" title="object property">
         op
        </sup>
        <br/>
-       <a href="#streamTypeSemanticRelation">
-        is in stream type semantic relation with
+      </td>
+     </tr>
+     <tr>
+      <th>
+       In range of
+      </th>
+      <td>
+       <a href="#canBeGroupedInto">
+        can be grouped into
        </a>
        <sup class="sup-op" title="object property">
         op
@@ -755,6 +741,20 @@ code {
         op
        </sup>
        <br/>
+       <a href="#canBeFlattenedInto">
+        can be flattened into
+       </a>
+       <sup class="sup-op" title="object property">
+        op
+       </sup>
+       <br/>
+       <a href="#streamTypeSemanticRelation">
+        is in stream type semantic relation with
+       </a>
+       <sup class="sup-op" title="object property">
+        op
+       </sup>
+       <br/>
       </td>
      </tr>
      <tr>
@@ -762,8 +762,8 @@ code {
        Members
       </th>
       <td>
-       <a href="https://w3id.org/stax/ontology#namedGraphStream">
-        stax:namedGraphStream
+       <a href="https://w3id.org/stax/ontology#subjectGraphStream">
+        stax:subjectGraphStream
        </a>
        <br/>
        <a href="https://w3id.org/stax/ontology#timestampedNamedGraphStream">
@@ -774,6 +774,10 @@ code {
         stax:flatTripleStream
        </a>
        <br/>
+       <a href="https://w3id.org/stax/ontology#datasetStream">
+        stax:datasetStream
+       </a>
+       <br/>
        <a href="https://w3id.org/stax/ontology#graphStream">
         stax:graphStream
        </a>
@@ -782,12 +786,8 @@ code {
         stax:flatQuadStream
        </a>
        <br/>
-       <a href="https://w3id.org/stax/ontology#datasetStream">
-        stax:datasetStream
-       </a>
-       <br/>
-       <a href="https://w3id.org/stax/ontology#subjectGraphStream">
-        stax:subjectGraphStream
+       <a href="https://w3id.org/stax/ontology#namedGraphStream">
+        stax:namedGraphStream
        </a>
        <br/>
       </td>
@@ -849,12 +849,12 @@ code {
        Members
       </th>
       <td>
-       <a href="https://w3id.org/stax/ontology#quad">
-        stax:quad
-       </a>
-       <br/>
        <a href="https://w3id.org/stax/ontology#dataset">
         stax:dataset
+       </a>
+       <br/>
+       <a href="https://w3id.org/stax/ontology#quad">
+        stax:quad
        </a>
        <br/>
        <a href="https://w3id.org/stax/ontology#triple">
@@ -2423,12 +2423,12 @@ code {
       Class(es)
      </dt>
      <dd>
-      <a href="https://w3id.org/stax/ontology#AbstractRdfStreamType">
-       stax:AbstractRdfStreamType
-      </a>
-      <br/>
       <a href="http://www.w3.org/2004/02/skos/core#Concept">
        skos:Concept
+      </a>
+      <br/>
+      <a href="https://w3id.org/stax/ontology#AbstractRdfStreamType">
+       stax:AbstractRdfStreamType
       </a>
       <br/>
      </dd>
@@ -2583,12 +2583,12 @@ code {
       Class(es)
      </dt>
      <dd>
-      <a href="https://w3id.org/stax/ontology#AbstractRdfStreamType">
-       stax:AbstractRdfStreamType
-      </a>
-      <br/>
       <a href="http://www.w3.org/2004/02/skos/core#Concept">
        skos:Concept
+      </a>
+      <br/>
+      <a href="https://w3id.org/stax/ontology#AbstractRdfStreamType">
+       stax:AbstractRdfStreamType
       </a>
       <br/>
      </dd>
@@ -2705,12 +2705,12 @@ code {
       Class(es)
      </dt>
      <dd>
-      <a href="https://w3id.org/stax/ontology#AbstractRdfStreamType">
-       stax:AbstractRdfStreamType
-      </a>
-      <br/>
       <a href="http://www.w3.org/2004/02/skos/core#Concept">
        skos:Concept
+      </a>
+      <br/>
+      <a href="https://w3id.org/stax/ontology#AbstractRdfStreamType">
+       stax:AbstractRdfStreamType
       </a>
       <br/>
      </dd>
