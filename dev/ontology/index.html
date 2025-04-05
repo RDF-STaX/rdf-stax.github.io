@@ -20,7 +20,7 @@
       
       
       <link rel="icon" href="../assets/logo_color.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.10">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.11">
     
     
       
@@ -188,11 +188,13 @@
     
     
     
-      <label class="md-header__button md-icon" for="__search">
-        
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
-      </label>
-      <div class="md-search" data-md-component="search" role="dialog">
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
@@ -226,6 +228,7 @@
     </div>
   </div>
 </div>
+      
     
     
       <div class="md-header__source">
@@ -1111,7 +1114,7 @@ code {
      </a>
     </dt>
     <dd>
-     2025-04-01T04:40:53
+     2025-04-05T04:36:37
     </dd>
     <dt>
      <a class="proplink" href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/issued">
@@ -1316,12 +1319,12 @@ code {
         stax:groupedStream
        </a>
        <br/>
-       <a href="https://w3id.org/stax/ontology#flatStream">
-        stax:flatStream
-       </a>
-       <br/>
        <a href="https://w3id.org/stax/ontology#rdfStream">
         stax:rdfStream
+       </a>
+       <br/>
+       <a href="https://w3id.org/stax/ontology#flatStream">
+        stax:flatStream
        </a>
        <br/>
       </td>
@@ -1422,15 +1425,8 @@ code {
        In domain of
       </th>
       <td>
-       <a href="#canBeTriviallyExtendedInto">
-        can be trivially extended into
-       </a>
-       <sup class="sup-op" title="object property">
-        op
-       </sup>
-       <br/>
-       <a href="#canBeFlattenedInto">
-        can be flattened into
+       <a href="#hasElementType">
+        has element type
        </a>
        <sup class="sup-op" title="object property">
         op
@@ -1450,8 +1446,15 @@ code {
         op
        </sup>
        <br/>
-       <a href="#hasElementType">
-        has element type
+       <a href="#canBeFlattenedInto">
+        can be flattened into
+       </a>
+       <sup class="sup-op" title="object property">
+        op
+       </sup>
+       <br/>
+       <a href="#canBeTriviallyExtendedInto">
+        can be trivially extended into
        </a>
        <sup class="sup-op" title="object property">
         op
@@ -1464,15 +1467,8 @@ code {
        In range of
       </th>
       <td>
-       <a href="#canBeTriviallyExtendedInto">
-        can be trivially extended into
-       </a>
-       <sup class="sup-op" title="object property">
-        op
-       </sup>
-       <br/>
-       <a href="#canBeFlattenedInto">
-        can be flattened into
+       <a href="#canBeGroupedInto">
+        can be grouped into
        </a>
        <sup class="sup-op" title="object property">
         op
@@ -1485,6 +1481,13 @@ code {
         op
        </sup>
        <br/>
+       <a href="#canBeFlattenedInto">
+        can be flattened into
+       </a>
+       <sup class="sup-op" title="object property">
+        op
+       </sup>
+       <br/>
        <a href="#hasStreamType">
         has stream type
        </a>
@@ -1492,8 +1495,8 @@ code {
         op
        </sup>
        <br/>
-       <a href="#canBeGroupedInto">
-        can be grouped into
+       <a href="#canBeTriviallyExtendedInto">
+        can be trivially extended into
        </a>
        <sup class="sup-op" title="object property">
         op
@@ -1506,14 +1509,6 @@ code {
        Members
       </th>
       <td>
-       <a href="https://w3id.org/stax/ontology#subjectGraphStream">
-        stax:subjectGraphStream
-       </a>
-       <br/>
-       <a href="https://w3id.org/stax/ontology#flatTripleStream">
-        stax:flatTripleStream
-       </a>
-       <br/>
        <a href="https://w3id.org/stax/ontology#namedGraphStream">
         stax:namedGraphStream
        </a>
@@ -1526,8 +1521,16 @@ code {
         stax:graphStream
        </a>
        <br/>
+       <a href="https://w3id.org/stax/ontology#subjectGraphStream">
+        stax:subjectGraphStream
+       </a>
+       <br/>
        <a href="https://w3id.org/stax/ontology#flatQuadStream">
         stax:flatQuadStream
+       </a>
+       <br/>
+       <a href="https://w3id.org/stax/ontology#flatTripleStream">
+        stax:flatTripleStream
        </a>
        <br/>
        <a href="https://w3id.org/stax/ontology#datasetStream">
@@ -1597,16 +1600,16 @@ code {
         stax:graph
        </a>
        <br/>
-       <a href="https://w3id.org/stax/ontology#triple">
-        stax:triple
+       <a href="https://w3id.org/stax/ontology#dataset">
+        stax:dataset
        </a>
        <br/>
        <a href="https://w3id.org/stax/ontology#quad">
         stax:quad
        </a>
        <br/>
-       <a href="https://w3id.org/stax/ontology#dataset">
-        stax:dataset
+       <a href="https://w3id.org/stax/ontology#triple">
+        stax:triple
        </a>
        <br/>
       </td>
@@ -1767,15 +1770,15 @@ code {
        In domain of
       </th>
       <td>
-       <a href="#hasStreamType">
-        has stream type
+       <a href="#isUsageOf">
+        is usage of
        </a>
        <sup class="sup-op" title="object property">
         op
        </sup>
        <br/>
-       <a href="#isUsageOf">
-        is usage of
+       <a href="#hasStreamType">
+        has stream type
        </a>
        <sup class="sup-op" title="object property">
         op
@@ -2997,12 +3000,12 @@ code {
       Class(es)
      </dt>
      <dd>
-      <a href="http://www.w3.org/2004/02/skos/core#ConceptScheme">
-       skos:ConceptScheme
-      </a>
-      <br/>
       <a href="http://www.w3.org/2002/07/owl#Ontology">
        owl:Ontology
+      </a>
+      <br/>
+      <a href="http://www.w3.org/2004/02/skos/core#ConceptScheme">
+       skos:ConceptScheme
       </a>
       <br/>
      </dd>
@@ -3085,12 +3088,12 @@ code {
       Class(es)
      </dt>
      <dd>
-      <a href="https://w3id.org/stax/ontology#ConcreteRdfStreamType">
-       stax:ConcreteRdfStreamType
-      </a>
-      <br/>
       <a href="http://www.w3.org/2004/02/skos/core#Concept">
        skos:Concept
+      </a>
+      <br/>
+      <a href="https://w3id.org/stax/ontology#ConcreteRdfStreamType">
+       stax:ConcreteRdfStreamType
       </a>
       <br/>
      </dd>
@@ -3126,12 +3129,12 @@ code {
       Class(es)
      </dt>
      <dd>
-      <a href="https://w3id.org/stax/ontology#ConcreteRdfStreamType">
-       stax:ConcreteRdfStreamType
-      </a>
-      <br/>
       <a href="http://www.w3.org/2004/02/skos/core#Concept">
        skos:Concept
+      </a>
+      <br/>
+      <a href="https://w3id.org/stax/ontology#ConcreteRdfStreamType">
+       stax:ConcreteRdfStreamType
       </a>
       <br/>
      </dd>
@@ -3167,12 +3170,12 @@ code {
       Class(es)
      </dt>
      <dd>
-      <a href="https://w3id.org/stax/ontology#AbstractRdfStreamType">
-       stax:AbstractRdfStreamType
-      </a>
-      <br/>
       <a href="http://www.w3.org/2004/02/skos/core#Concept">
        skos:Concept
+      </a>
+      <br/>
+      <a href="https://w3id.org/stax/ontology#AbstractRdfStreamType">
+       stax:AbstractRdfStreamType
       </a>
       <br/>
      </dd>
@@ -3208,12 +3211,12 @@ code {
       Class(es)
      </dt>
      <dd>
-      <a href="https://w3id.org/stax/ontology#ConcreteRdfStreamType">
-       stax:ConcreteRdfStreamType
-      </a>
-      <br/>
       <a href="http://www.w3.org/2004/02/skos/core#Concept">
        skos:Concept
+      </a>
+      <br/>
+      <a href="https://w3id.org/stax/ontology#ConcreteRdfStreamType">
+       stax:ConcreteRdfStreamType
       </a>
       <br/>
      </dd>
@@ -3286,12 +3289,12 @@ code {
       Class(es)
      </dt>
      <dd>
-      <a href="https://w3id.org/stax/ontology#ConcreteRdfStreamType">
-       stax:ConcreteRdfStreamType
-      </a>
-      <br/>
       <a href="http://www.w3.org/2004/02/skos/core#Concept">
        skos:Concept
+      </a>
+      <br/>
+      <a href="https://w3id.org/stax/ontology#ConcreteRdfStreamType">
+       stax:ConcreteRdfStreamType
       </a>
       <br/>
      </dd>
@@ -3327,12 +3330,12 @@ code {
       Class(es)
      </dt>
      <dd>
-      <a href="https://w3id.org/stax/ontology#AbstractRdfStreamType">
-       stax:AbstractRdfStreamType
-      </a>
-      <br/>
       <a href="http://www.w3.org/2004/02/skos/core#Concept">
        skos:Concept
+      </a>
+      <br/>
+      <a href="https://w3id.org/stax/ontology#AbstractRdfStreamType">
+       stax:AbstractRdfStreamType
       </a>
       <br/>
      </dd>
@@ -3368,12 +3371,12 @@ code {
       Class(es)
      </dt>
      <dd>
-      <a href="https://w3id.org/stax/ontology#ConcreteRdfStreamType">
-       stax:ConcreteRdfStreamType
-      </a>
-      <br/>
       <a href="http://www.w3.org/2004/02/skos/core#Concept">
        skos:Concept
+      </a>
+      <br/>
+      <a href="https://w3id.org/stax/ontology#ConcreteRdfStreamType">
+       stax:ConcreteRdfStreamType
       </a>
       <br/>
      </dd>
@@ -3449,12 +3452,12 @@ code {
       Class(es)
      </dt>
      <dd>
-      <a href="https://w3id.org/stax/ontology#AbstractRdfStreamType">
-       stax:AbstractRdfStreamType
-      </a>
-      <br/>
       <a href="http://www.w3.org/2004/02/skos/core#Concept">
        skos:Concept
+      </a>
+      <br/>
+      <a href="https://w3id.org/stax/ontology#AbstractRdfStreamType">
+       stax:AbstractRdfStreamType
       </a>
       <br/>
      </dd>
@@ -3490,12 +3493,12 @@ code {
       Class(es)
      </dt>
      <dd>
-      <a href="https://w3id.org/stax/ontology#ConcreteRdfStreamType">
-       stax:ConcreteRdfStreamType
-      </a>
-      <br/>
       <a href="http://www.w3.org/2004/02/skos/core#Concept">
        skos:Concept
+      </a>
+      <br/>
+      <a href="https://w3id.org/stax/ontology#ConcreteRdfStreamType">
+       stax:ConcreteRdfStreamType
       </a>
       <br/>
      </dd>
@@ -3531,12 +3534,12 @@ code {
       Class(es)
      </dt>
      <dd>
-      <a href="https://w3id.org/stax/ontology#ConcreteRdfStreamType">
-       stax:ConcreteRdfStreamType
-      </a>
-      <br/>
       <a href="http://www.w3.org/2004/02/skos/core#Concept">
        skos:Concept
+      </a>
+      <br/>
+      <a href="https://w3id.org/stax/ontology#ConcreteRdfStreamType">
+       stax:ConcreteRdfStreamType
       </a>
       <br/>
      </dd>
