@@ -20,7 +20,7 @@
       
       
       <link rel="icon" href="../assets/logo_color.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.15">
     
     
       
@@ -715,7 +715,7 @@
 
 
   
-    <a href="https://github.com/RDF-STaX/rdf-stax.github.io/edit/main/docs/ontology.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/RDF-STaX/rdf-stax.github.io/edit/main/docs/ontology.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -1114,7 +1114,7 @@ code {
      </a>
     </dt>
     <dd>
-     2025-07-01T04:52:19
+     2025-07-05T04:44:33
     </dd>
     <dt>
      <a class="proplink" href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/issued">
@@ -1315,16 +1315,16 @@ code {
        Members
       </th>
       <td>
-       <a href="https://w3id.org/stax/ontology#flatStream">
-        stax:flatStream
+       <a href="https://w3id.org/stax/ontology#groupedStream">
+        stax:groupedStream
        </a>
        <br/>
        <a href="https://w3id.org/stax/ontology#rdfStream">
         stax:rdfStream
        </a>
        <br/>
-       <a href="https://w3id.org/stax/ontology#groupedStream">
-        stax:groupedStream
+       <a href="https://w3id.org/stax/ontology#flatStream">
+        stax:flatStream
        </a>
        <br/>
       </td>
@@ -1425,20 +1425,6 @@ code {
        In domain of
       </th>
       <td>
-       <a href="#hasElementType">
-        has element type
-       </a>
-       <sup class="sup-op" title="object property">
-        op
-       </sup>
-       <br/>
-       <a href="#canBeFlattenedInto">
-        can be flattened into
-       </a>
-       <sup class="sup-op" title="object property">
-        op
-       </sup>
-       <br/>
        <a href="#streamTypeSemanticRelation">
         is in stream type semantic relation with
        </a>
@@ -1460,15 +1446,8 @@ code {
         op
        </sup>
        <br/>
-      </td>
-     </tr>
-     <tr>
-      <th>
-       In range of
-      </th>
-      <td>
-       <a href="#hasStreamType">
-        has stream type
+       <a href="#hasElementType">
+        has element type
        </a>
        <sup class="sup-op" title="object property">
         op
@@ -1481,8 +1460,29 @@ code {
         op
        </sup>
        <br/>
+      </td>
+     </tr>
+     <tr>
+      <th>
+       In range of
+      </th>
+      <td>
        <a href="#canBeGroupedInto">
         can be grouped into
+       </a>
+       <sup class="sup-op" title="object property">
+        op
+       </sup>
+       <br/>
+       <a href="#canBeFlattenedInto">
+        can be flattened into
+       </a>
+       <sup class="sup-op" title="object property">
+        op
+       </sup>
+       <br/>
+       <a href="#hasStreamType">
+        has stream type
        </a>
        <sup class="sup-op" title="object property">
         op
@@ -1509,32 +1509,32 @@ code {
        Members
       </th>
       <td>
-       <a href="https://w3id.org/stax/ontology#graphStream">
-        stax:graphStream
-       </a>
-       <br/>
        <a href="https://w3id.org/stax/ontology#timestampedNamedGraphStream">
         stax:timestampedNamedGraphStream
        </a>
        <br/>
-       <a href="https://w3id.org/stax/ontology#datasetStream">
-        stax:datasetStream
-       </a>
-       <br/>
-       <a href="https://w3id.org/stax/ontology#subjectGraphStream">
-        stax:subjectGraphStream
-       </a>
-       <br/>
-       <a href="https://w3id.org/stax/ontology#flatQuadStream">
-        stax:flatQuadStream
+       <a href="https://w3id.org/stax/ontology#flatTripleStream">
+        stax:flatTripleStream
        </a>
        <br/>
        <a href="https://w3id.org/stax/ontology#namedGraphStream">
         stax:namedGraphStream
        </a>
        <br/>
-       <a href="https://w3id.org/stax/ontology#flatTripleStream">
-        stax:flatTripleStream
+       <a href="https://w3id.org/stax/ontology#graphStream">
+        stax:graphStream
+       </a>
+       <br/>
+       <a href="https://w3id.org/stax/ontology#datasetStream">
+        stax:datasetStream
+       </a>
+       <br/>
+       <a href="https://w3id.org/stax/ontology#flatQuadStream">
+        stax:flatQuadStream
+       </a>
+       <br/>
+       <a href="https://w3id.org/stax/ontology#subjectGraphStream">
+        stax:subjectGraphStream
        </a>
        <br/>
       </td>
@@ -1596,20 +1596,20 @@ code {
        Members
       </th>
       <td>
-       <a href="https://w3id.org/stax/ontology#quad">
-        stax:quad
-       </a>
-       <br/>
-       <a href="https://w3id.org/stax/ontology#triple">
-        stax:triple
-       </a>
-       <br/>
        <a href="https://w3id.org/stax/ontology#graph">
         stax:graph
        </a>
        <br/>
+       <a href="https://w3id.org/stax/ontology#quad">
+        stax:quad
+       </a>
+       <br/>
        <a href="https://w3id.org/stax/ontology#dataset">
         stax:dataset
+       </a>
+       <br/>
+       <a href="https://w3id.org/stax/ontology#triple">
+        stax:triple
        </a>
        <br/>
       </td>
@@ -1770,15 +1770,15 @@ code {
        In domain of
       </th>
       <td>
-       <a href="#hasStreamType">
-        has stream type
+       <a href="#isUsageOf">
+        is usage of
        </a>
        <sup class="sup-op" title="object property">
         op
        </sup>
        <br/>
-       <a href="#isUsageOf">
-        is usage of
+       <a href="#hasStreamType">
+        has stream type
        </a>
        <sup class="sup-op" title="object property">
         op
@@ -3088,12 +3088,12 @@ code {
       Class(es)
      </dt>
      <dd>
-      <a href="https://w3id.org/stax/ontology#ConcreteRdfStreamType">
-       stax:ConcreteRdfStreamType
-      </a>
-      <br/>
       <a href="http://www.w3.org/2004/02/skos/core#Concept">
        skos:Concept
+      </a>
+      <br/>
+      <a href="https://w3id.org/stax/ontology#ConcreteRdfStreamType">
+       stax:ConcreteRdfStreamType
       </a>
       <br/>
      </dd>
@@ -3129,12 +3129,12 @@ code {
       Class(es)
      </dt>
      <dd>
-      <a href="https://w3id.org/stax/ontology#ConcreteRdfStreamType">
-       stax:ConcreteRdfStreamType
-      </a>
-      <br/>
       <a href="http://www.w3.org/2004/02/skos/core#Concept">
        skos:Concept
+      </a>
+      <br/>
+      <a href="https://w3id.org/stax/ontology#ConcreteRdfStreamType">
+       stax:ConcreteRdfStreamType
       </a>
       <br/>
      </dd>
@@ -3211,12 +3211,12 @@ code {
       Class(es)
      </dt>
      <dd>
-      <a href="https://w3id.org/stax/ontology#ConcreteRdfStreamType">
-       stax:ConcreteRdfStreamType
-      </a>
-      <br/>
       <a href="http://www.w3.org/2004/02/skos/core#Concept">
        skos:Concept
+      </a>
+      <br/>
+      <a href="https://w3id.org/stax/ontology#ConcreteRdfStreamType">
+       stax:ConcreteRdfStreamType
       </a>
       <br/>
      </dd>
@@ -3289,12 +3289,12 @@ code {
       Class(es)
      </dt>
      <dd>
-      <a href="https://w3id.org/stax/ontology#ConcreteRdfStreamType">
-       stax:ConcreteRdfStreamType
-      </a>
-      <br/>
       <a href="http://www.w3.org/2004/02/skos/core#Concept">
        skos:Concept
+      </a>
+      <br/>
+      <a href="https://w3id.org/stax/ontology#ConcreteRdfStreamType">
+       stax:ConcreteRdfStreamType
       </a>
       <br/>
      </dd>
@@ -3371,12 +3371,12 @@ code {
       Class(es)
      </dt>
      <dd>
-      <a href="https://w3id.org/stax/ontology#ConcreteRdfStreamType">
-       stax:ConcreteRdfStreamType
-      </a>
-      <br/>
       <a href="http://www.w3.org/2004/02/skos/core#Concept">
        skos:Concept
+      </a>
+      <br/>
+      <a href="https://w3id.org/stax/ontology#ConcreteRdfStreamType">
+       stax:ConcreteRdfStreamType
       </a>
       <br/>
      </dd>
@@ -3452,12 +3452,12 @@ code {
       Class(es)
      </dt>
      <dd>
-      <a href="https://w3id.org/stax/ontology#AbstractRdfStreamType">
-       stax:AbstractRdfStreamType
-      </a>
-      <br/>
       <a href="http://www.w3.org/2004/02/skos/core#Concept">
        skos:Concept
+      </a>
+      <br/>
+      <a href="https://w3id.org/stax/ontology#AbstractRdfStreamType">
+       stax:AbstractRdfStreamType
       </a>
       <br/>
      </dd>
@@ -3493,12 +3493,12 @@ code {
       Class(es)
      </dt>
      <dd>
-      <a href="https://w3id.org/stax/ontology#ConcreteRdfStreamType">
-       stax:ConcreteRdfStreamType
-      </a>
-      <br/>
       <a href="http://www.w3.org/2004/02/skos/core#Concept">
        skos:Concept
+      </a>
+      <br/>
+      <a href="https://w3id.org/stax/ontology#ConcreteRdfStreamType">
+       stax:ConcreteRdfStreamType
       </a>
       <br/>
      </dd>
@@ -3534,12 +3534,12 @@ code {
       Class(es)
      </dt>
      <dd>
-      <a href="https://w3id.org/stax/ontology#ConcreteRdfStreamType">
-       stax:ConcreteRdfStreamType
-      </a>
-      <br/>
       <a href="http://www.w3.org/2004/02/skos/core#Concept">
        skos:Concept
+      </a>
+      <br/>
+      <a href="https://w3id.org/stax/ontology#ConcreteRdfStreamType">
+       stax:ConcreteRdfStreamType
       </a>
       <br/>
      </dd>
@@ -4086,7 +4086,7 @@ A timestamped RDF named graph stream is an RDF named graph stream in which every
       <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.tracking", "navigation.top", "navigation.indexes", "toc.follow", "search.suggest", "search.highlight", "content.code.copy", "content.action.edit"], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"default": ["latest", "stable"], "provider": "mike"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      <script src="../assets/javascripts/bundle.56ea9cef.min.js"></script>
       
         <script src="../javascripts/mathjax.js"></script>
       
