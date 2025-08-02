@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://rdf-stax.github.io/dev/uses/">
+        <link rel="canonical" href="https://rdf-stax.github.io/dev/uses/index.html">
       
       
-        <link rel="prev" href="../nanopubs/">
+        <link rel="prev" href="../nanopubs.html">
       
       
-        <link rel="next" href="cq/">
+        <link rel="next" href="cq.html">
       
       
       <link rel="icon" href="../assets/logo_color.png">
@@ -131,7 +131,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="RDF-STaX" class="md-header__button md-logo" aria-label="RDF-STaX" data-md-component="logo">
+    <a href="../index.html" title="RDF-STaX" class="md-header__button md-logo" aria-label="RDF-STaX" data-md-component="logo">
       
   <img src="../assets/logo_white.png" alt="logo">
 
@@ -268,7 +268,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="RDF-STaX" class="md-nav__button md-logo" aria-label="RDF-STaX" data-md-component="logo">
+    <a href="../index.html" title="RDF-STaX" class="md-nav__button md-logo" aria-label="RDF-STaX" data-md-component="logo">
       
   <img src="../assets/logo_white.png" alt="logo">
 
@@ -297,7 +297,7 @@
   
   
     <li class="md-nav__item">
-      <a href=".." class="md-nav__link">
+      <a href="../index.html" class="md-nav__link">
         
   
   
@@ -319,7 +319,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../taxonomy/" class="md-nav__link">
+      <a href="../taxonomy.html" class="md-nav__link">
         
   
   
@@ -341,7 +341,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ontology/" class="md-nav__link">
+      <a href="../ontology.html" class="md-nav__link">
         
   
   
@@ -363,7 +363,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../use-it/" class="md-nav__link">
+      <a href="../use-it.html" class="md-nav__link">
         
   
   
@@ -385,7 +385,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../nanopubs/" class="md-nav__link">
+      <a href="../nanopubs.html" class="md-nav__link">
         
   
   
@@ -429,7 +429,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="./" class="md-nav__link md-nav__link--active">
+            <a href="index.html" class="md-nav__link md-nav__link--active">
               
   
   
@@ -464,7 +464,7 @@
   
   
     <li class="md-nav__item">
-      <a href="cq/" class="md-nav__link">
+      <a href="cq.html" class="md-nav__link">
         
   
   
@@ -494,7 +494,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../contributing/" class="md-nav__link">
+      <a href="../contributing.html" class="md-nav__link">
         
   
   
@@ -516,7 +516,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../licensing/" class="md-nav__link">
+      <a href="../licensing.html" class="md-nav__link">
         
   
   
@@ -659,7 +659,7 @@
 </ul>
 <h2 id="projects-using-rdf-stax">Projects using RDF-STaX</h2>
 <h3 id="riverbench">RiverBench</h3>
-<p><a href="https://w3id.org/riverbench/">RiverBench</a> is an open, community-driven RDF streaming benchmark suite. It uses RDF-STaX for annotating the stream types of the benchmark datasets. The <a href="../use-it/">RDF-STaX annotation system</a> is integrated into the <a href="https://w3id.org/riverbench/schema/metadata">RiverBench metadata ontology</a>.</p>
+<p><a href="https://w3id.org/riverbench/">RiverBench</a> is an open, community-driven RDF streaming benchmark suite. It uses RDF-STaX for annotating the stream types of the benchmark datasets. The <a href="../use-it.html">RDF-STaX annotation system</a> is integrated into the <a href="https://w3id.org/riverbench/schema/metadata">RiverBench metadata ontology</a>.</p>
 <p>Each dataset is assigned two stream type usages – one grouped RDF stream type and one flat RDF stream type. This is because in RiverBench each dataset can be viewed as either <em>streaming</em> or <em>flat</em>. Each dataset also has multiple distributions (flat or streaming) which are annotated with the corresponding stream type usage. The annotations are validated using SHACL, to make sure that the annotation is not contradictory (<a href="https://github.com/RiverBench/schema/blob/3d03cb01764d3c36cefb6f982e5e8bad55aa41d7/src/shacl/dataset.ttl#L175">see the rules</a>). For this, the <code class="language-turtle highlight"><span class="nn">stax</span><span class="p">:</span><span class="nt">canBeFlattenedInto</span></code> and <code class="language-turtle highlight"><span class="nn">stax</span><span class="p">:</span><span class="nt">canBeGroupedInto</span></code> properties are used, along with the taxonomical structure from SKOS.</p>
 <details class="example">
 <summary>Example usage (click to expand)</summary>
@@ -748,14 +748,14 @@ Adapted from <a href="https://github.com/Jelly-RDF/jelly-jvm/blob/485b01e0c994db
 <li><a href="https://w3id.org/jelly/jelly-jvm/dev/">Jelly-JVM documentation</a></li>
 </ul>
 <h3 id="nanopublications">Nanopublications</h3>
-<p>RDF-STaX is used in <a href="../nanopubs/">nanopublications</a> to annotate stream types in research works or software. You can find more information on the <a href="../nanopubs/">dedicated page about nanopublications</a>.</p>
+<p>RDF-STaX is used in <a href="../nanopubs.html">nanopublications</a> to annotate stream types in research works or software. You can find more information on the <a href="../nanopubs.html">dedicated page about nanopublications</a>.</p>
 <h2 id="use-case-based-competency-question-tests">Use case-based competency question tests</h2>
-<p>Based on the above use cases, a number of competency question tests were created. The tests are implemented as SPARQL queries and are used in Continuous Integration (CI) to test the RDF-STaX ontology. You can find a list of all the tests on <strong><a href="cq/">this subpage</a></strong>. The documentation for creating new tests is available <a href="../contributing/#competency-question-tests">here</a>.</p>
+<p>Based on the above use cases, a number of competency question tests were created. The tests are implemented as SPARQL queries and are used in Continuous Integration (CI) to test the RDF-STaX ontology. You can find a list of all the tests on <strong><a href="cq.html">this subpage</a></strong>. The documentation for creating new tests is available <a href="../contributing.html#competency-question-tests">here</a>.</p>
 <h2 id="see-also">See also</h2>
 <ul>
-<li><a href="cq/">Competency question tests</a></li>
-<li><a href="../contributing/">Contributing</a></li>
-<li><a href="../licensing/">Licensing and citation</a></li>
+<li><a href="cq.html">Competency question tests</a></li>
+<li><a href="../contributing.html">Contributing</a></li>
+<li><a href="../licensing.html">Licensing and citation</a></li>
 </ul>
 
 
