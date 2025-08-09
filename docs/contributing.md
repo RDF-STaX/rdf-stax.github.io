@@ -41,7 +41,7 @@ The CI automatically publishes the ontology (see [the releases section below](#r
 - Validate the competency question tests and run them agains the ontology.
 - Set the ontology's version IRI and version.
 - Save an OWL 2 DL version of the ontology in all supported formats.
-    - For [Jelly](https://w3id.org/jelly), the CI uses the [Apache Jena RIOT utility](https://jena.apache.org/documentation/tools/index.html) with the [Jelly-JVM plugin for Jena](https://w3id.org/jelly/jelly-jvm/dev/getting-started-plugins/).
+    - For [Jelly](https://w3id.org/jelly), the CI uses [jelly-cli](https://github.com/Jelly-RDF/cli).
 - Infer additional statements with [ROBOT](https://robot.obolibrary.org/reason).
 - Merge in the author information from `src/authors.ttl`.
 - Merge in the alignments to other vocabularies from `src/alignments.ttl`.
