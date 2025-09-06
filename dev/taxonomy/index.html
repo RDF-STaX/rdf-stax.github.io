@@ -954,13 +954,13 @@
 <p>IRI: <a href="https://w3id.org/stax/ontology#graphStream"><code>https://w3id.org/stax/ontology#graphStream</code></a></p>
 <p>An <strong>RDF graph stream</strong> is a <a href="#grouped-rdf-stream">grouped RDF stream</a> whose elements are unnamed (default) RDF graphs.</p>
 <p>Can be flattened<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup> into a <a href="#flat-rdf-triple-stream">flat RDF triple stream</a>. <br>
-Can be trivially extended<sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup> into an <a href="#rdf-dataset-stream">RDF dataset stream</a>.</p>
+Can be trivially extended<sup id="fnref:3"><a class="footnote-ref" href="#fn:3">2</a></sup> into an <a href="#rdf-dataset-stream">RDF dataset stream</a>.</p>
 <hr />
 <h3 id="rdf-subject-graph-stream">RDF subject graph stream</h3>
 <p>IRI: <a href="https://w3id.org/stax/ontology#subjectGraphStream"><code>https://w3id.org/stax/ontology#subjectGraphStream</code></a></p>
 <p>An <strong>RDF subject graph stream</strong> is an <a href="#rdf-graph-stream">RDF graph stream</a> in which every element contains an IRI node (called the subject node) that uniquely identifies the graph in the stream. Every other node in the graph can be reached by traversing triples, starting from the subject node.</p>
 <p>Can be flattened<sup id="fnref2:1"><a class="footnote-ref" href="#fn:1">1</a></sup> into a <a href="#flat-rdf-triple-stream">flat RDF triple stream</a>. <br>
-Can be trivially extended<sup id="fnref2:3"><a class="footnote-ref" href="#fn:3">3</a></sup> into an <a href="#rdf-dataset-stream">RDF dataset stream</a>.</p>
+Can be trivially extended<sup id="fnref2:3"><a class="footnote-ref" href="#fn:3">2</a></sup> into an <a href="#rdf-dataset-stream">RDF dataset stream</a>.</p>
 <hr />
 <h3 id="rdf-dataset-stream">RDF dataset stream</h3>
 <p>IRI: <a href="https://w3id.org/stax/ontology#datasetStream"><code>https://w3id.org/stax/ontology#datasetStream</code></a></p>
@@ -984,13 +984,13 @@ Can be trivially extended<sup id="fnref2:3"><a class="footnote-ref" href="#fn:3"
 <h3 id="flat-rdf-triple-stream">Flat RDF triple stream</h3>
 <p>IRI: <a href="https://w3id.org/stax/ontology#flatTripleStream"><code>https://w3id.org/stax/ontology#flatTripleStream</code></a></p>
 <p>A <strong>flat RDF triple stream</strong> is a <a href="#flat-rdf-stream">flat RDF stream</a> whose elements are triples.</p>
-<p>Can be grouped<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup> into an <a href="#rdf-graph-stream">RDF graph stream</a>. <br>
-Can be trivially extended<sup id="fnref3:3"><a class="footnote-ref" href="#fn:3">3</a></sup> into a <a href="#flat-rdf-quad-stream">flat RDF quad stream</a>.</p>
+<p>Can be grouped<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">3</a></sup> into an <a href="#rdf-graph-stream">RDF graph stream</a>. <br>
+Can be trivially extended<sup id="fnref3:3"><a class="footnote-ref" href="#fn:3">2</a></sup> into a <a href="#flat-rdf-quad-stream">flat RDF quad stream</a>.</p>
 <hr />
 <h3 id="flat-rdf-quad-stream">Flat RDF quad stream</h3>
 <p>IRI: <a href="https://w3id.org/stax/ontology#flatQuadStream"><code>https://w3id.org/stax/ontology#flatQuadStream</code></a></p>
 <p>A <strong>flat RDF quad stream</strong> is a <a href="#flat-rdf-stream">flat RDF stream</a> whose elements are quads.</p>
-<p>Can be grouped<sup id="fnref2:2"><a class="footnote-ref" href="#fn:2">2</a></sup> into an <a href="#rdf-dataset-stream">RDF dataset stream</a>.</p>
+<p>Can be grouped<sup id="fnref2:2"><a class="footnote-ref" href="#fn:2">3</a></sup> into an <a href="#rdf-dataset-stream">RDF dataset stream</a>.</p>
 <hr />
 <h2 id="see-also">See also</h2>
 <ul>
@@ -1005,11 +1005,11 @@ Can be trivially extended<sup id="fnref3:3"><a class="footnote-ref" href="#fn:3"
 <li id="fn:1">
 <p>The flattening is done by enumerating all components of the stream elements in one, flat stream. For example, a graph stream can be flattened into a flat triple stream.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
-<li id="fn:2">
-<p>The grouping is done by splitting the flat stream of statements into groups, which then can be used to construct elements of the grouped stream. For example, a flat triple stream can be grouped into a graph stream. In this operation, the ordering information within a group is lost.&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
-</li>
 <li id="fn:3">
-<p>You can extend a stream that uses triples or graphs into a stream type that uses quads or datasets. The extension is done by (in case of flat RDF streams) adding a fourth component, corresponding to the default graph. In case of grouped RDF streams, the contents of the graph are placed explicitly in the default graph.&#160;<a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:3" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:3" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+<p>You can extend a stream that uses triples or graphs into a stream type that uses quads or datasets. The extension is done by (in case of flat RDF streams) adding a fourth component, corresponding to the default graph. In case of grouped RDF streams, the contents of the graph are placed explicitly in the default graph.&#160;<a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:3" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:3" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:2">
+<p>The grouping is done by splitting the flat stream of statements into groups, which then can be used to construct elements of the grouped stream. For example, a flat triple stream can be grouped into a graph stream. In this operation, the ordering information within a group is lost.&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:2" title="Jump back to footnote 3 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>
