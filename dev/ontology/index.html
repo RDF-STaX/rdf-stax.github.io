@@ -23,7 +23,7 @@
       
       
       <link rel="icon" href="../assets/logo_color.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
     
     
       
@@ -31,7 +31,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.618322db.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -1191,7 +1191,7 @@ code {
      </a>
     </dt>
     <dd>
-     2025-12-18T04:48:16
+     2025-12-20T04:43:02
     </dd>
     <dt>
      <a class="proplink" href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/issued">
@@ -1502,8 +1502,8 @@ code {
        In domain of
       </th>
       <td>
-       <a href="#canBeFlattenedInto">
-        can be flattened into
+       <a href="#canBeTriviallyExtendedInto">
+        can be trivially extended into
        </a>
        <sup class="sup-op" title="object property">
         op
@@ -1516,15 +1516,15 @@ code {
         op
        </sup>
        <br/>
-       <a href="#canBeGroupedInto">
-        can be grouped into
+       <a href="#canBeFlattenedInto">
+        can be flattened into
        </a>
        <sup class="sup-op" title="object property">
         op
        </sup>
        <br/>
-       <a href="#canBeTriviallyExtendedInto">
-        can be trivially extended into
+       <a href="#canBeGroupedInto">
+        can be grouped into
        </a>
        <sup class="sup-op" title="object property">
         op
@@ -1544,6 +1544,13 @@ code {
        In range of
       </th>
       <td>
+       <a href="#canBeFlattenedInto">
+        can be flattened into
+       </a>
+       <sup class="sup-op" title="object property">
+        op
+       </sup>
+       <br/>
        <a href="#streamTypeSemanticRelation">
         is in stream type semantic relation with
        </a>
@@ -1572,13 +1579,6 @@ code {
         op
        </sup>
        <br/>
-       <a href="#canBeFlattenedInto">
-        can be flattened into
-       </a>
-       <sup class="sup-op" title="object property">
-        op
-       </sup>
-       <br/>
       </td>
      </tr>
      <tr>
@@ -1586,6 +1586,22 @@ code {
        Members
       </th>
       <td>
+       <a href="https://w3id.org/stax/ontology#namedGraphStream">
+        stax:namedGraphStream
+       </a>
+       <br/>
+       <a href="https://w3id.org/stax/ontology#timestampedNamedGraphStream">
+        stax:timestampedNamedGraphStream
+       </a>
+       <br/>
+       <a href="https://w3id.org/stax/ontology#graphStream">
+        stax:graphStream
+       </a>
+       <br/>
+       <a href="https://w3id.org/stax/ontology#subjectGraphStream">
+        stax:subjectGraphStream
+       </a>
+       <br/>
        <a href="https://w3id.org/stax/ontology#datasetStream">
         stax:datasetStream
        </a>
@@ -1596,22 +1612,6 @@ code {
        <br/>
        <a href="https://w3id.org/stax/ontology#flatTripleStream">
         stax:flatTripleStream
-       </a>
-       <br/>
-       <a href="https://w3id.org/stax/ontology#graphStream">
-        stax:graphStream
-       </a>
-       <br/>
-       <a href="https://w3id.org/stax/ontology#timestampedNamedGraphStream">
-        stax:timestampedNamedGraphStream
-       </a>
-       <br/>
-       <a href="https://w3id.org/stax/ontology#namedGraphStream">
-        stax:namedGraphStream
-       </a>
-       <br/>
-       <a href="https://w3id.org/stax/ontology#subjectGraphStream">
-        stax:subjectGraphStream
        </a>
        <br/>
       </td>
@@ -1847,15 +1847,15 @@ code {
        In domain of
       </th>
       <td>
-       <a href="#hasStreamType">
-        has stream type
+       <a href="#isUsageOf">
+        is usage of
        </a>
        <sup class="sup-op" title="object property">
         op
        </sup>
        <br/>
-       <a href="#isUsageOf">
-        is usage of
+       <a href="#hasStreamType">
+        has stream type
        </a>
        <sup class="sup-op" title="object property">
         op
@@ -3077,12 +3077,12 @@ code {
       Class(es)
      </dt>
      <dd>
-      <a href="http://www.w3.org/2004/02/skos/core#ConceptScheme">
-       skos:ConceptScheme
-      </a>
-      <br/>
       <a href="http://www.w3.org/2002/07/owl#Ontology">
        owl:Ontology
+      </a>
+      <br/>
+      <a href="http://www.w3.org/2004/02/skos/core#ConceptScheme">
+       skos:ConceptScheme
       </a>
       <br/>
      </dd>
@@ -3247,12 +3247,12 @@ code {
       Class(es)
      </dt>
      <dd>
-      <a href="https://w3id.org/stax/ontology#AbstractRdfStreamType">
-       stax:AbstractRdfStreamType
-      </a>
-      <br/>
       <a href="http://www.w3.org/2004/02/skos/core#Concept">
        skos:Concept
+      </a>
+      <br/>
+      <a href="https://w3id.org/stax/ontology#AbstractRdfStreamType">
+       stax:AbstractRdfStreamType
       </a>
       <br/>
      </dd>
@@ -3407,12 +3407,12 @@ code {
       Class(es)
      </dt>
      <dd>
-      <a href="https://w3id.org/stax/ontology#AbstractRdfStreamType">
-       stax:AbstractRdfStreamType
-      </a>
-      <br/>
       <a href="http://www.w3.org/2004/02/skos/core#Concept">
        skos:Concept
+      </a>
+      <br/>
+      <a href="https://w3id.org/stax/ontology#AbstractRdfStreamType">
+       stax:AbstractRdfStreamType
       </a>
       <br/>
      </dd>
@@ -3529,12 +3529,12 @@ code {
       Class(es)
      </dt>
      <dd>
-      <a href="https://w3id.org/stax/ontology#AbstractRdfStreamType">
-       stax:AbstractRdfStreamType
-      </a>
-      <br/>
       <a href="http://www.w3.org/2004/02/skos/core#Concept">
        skos:Concept
+      </a>
+      <br/>
+      <a href="https://w3id.org/stax/ontology#AbstractRdfStreamType">
+       stax:AbstractRdfStreamType
       </a>
       <br/>
      </dd>
@@ -4162,10 +4162,10 @@ A timestamped RDF named graph stream is an RDF named graph stream in which every
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.tracking", "navigation.top", "navigation.indexes", "toc.follow", "search.suggest", "search.highlight", "content.code.copy", "content.action.edit"], "search": "../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"default": ["latest", "stable"], "provider": "mike"}}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.tracking", "navigation.top", "navigation.indexes", "toc.follow", "search.suggest", "search.highlight", "content.code.copy", "content.action.edit"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"default": ["latest", "stable"], "provider": "mike"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
       
         <script src="../javascripts/mathjax.js"></script>
       
